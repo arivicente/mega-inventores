@@ -1037,21 +1037,21 @@ if(!fx())document.addEventListener('DOMContentLoaded',fx);
 .lp-checkout-local .co-input{width:100%;max-width:100%;min-width:0;box-sizing:border-box;border:1.5px solid #e2e8f0;border-radius:9px;padding:11px 13px;font-size:15px;font-family:inherit;color:#1e293b;background:#fff;outline:none;transition:border-color .15s,box-shadow .15s}
 .lp-checkout-local .co-input:focus{border-color:var(--lp-green);box-shadow:0 0 0 3px rgba(28,157,104,.12)}
 .lp-checkout-local .co-bumps{display:flex;flex-direction:column;gap:8px}
-.lp-checkout-local .co-bump{display:flex;gap:10px;align-items:flex-start;border:1.5px dashed #cbd5e1;border-radius:11px;padding:11px 12px;cursor:pointer;background:#fff;transition:border-color .15s,background .15s}
+.lp-checkout-local .co-bump{display:grid;grid-template-columns:18px 78px minmax(0,1fr);gap:10px;align-items:start;border:1.5px dashed #cbd5e1;border-radius:12px;padding:12px;cursor:pointer;background:#fff;transition:border-color .15s,background .15s}
 .lp-checkout-local .co-bump:hover{border-color:#25b87c}
-.lp-checkout-local .co-bump.is-on{border:2px solid var(--lp-green);background:#f0fdf5}
-.lp-checkout-local .co-bump input{width:18px;height:18px;flex:0 0 18px;margin:2px 0 0;accent-color:var(--lp-green);cursor:pointer}
-.lp-checkout-local .co-bump-capa{flex:0 0 66px;width:66px;height:82px;border-radius:8px;overflow:hidden;background:#f1f5f9;border:1px solid #e2e8f0}
-.lp-checkout-local .co-bump-capa img{display:block;width:100%;height:100%;object-fit:cover;object-position:center top}
-.lp-checkout-local .co-bump-main{flex:1;min-width:0}
-.lp-checkout-local .co-bump-top{display:flex;justify-content:space-between;align-items:flex-start;gap:8px;flex-wrap:wrap}
-.lp-checkout-local .co-bump-title{font-weight:800;font-size:13.5px;line-height:1.35;color:var(--lp-navy);overflow-wrap:anywhere;min-width:0}
-.lp-checkout-local .co-bump-pricing{display:flex;flex-direction:column;align-items:flex-end;flex:none;line-height:1.2}
-.lp-checkout-local .co-bump-price{font-weight:900;font-size:14px;color:#158458;white-space:nowrap}
+.lp-checkout-local .co-bump.is-on{border:1.5px solid var(--lp-green);background:#f0fdf5}
+.lp-checkout-local .co-bump input{grid-column:1;grid-row:1;width:18px;height:18px;margin:3px 0 0;accent-color:var(--lp-green);cursor:pointer}
+.lp-checkout-local .co-bump-capa{grid-column:2;grid-row:1;display:flex;flex-direction:column;gap:5px;width:78px;min-width:0}
+.lp-checkout-local .co-bump-capa img{display:block;width:78px;height:98px;object-fit:cover;object-position:center top;border-radius:8px;border:1px solid #e2e8f0;background:#f1f5f9}
+.lp-checkout-local .co-bump-capa-name{display:block;font-size:9.5px;line-height:1.25;font-weight:700;color:#64748b;text-align:center;overflow-wrap:anywhere}
+.lp-checkout-local .co-bump-main{grid-column:3;grid-row:1;display:flex;flex-direction:column;gap:5px;min-width:0}
+.lp-checkout-local .co-bump-title{display:block;font-weight:800;font-size:13px;line-height:1.35;color:var(--lp-navy);overflow-wrap:anywhere;min-width:0}
+.lp-checkout-local .co-bump-desc{display:block;font-size:11.5px;line-height:1.42;color:#64748b;margin:0;overflow-wrap:anywhere}
+.lp-checkout-local .co-bump-offer{display:flex;align-items:center;gap:7px;flex-wrap:wrap;margin-top:2px}
+.lp-checkout-local .co-bump-price{font-weight:900;font-size:16px;line-height:1;color:#158458;white-space:nowrap}
 .lp-checkout-local .co-bump-old{font-size:11px;font-weight:600;color:#94a3b8;text-decoration:line-through;white-space:nowrap}
-.lp-checkout-local .co-bump-pct{font-size:10px;font-weight:900;color:#b45309;background:#fef3c7;border-radius:999px;padding:1px 6px;margin-top:2px;white-space:nowrap}
-.lp-checkout-local .co-bump-desc{font-size:11.5px;color:#64748b;line-height:1.4;margin:4px 0 0;overflow-wrap:anywhere}
-.lp-checkout-local .co-bump-cta{display:inline-block;margin-top:6px;font-size:11px;font-weight:800;color:#158458;background:#eafbf3;border:1px solid #bee9cc;border-radius:6px;padding:3px 8px}
+.lp-checkout-local .co-bump-pct{font-size:10px;font-weight:900;color:#b45309;background:#fef3c7;border-radius:999px;padding:2px 7px;white-space:nowrap}
+.lp-checkout-local .co-bump-cta{align-self:flex-start;display:inline-block;margin-top:1px;font-size:11px;font-weight:800;color:#158458;background:#eafbf3;border:1px solid #bee9cc;border-radius:6px;padding:4px 9px}
 .lp-checkout-local .co-all{display:flex;align-items:center;gap:9px;background:#fff8e1;border:1.5px solid #fcd979;border-radius:11px;padding:11px 13px;cursor:pointer;font-weight:900;font-size:14px;color:#7a5600;margin-top:4px}
 .lp-checkout-local .co-all input{width:18px;height:18px;accent-color:var(--lp-green);cursor:pointer}
 .lp-checkout-local .co-summary{background:#f8fafc;border:1px solid #e2e8f0;border-radius:12px;padding:14px 15px}
@@ -1069,8 +1069,8 @@ if(!fx())document.addEventListener('DOMContentLoaded',fx);
 .lp-checkout-local .co-trust{display:flex;align-items:center;justify-content:center;gap:8px;flex-wrap:wrap;font-size:11.5px;color:#64748b;margin-top:12px}
 .lp-checkout-local .co-legal{text-align:center;font-size:11px;color:#94a3b8;line-height:1.5;margin:14px 0 0}
 .lp-checkout-local .co-tech{text-align:center;font-size:11px;color:#94a3b8;margin:6px 0 0}
-@media(max-width:640px){.lp-checkout-local .co-grid{grid-template-columns:minmax(0,1fr)}.lp-checkout-local .co-body{padding:16px}.lp-checkout-local h2{font-size:20px}.lp-checkout-local .co-bump-capa{flex-basis:58px;width:58px;height:74px}.lp-checkout-local .co-banner-img{width:88px;height:112px}}
-@media(max-width:380px){.lp-checkout-local .co-bump{flex-wrap:wrap}.lp-checkout-local .co-bump-capa{flex-basis:100%;width:100%;height:120px}}
+@media(max-width:640px){.lp-checkout-local .co-grid{grid-template-columns:minmax(0,1fr)}.lp-checkout-local .co-body{padding:16px}.lp-checkout-local h2{font-size:20px}.lp-checkout-local .co-banner-img{width:88px;height:112px}.lp-checkout-local .co-bump{grid-template-columns:16px 60px minmax(0,1fr);gap:8px;padding:10px}.lp-checkout-local .co-bump input{width:16px;height:16px}.lp-checkout-local .co-bump-capa{width:60px}.lp-checkout-local .co-bump-capa img{width:60px;height:75px}.lp-checkout-local .co-bump-title{font-size:12.5px}.lp-checkout-local .co-bump-price{font-size:14.5px}}
+@media(max-width:380px){.lp-checkout-local .co-bump{grid-template-columns:16px 48px minmax(0,1fr);gap:7px}.lp-checkout-local .co-bump-capa{width:48px}.lp-checkout-local .co-bump-capa img{width:48px;height:60px}.lp-checkout-local .co-bump-capa-name{font-size:8.5px}.lp-checkout-local .co-bump-desc{font-size:11px}}
 </style>
 <section class="lp-checkout-local checkout-section" id="checkout">
 <div class="lp-wrap">
@@ -1097,33 +1097,33 @@ if(!fx())document.addEventListener('DOMContentLoaded',fx);
 <div class="co-bumps">
 <label class="co-bump" data-bump="bump-robotica-movimento">
 <input type="checkbox" id="bump-robotica-movimento">
-<span class="co-bump-capa"><img src="assets/ob-robotica-con-movimiento.webp" alt="Capa: Rob&oacute;tica con Movimiento (24 proyectos)" loading="lazy" width="66" height="82"></span>
-<span class="co-bump-main"><span class="co-bump-top"><span class="co-bump-title">&#129302; Robots que se mueven de verdad: 24 mecanismos de cart&oacute;n con plantillas</span><span class="co-bump-pricing"><span class="co-bump-price">8,18 €</span><span class="co-bump-old">17,27 €</span><span class="co-bump-pct">-53%</span></span></span><span class="co-bump-desc">Tu robot deja de ser estatua: 24 mecanismos con ruedas, engranajes y m&aacute;s.</span><span class="co-bump-cta">+ A&ntilde;adir a tu compra</span></span>
+<span class="co-bump-capa"><img src="assets/ob-robotica-con-movimiento.webp" alt="Capa: Rob&oacute;tica Movible (24 proyectos)" loading="lazy" width="78" height="98"><span class="co-bump-capa-name">Capa: Rob&oacute;tica Movible (24 proyectos)</span></span>
+<span class="co-bump-main"><span class="co-bump-title">&#129302; Robots que se mueven de verdad: 24 mecanismos de cart&oacute;n con plantillas</span><span class="co-bump-desc">Tu robot deja de ser estatua: 24 mecanismos con ruedas, engranajes y m&aacute;s.</span><span class="co-bump-offer"><span class="co-bump-price">8,18 €</span><span class="co-bump-old">17,27 €</span><span class="co-bump-pct">-53%</span></span><span class="co-bump-cta">+ A&ntilde;adir a tu compra</span></span>
 </label>
 <label class="co-bump" data-bump="bump-gran-desafio-inventor">
 <input type="checkbox" id="bump-gran-desafio-inventor">
-<span class="co-bump-capa"><img src="assets/ob-el-gran-desafio-invetor.webp" alt="Capa: El Gran Desaf&iacute;o Inventor (30 misiones)" loading="lazy" width="66" height="82"></span>
-<span class="co-bump-main"><span class="co-bump-top"><span class="co-bump-title">&#127942; Que ning&uacute;n invento quede en un rinc&oacute;n: 30 misiones con puntos e insignias</span><span class="co-bump-pricing"><span class="co-bump-price">8,18 €</span><span class="co-bump-old">22,72 €</span><span class="co-bump-pct">-64%</span></span></span><span class="co-bump-desc">30 misiones en 6 mundos, con puntaje e insignias. &iexcl;A construir, probar y crear!</span><span class="co-bump-cta">+ A&ntilde;adir a tu compra</span></span>
+<span class="co-bump-capa"><img src="assets/ob-el-gran-desafio-invetor.webp" alt="Capa: El Gran Desaf&iacute;o Inventor" loading="lazy" width="78" height="98"><span class="co-bump-capa-name">Capa: El Gran Desaf&iacute;o Inventor</span></span>
+<span class="co-bump-main"><span class="co-bump-title">&#127942; Que ning&uacute;n invento quede en un rinc&oacute;n: 30 misiones con puntos e insignias</span><span class="co-bump-desc">30 misiones en 6 mundos, con puntaje e insignias. Tu hijo construye, prueba y crea.</span><span class="co-bump-offer"><span class="co-bump-price">8,18 €</span><span class="co-bump-old">22,72 €</span><span class="co-bump-pct">-64%</span></span><span class="co-bump-cta">+ A&ntilde;adir a tu compra</span></span>
 </label>
 <label class="co-bump" data-bump="bump-cientificos-casa">
 <input type="checkbox" id="bump-cientificos-casa">
-<span class="co-bump-capa"><img src="assets/ob-cientificos-en-casa.webp" alt="Capa: Cient&iacute;ficos en Casa (50 experimentos)" loading="lazy" width="66" height="82"></span>
-<span class="co-bump-main"><span class="co-bump-top"><span class="co-bump-title">&#129514; Laboratorio en tu cocina: 50 experimentos seguros con lo que ya ten&eacute;s</span><span class="co-bump-pricing"><span class="co-bump-price">9,09 €</span><span class="co-bump-old">26,45 €</span><span class="co-bump-pct">-66%</span></span></span><span class="co-bump-desc">50 experimentos con lo que ya ten&eacute;s en la cocina: pregunta, hip&oacute;tesis y resultado.</span><span class="co-bump-cta">+ A&ntilde;adir a tu compra</span></span>
+<span class="co-bump-capa"><img src="assets/ob-cientificos-en-casa.webp" alt="Capa: Cient&iacute;ficos en Casa (50)" loading="lazy" width="78" height="98"><span class="co-bump-capa-name">Capa: Cient&iacute;ficos en Casa (50)</span></span>
+<span class="co-bump-main"><span class="co-bump-title">&#129514; Laboratorio en tu cocina: 50 experimentos seguros con lo que ya ten&eacute;s</span><span class="co-bump-desc">50 experimentos con lo que ya ten&eacute;s en la cocina: pregunta, hip&oacute;tesis y resultado.</span><span class="co-bump-offer"><span class="co-bump-price">9,09 €</span><span class="co-bump-old">26,45 €</span><span class="co-bump-pct">-66%</span></span><span class="co-bump-cta">+ A&ntilde;adir a tu compra</span></span>
 </label>
 <label class="co-bump" data-bump="bump-tecnologia-sem-telas">
 <input type="checkbox" id="bump-tecnologia-sem-telas">
-<span class="co-bump-capa"><img src="assets/ob-tecnologia-sin-pantallas.webp" alt="Capa: Tecnolog&iacute;a Sin Pantallas (40 desaf&iacute;os)" loading="lazy" width="66" height="82"></span>
-<span class="co-bump-main"><span class="co-bump-top"><span class="co-bump-title">&#128118; Chau &ldquo;me aburro&rdquo;: 40 desaf&iacute;os por niveles, con diplomas y sin pantalla</span><span class="co-bump-pricing"><span class="co-bump-price">7,27 €</span><span class="co-bump-old">19,99 €</span><span class="co-bump-pct">-64%</span></span></span><span class="co-bump-desc">40 desaf&iacute;os por nivel, con tablero de progreso y diplomas. Cada reto en un paso.</span><span class="co-bump-cta">+ A&ntilde;adir a tu compra</span></span>
+<span class="co-bump-capa"><img src="assets/ob-tecnologia-sin-pantallas.webp" alt="Capa: Tecnolog&iacute;a Sin Pantallas (40 Desaf&iacute;os)" loading="lazy" width="78" height="98"><span class="co-bump-capa-name">Capa: Tecnolog&iacute;a Sin Pantallas (40 Desaf&iacute;os)</span></span>
+<span class="co-bump-main"><span class="co-bump-title">&#128118; Chau &ldquo;me aburro&rdquo;: 40 desaf&iacute;os por niveles, con diplomas y sin pantalla</span><span class="co-bump-desc">40 desaf&iacute;os por nivel, con tablero de progreso y diplomas. Cada reto en un paso.</span><span class="co-bump-offer"><span class="co-bump-price">7,27 €</span><span class="co-bump-old">19,99 €</span><span class="co-bump-pct">-64%</span></span><span class="co-bump-cta">+ A&ntilde;adir a tu compra</span></span>
 </label>
 <label class="co-bump" data-bump="bump-agentes-inventores">
 <input type="checkbox" id="bump-agentes-inventores">
-<span class="co-bump-capa"><img src="assets/ob-agentes-inventores.webp" alt="Capa: Agentes Inventores (6 misterios)" loading="lazy" width="66" height="82"></span>
-<span class="co-bump-main"><span class="co-bump-top"><span class="co-bump-title">&#128373; Agentes Inventores: 6 misterios para resolver inventando</span><span class="co-bump-pricing"><span class="co-bump-price">8,18 €</span><span class="co-bump-old">17,27 €</span><span class="co-bump-pct">-53%</span></span></span><span class="co-bump-desc">6 casos para imprimir: siguen pistas, arman un invento de verdad (periscopio, catapulta...).</span><span class="co-bump-cta">+ A&ntilde;adir a tu compra</span></span>
+<span class="co-bump-capa"><img src="assets/ob-agentes-inventores.webp" alt="Capa: Agentes Inventores (6 misterios)" loading="lazy" width="78" height="98"><span class="co-bump-capa-name">Capa: Agentes Inventores (6 misterios)</span></span>
+<span class="co-bump-main"><span class="co-bump-title">&#128373; Agentes Inventores: 6 misterios para resolver inventando</span><span class="co-bump-desc">6 casos para imprimir: siguen pistas, arman un invento de verdad (periscopio, catapulta...).</span><span class="co-bump-offer"><span class="co-bump-price">8,18 €</span><span class="co-bump-old">17,27 €</span><span class="co-bump-pct">-53%</span></span><span class="co-bump-cta">+ A&ntilde;adir a tu compra</span></span>
 </label>
 <label class="co-bump" data-bump="bump-magia-optica">
 <input type="checkbox" id="bump-magia-optica">
-<span class="co-bump-capa"><img src="assets/ob-10-ilusiones-opticas.webp" alt="Capa: Magia &Oacute;ptica (10 ilusiones)" loading="lazy" width="66" height="82"></span>
-<span class="co-bump-main"><span class="co-bump-top"><span class="co-bump-title">&#127914; Magia &Oacute;ptica: 10 juguetes de ilusi&oacute;n para armar con papel y cart&oacute;n</span><span class="co-bump-pricing"><span class="co-bump-price">6,36 €</span><span class="co-bump-old">15,45 €</span><span class="co-bump-pct">-59%</span></span></span><span class="co-bump-desc">10 ilusiones &oacute;pticas para armar con papel, cart&oacute;n y cosas de casa: taumatropo y m&aacute;s.</span><span class="co-bump-cta">+ A&ntilde;adir a tu compra</span></span>
+<span class="co-bump-capa"><img src="assets/ob-10-ilusiones-opticas.webp" alt="Capa: Magia &Oacute;ptica" loading="lazy" width="78" height="98"><span class="co-bump-capa-name">Capa: Magia &Oacute;ptica</span></span>
+<span class="co-bump-main"><span class="co-bump-title">&#127914; Magia &Oacute;ptica: 10 juguetes de ilusi&oacute;n para armar con papel y cart&oacute;n</span><span class="co-bump-desc">10 ilusiones &oacute;pticas para armar con papel, cart&oacute;n y cosas de casa: taumatropo y m&aacute;s.</span><span class="co-bump-offer"><span class="co-bump-price">6,36 €</span><span class="co-bump-old">15,45 €</span><span class="co-bump-pct">-59%</span></span><span class="co-bump-cta">+ A&ntilde;adir a tu compra</span></span>
 </label>
 </div>
 <label class="co-all"><input type="checkbox" id="bump-todos"> &iexcl;Me los llevo todos!</label>
