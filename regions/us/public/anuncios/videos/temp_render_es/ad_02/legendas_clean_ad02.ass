@@ -1,0 +1,26 @@
+[Script Info]
+ScriptType: v4.00+
+PlayResX: 360
+PlayResY: 640
+ScaledBorderAndShadow: yes
+
+[V4+ Styles]
+Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
+Style: CleanDarkPill, Arial, 14, &H0000FFFF, &H000000FF, &H08000000, &H08000000, -1, 0, 0, 0, 100, 100, 0, 0, 3, 6, 0, 2, 14, 14, 125, 1
+
+[Events]
+Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
+Dialogue: 0,0:00:00.00,0:00:04.24,CleanDarkPill,,0,0,0,,{\b1}¡DEJAN LAS PANTALLAS AL INSTANTE!{\b0}
+Dialogue: 0,0:00:04.24,0:00:08.32,CleanDarkPill,,0,0,0,,{\b1}HORAS DE ENFOQUE Y CURIOSIDAD{\b0}
+Dialogue: 0,0:00:08.32,0:00:12.08,CleanDarkPill,,0,0,0,,{\b1}EL ORGULLO DE DECIR: ¡LO HICE YO!{\b0}
+Dialogue: 0,0:00:12.08,0:00:16.09,CleanDarkPill,,0,0,0,,{\b1}MÁS DE 120 PROYECTOS PRÁCTICOS{\b0}
+Dialogue: 0,0:00:16.09,0:00:20.38,CleanDarkPill,,0,0,0,,{\b1}FÁCIL DE IMPRIMIR Y ARMAR EN CASA{\b0}
+Dialogue: 0,0:00:20.38,0:00:24.14,CleanDarkPill,,0,0,0,,{\b1}CON CARTÓN Y MATERIALES CASEROS{\b0}
+Dialogue: 0,0:00:24.14,0:00:28.36,CleanDarkPill,,0,0,0,,{\b1}APRENDEN FÍSICA Y MECÁNICA REAL{\b0}
+Dialogue: 0,0:00:28.36,0:00:32.29,CleanDarkPill,,0,0,0,,{\b1}PARA NIÑOS DE 4 A 12 AÑOS{\b0}
+Dialogue: 0,0:00:32.29,0:00:35.23,CleanDarkPill,,0,0,0,,{\b1}PLANOS Y VIDEOS PASO A PASO{\b0}
+Dialogue: 0,0:00:35.23,0:00:39.14,CleanDarkPill,,0,0,0,,{\b1}FINES DE SEMANA EN FAMILIA{\b0}
+Dialogue: 0,0:00:39.14,0:00:43.25,CleanDarkPill,,0,0,0,,{\b1}¡REALMENTE CAMINAN Y SE MUEVEN!{\b0}
+Dialogue: 0,0:00:43.25,0:00:46.51,CleanDarkPill,,0,0,0,,{\b1}HORAS DE ENFOQUE Y CREATIVIDAD{\b0}
+Dialogue: 0,0:00:46.51,0:00:49.68,CleanDarkPill,,0,0,0,,{\b1}SEGURIDAD PARA TODA LA VIDA{\b0}
+Dialogue: 0,0:00:49.68,0:00:53.14,CleanDarkPill,,0,0,0,,{\b1}ACCESO DIGITAL DE POR VIDA{\b0}

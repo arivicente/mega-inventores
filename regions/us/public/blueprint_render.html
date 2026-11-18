@@ -1,0 +1,147 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@600;700;800;900&family=Plus+Jakarta+Sans:wght@500;600;700;800&family=JetBrains+Mono:wght@600;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      padding: 24px;
+      background: #040914;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 1200px;
+      height: 760px;
+      box-sizing: border-box;
+    }
+    .blueprint-card {
+      width: 100%;
+      height: 100%;
+      background: #081225;
+      border: 3px solid #3b82f6;
+      border-radius: 28px;
+      box-shadow: 0 25px 60px -15px rgba(0, 0, 0, 0.7), 0 0 35px rgba(59, 130, 246, 0.25);
+      position: relative;
+      overflow: hidden;
+      padding: 32px 36px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      box-sizing: border-box;
+    }
+    .grid-pattern {
+      position: absolute;
+      inset: 0;
+      background-image: 
+        linear-gradient(to right, rgba(56, 189, 248, 0.08) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(56, 189, 248, 0.08) 1px, transparent 1px);
+      background-size: 24px 24px;
+      pointer-events: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="blueprint-card">
+    <div class="grid-pattern"></div>
+    
+    <!-- Header -->
+    <div class="relative z-10 flex items-center justify-between border-b-2 border-blue-500/40 pb-4">
+      <div class="flex items-center gap-3">
+        <span class="w-3.5 h-3.5 rounded-full bg-blue-400 shadow-[0_0_12px_#38bdf8] animate-pulse"></span>
+        <h1 class="font-['Outfit'] font-black text-3xl tracking-wider text-transparent bg-clip-text bg-gradient-to-r from-white via-blue-100 to-sky-300">
+          HYDRAULIC CRANE <span class="text-sky-400 font-mono text-2xl font-bold">(PROJECT #04)</span>
+        </h1>
+      </div>
+      <div class="flex items-center gap-2 bg-blue-950/80 border border-blue-400/40 rounded-full px-4 py-1.5 shadow-inner">
+        <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
+        <span class="font-['JetBrains_Mono'] text-xs font-bold uppercase tracking-wider text-sky-200">
+          LEVEL 2 &bull; TIME: 35 MIN
+        </span>
+      </div>
+    </div>
+
+    <!-- Main Content 2-Column Split -->
+    <div class="relative z-10 grid grid-cols-12 gap-6 my-auto items-center">
+      
+      <!-- Left Column: Real Photo with Blueprint Callouts (5 cols) -->
+      <div class="col-span-5 flex flex-col justify-center">
+        <div class="relative rounded-2xl overflow-hidden border-2 border-sky-400/50 shadow-2xl bg-slate-950 aspect-[4/3] group">
+          <img src="file:///c:/Users/Star/Documents/espionagem1/mega-inventors/regions/us/public/assets/blueprint-crane-photo.jpg" 
+               class="w-full h-full object-cover">
+          <span class="absolute top-3 left-3 bg-blue-600/90 backdrop-blur-md text-white text-[10px] font-black uppercase tracking-wider px-3 py-1 rounded-lg border border-blue-300/40 shadow-md">
+            🏗️ Live Working Model
+          </span>
+          <span class="absolute bottom-3 right-3 bg-slate-900/90 backdrop-blur-md text-emerald-400 text-[10px] font-bold px-2.5 py-1 rounded-md border border-emerald-500/40 shadow-md">
+            💧 Water-Powered
+          </span>
+        </div>
+        <p class="text-[12px] text-sky-300/80 font-medium text-center mt-2.5 flex items-center justify-center gap-1.5">
+          <span>⚙️</span> Real student build made entirely from recycled cardboard & syringes
+        </p>
+      </div>
+
+      <!-- Right Column: Materials & Step-by-Step Schematics (7 cols) -->
+      <div class="col-span-7 flex flex-col gap-3.5">
+        
+        <!-- Materials Checklist -->
+        <div class="bg-blue-950/60 border border-blue-500/30 rounded-xl p-3.5 shadow-sm">
+          <div class="flex items-center gap-2 mb-1.5">
+            <span class="text-amber-400 text-xs">📦</span>
+            <span class="text-[11px] font-['JetBrains_Mono'] font-bold uppercase tracking-wider text-sky-300">Materials Needed (100% Household Items):</span>
+          </div>
+          <p class="text-xs text-slate-100 font-semibold pl-5 leading-relaxed">
+            Cardboard Box &bull; 2x 10ml Plastic Syringes &bull; Aquarium Tube &bull; Bamboo Skewer &bull; Craft String
+          </p>
+        </div>
+
+        <!-- 3 Step Cards -->
+        <div class="grid grid-cols-3 gap-3">
+          <div class="bg-blue-900/25 border border-sky-500/25 rounded-xl p-3 flex flex-col justify-between">
+            <span class="font-['JetBrains_Mono'] text-amber-400 font-black text-[11px] tracking-wider block mb-1">STEP 01</span>
+            <p class="text-[12px] text-slate-200 leading-snug">
+              Cut base arm and reinforce the pivot joint with craft washers.
+            </p>
+          </div>
+
+          <div class="bg-blue-900/25 border border-sky-500/25 rounded-xl p-3 flex flex-col justify-between">
+            <span class="font-['JetBrains_Mono'] text-amber-400 font-black text-[11px] tracking-wider block mb-1">STEP 02</span>
+            <p class="text-[12px] text-slate-200 leading-snug">
+              Mount the hydraulic syringe cylinder and connect the water tube.
+            </p>
+          </div>
+
+          <div class="bg-blue-900/25 border border-sky-500/25 rounded-xl p-3 flex flex-col justify-between">
+            <span class="font-['JetBrains_Mono'] text-amber-400 font-black text-[11px] tracking-wider block mb-1">STEP 03</span>
+            <p class="text-[12px] text-slate-200 leading-snug">
+              Test the lifting mechanism and calibrate counterweight balance.
+            </p>
+          </div>
+        </div>
+
+        <!-- Science Box -->
+        <div class="bg-gradient-to-r from-amber-500/15 via-blue-900/30 to-blue-900/20 border border-amber-400/30 rounded-xl p-3 flex items-center gap-3">
+          <span class="text-xl flex-shrink-0">💡</span>
+          <p class="text-[12px] text-slate-200 leading-tight">
+            <strong class="text-amber-300 font-bold">STEM Physics Insight:</strong> Fluid Pressure Principle (Pascal's Law) multiplies lifting force when water pushes through closed tubes.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- Footer -->
+    <div class="relative z-10 flex items-center justify-between border-t border-blue-800/60 pt-3 text-[11px] text-sky-400/80 font-mono">
+      <span class="flex items-center gap-2">
+        <span class="w-1.5 h-1.5 rounded-full bg-sky-400"></span>
+        THE YOUNG INVENTOR'S BLUEPRINT COMPENDIUM
+      </span>
+      <span class="font-bold text-sky-300">SHEET 04 / 120</span>
+    </div>
+
+  </div>
+</body>
+</html>

@@ -1,0 +1,11 @@
+.env
+node_modules/
+.wrangler/
+dist/
+.DS_Store
+
+*.png
+public/anuncios/videos/temp_*
+public/anuncios/videos/frames_*
+public/anuncios/videos/mapa_cenas*
+

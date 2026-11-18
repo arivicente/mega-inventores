@@ -1,0 +1,40 @@
+{
+  "campaignId": "120252633565190168",
+  "adsetId": "120252633580120168",
+  "pixelId": "1864964467859741",
+  "pageId": "1407050532499881",
+  "dailyBudget": "R$ 50,00",
+  "publishedAt": "2026-11-07T22:30:13.851Z",
+  "ads": [
+    {
+      "name": "Anúncio 01 - Telas vs Curiosidade (Portão & Robô)",
+      "adId": "120252633582730168",
+      "creativeId": "2339352433525048",
+      "videoId": "1500110841960573"
+    },
+    {
+      "name": "Anúncio 02 - Robôs Articulados & Engenharia Caseira",
+      "adId": "120252633583930168",
+      "creativeId": "1676067437481575",
+      "videoId": "2816184282110352"
+    },
+    {
+      "name": "Anúncio 03 - Conexão Pai & Filho Sem Telas",
+      "adId": "120252633585800168",
+      "creativeId": "1808795680335569",
+      "videoId": "1908088433905529"
+    },
+    {
+      "name": "Anúncio 04 - Oficina com Recicláveis & 120 Projetos",
+      "adId": "120252633588450168",
+      "creativeId": "1136950918748483",
+      "videoId": "980593991276980"
+    },
+    {
+      "name": "Anúncio 05 - Dinâmico 18s (Não é só Brincar)",
+      "adId": "120252633592120168",
+      "creativeId": "1158003670016475",
+      "videoId": "2678316022588329"
+    }
+  ]
+}

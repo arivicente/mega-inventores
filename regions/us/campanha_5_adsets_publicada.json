@@ -1,0 +1,55 @@
+{
+  "campaignName": "[The Young Inventors] 01. Sales & Purchase (Global US)",
+  "campaignId": "120252644518370168",
+  "pixelId": "1864964467859741",
+  "totalDailyBudget": "R$ 100.00",
+  "publishedAt": "2026-11-08T16:47:31.775Z",
+  "destinationUrl": "https://mega-inventors-us.codhun.workers.dev/",
+  "adsets": [
+    {
+      "adsetName": "[ABO R$20] Ad 01 - Screens vs Curiosity (Robot & Cardboard)",
+      "adsetId": "120252644520680168",
+      "adName": "Ad 01 - Screens vs Curiosity (Robot & Cardboard)",
+      "adId": "120252644520970168",
+      "creativeId": "1139713909019731",
+      "videoId": "1766711867736725",
+      "dailyBudget": "R$ 20,00"
+    },
+    {
+      "adsetName": "[ABO R$20] Ad 02 - Articulated Robots & DIY Engineering",
+      "adsetId": "120252644524270168",
+      "adName": "Ad 02 - Articulated Robots & DIY Engineering",
+      "adId": "120252644525450168",
+      "creativeId": "1139701498811273",
+      "videoId": "1832582871112293",
+      "dailyBudget": "R$ 20,00"
+    },
+    {
+      "adsetName": "[ABO R$20] Ad 03 - Parent & Child Weekend Connection",
+      "adsetId": "120252644531340168",
+      "adName": "Ad 03 - Parent & Child Weekend Connection",
+      "adId": "120252644532100168",
+      "creativeId": "2194657974736440",
+      "videoId": "4587042688279065",
+      "dailyBudget": "R$ 20,00"
+    },
+    {
+      "adsetName": "[ABO R$20] Ad 04 - Recycled Cardboard Workshop & 120 Projects",
+      "adsetId": "120252644535670168",
+      "adName": "Ad 04 - Recycled Cardboard Workshop & 120 Projects",
+      "adId": "120252644536160168",
+      "creativeId": "2075304866435077",
+      "videoId": "1095917250151622",
+      "dailyBudget": "R$ 20,00"
+    },
+    {
+      "adsetName": "[ABO R$20] Ad 05 - Dynamic 18s (Build Their Future)",
+      "adsetId": "120252644537510168",
+      "adName": "Ad 05 - Dynamic 18s (Build Their Future)",
+      "adId": "120252644538040168",
+      "creativeId": "2359225381508454",
+      "videoId": "1657143582669828",
+      "dailyBudget": "R$ 20,00"
+    }
+  ]
+}

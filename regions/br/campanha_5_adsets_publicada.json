@@ -1,0 +1,48 @@
+{
+  "campaignId": "120252633565190168",
+  "pixelId": "1864964467859741",
+  "totalDailyBudget": "R$ 100,00",
+  "updatedAt": "2026-11-08T12:19:28.770Z",
+  "adsets": [
+    {
+      "adsetName": "[ABO R$20] Ad 01 - Telas vs Curiosidade (Portão & Robô)",
+      "adsetId": "120252642170420168",
+      "adName": "Anúncio 01 - Telas vs Curiosidade (Portão & Robô)",
+      "adId": "120252642170740168",
+      "creativeId": "2339352433525048",
+      "dailyBudget": "R$ 20,00"
+    },
+    {
+      "adsetName": "[ABO R$20] Ad 02 - Robôs Articulados & Engenharia Caseira",
+      "adsetId": "120252642171170168",
+      "adName": "Anúncio 02 - Robôs Articulados & Engenharia Caseira",
+      "adId": "120252642171410168",
+      "creativeId": "1676067437481575",
+      "dailyBudget": "R$ 20,00"
+    },
+    {
+      "adsetName": "[ABO R$20] Ad 03 - Conexão Pai & Filho Sem Telas",
+      "adsetId": "120252642171640168",
+      "adName": "Anúncio 03 - Conexão Pai & Filho Sem Telas",
+      "adId": "120252642171930168",
+      "creativeId": "1808795680335569",
+      "dailyBudget": "R$ 20,00"
+    },
+    {
+      "adsetName": "[ABO R$20] Ad 04 - Oficina com Recicláveis & 120 Projetos",
+      "adsetId": "120252642172050168",
+      "adName": "Anúncio 04 - Oficina com Recicláveis & 120 Projetos",
+      "adId": "120252642172340168",
+      "creativeId": "1136950918748483",
+      "dailyBudget": "R$ 20,00"
+    },
+    {
+      "adsetName": "[ABO R$20] Ad 05 - Dinâmico 18s (Não é só Brincar)",
+      "adsetId": "120252642172530168",
+      "adName": "Anúncio 05 - Dinâmico 18s (Não é só Brincar)",
+      "adId": "120252642172740168",
+      "creativeId": "1158003670016475",
+      "dailyBudget": "R$ 20,00"
+    }
+  ]
+}

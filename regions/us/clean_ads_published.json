@@ -1,0 +1,88 @@
+{
+  "publishedAt": "2026-11-14T11:40:03.337Z",
+  "adAccountId": "act_898705452000785",
+  "adsetId": "120252715725420168",
+  "pausedOldAdId": "120252715726920168",
+  "publishedAds": [
+    {
+      "key": "ad_03_clean",
+      "name": "Ad 03 V2 - Parent & Child Weekend Connection [100% Clean EN]",
+      "videoFile": "ad_03_clean_en.mp4",
+      "videoId": "1447668610836149",
+      "creativeId": "1504820318185112",
+      "adId": "120252749467340168",
+      "adsetId": "120252715725420168",
+      "status": "ACTIVE"
+    },
+    {
+      "key": "ad_02_clean",
+      "name": "Ad 02 V2 - Articulated Robots & DIY Engineering [100% Clean EN]",
+      "videoFile": "ad_02_clean_en.mp4",
+      "videoId": "1155363613662410",
+      "creativeId": "1680802030124829",
+      "adId": "120252749471520168",
+      "adsetId": "120252715725420168",
+      "status": "ACTIVE"
+    },
+    {
+      "key": "ad_05_clean",
+      "name": "Ad 05 V2 - Dynamic 18s Build Their Future [100% Clean EN]",
+      "videoFile": "ad_05_clean_en.mp4",
+      "videoId": "1871332873899156",
+      "creativeId": "2863386514088271",
+      "adId": "120252749473690168",
+      "adsetId": "120252715725420168",
+      "status": "ACTIVE"
+    }
+  ],
+  "liveAdsetAds": [
+    {
+      "id": "120252715726920168",
+      "name": "Ad 03 - Parent & Child Weekend Connection",
+      "status": "PAUSED",
+      "effective_status": "IN_PROCESS"
+    },
+    {
+      "id": "120252749473690168",
+      "name": "Ad 05 V2 - Dynamic 18s Build Their Future [100% Clean EN]",
+      "status": "ACTIVE",
+      "effective_status": "IN_PROCESS"
+    },
+    {
+      "id": "120252749467340168",
+      "name": "Ad 03 V2 - Parent & Child Weekend Connection [100% Clean EN]",
+      "status": "ACTIVE",
+      "effective_status": "IN_PROCESS"
+    },
+    {
+      "id": "120252749471520168",
+      "name": "Ad 02 V2 - Articulated Robots & DIY Engineering [100% Clean EN]",
+      "status": "ACTIVE",
+      "effective_status": "IN_PROCESS"
+    },
+    {
+      "id": "120252715727030168",
+      "name": "Ad 04 - Recycled Cardboard Workshop & 120 Projects (English Perfect)",
+      "status": "PAUSED",
+      "effective_status": "PAUSED"
+    },
+    {
+      "id": "120252715726050168",
+      "name": "Ad 01 - Screens vs Curiosity (Robot & Cardboard)",
+      "status": "PAUSED",
+      "effective_status": "PAUSED"
+    },
+    {
+      "id": "120252715726360168",
+      "name": "Ad 02 - Articulated Robots & DIY Engineering",
+      "status": "PAUSED",
+      "effective_status": "PAUSED"
+    },
+    {
+      "id": "120252715727640168",
+      "name": "Ad 05 - Dynamic 18s (Build Their Future)",
+      "status": "PAUSED",
+      "effective_status": "PAUSED"
+    }
+  ]
+}

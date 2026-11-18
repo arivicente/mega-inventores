@@ -1,0 +1,42 @@
+{
+  "publishedAt": "2026-11-15T20:11:05.293Z",
+  "adAccountId": "act_1669010791304226",
+  "campaignId": "52532181916129",
+  "adsetId": "52532181930729",
+  "budgetDaily": "R$ 20,00",
+  "country": "Spain (ES)",
+  "currencyProduct": "24.00 EUR",
+  "destinationUrl": "https://mega-inventors-es.codhun.workers.dev/",
+  "publishedAds": [
+    {
+      "key": "ad_02_es",
+      "name": "Ad 02 ES - Robótica Articulada y Creatividad Táctil [24€ España]",
+      "videoFile": "ad_02_es.mp4",
+      "videoId": "2570310423463632",
+      "creativeId": "2954462668254386",
+      "adId": "52532182135729",
+      "adsetId": "52532181930729",
+      "status": "ACTIVE"
+    },
+    {
+      "key": "ad_03_es",
+      "name": "Ad 03 ES - Conexión Padre e Hijo en Fin de Semana [24€ España]",
+      "videoFile": "ad_03_es.mp4",
+      "videoId": "1773368263720511",
+      "creativeId": "29448974554743295",
+      "adId": "52532182223529",
+      "adsetId": "52532181930729",
+      "status": "ACTIVE"
+    },
+    {
+      "key": "ad_01_es",
+      "name": "Ad 01 ES - Cambia Pantallas por Curiosidad Real [24€ España]",
+      "videoFile": "ad_01_es.mp4",
+      "videoId": "2633063610455085",
+      "creativeId": "1157935139920753",
+      "adId": "52532182322729",
+      "adsetId": "52532181930729",
+      "status": "ACTIVE"
+    }
+  ]
+}

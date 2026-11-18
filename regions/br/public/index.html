@@ -1,0 +1,855 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>Mega Pack de Inventores | 120 Projetos Práticos de Robótica & Ciência Caseira</title>
+  <meta name="description" content="Seu filho vai deixar as telas de lado e construir seu primeiro robô com as próprias mãos neste final de semana. Mais de 120 projetos passo a passo com papelão e recicláveis.">
+  
+  <!-- Meta Pixel Code -->
+  <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '1864964467859741');
+    fbq('track', 'PageView');
+  </script>
+  <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=1864964467859741&ev=PageView&noscript=1"
+  /></noscript>
+  <!-- End Meta Pixel Code -->
+
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🤖</text></svg>">
+  
+  <!-- Google Fonts & Tailwind CDN -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brandBlue: '#2563EB',
+            brandBlueDark: '#1D4ED8',
+            brandYellow: '#FBBF24',
+            brandOrange: '#F97316',
+            brandGreen: '#10B981',
+            brandGreenDark: '#059669',
+            brandDark: '#0F172A',
+            brandBg: '#F8FAFC'
+          },
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+            display: ['"Outfit"', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    html { scroll-behavior: smooth; }
+    .pulse-btn {
+      animation: pulse-green 2s infinite;
+    }
+    @keyframes pulse-green {
+      0% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+      70% { box-shadow: 0 0 0 14px rgba(16, 185, 129, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+    }
+    .order-bump-card {
+      transition: all 0.25s ease-in-out;
+    }
+    .order-bump-card.checked {
+      background-color: #EFF6FF;
+      border-color: #2563EB;
+      box-shadow: 0 6px 16px -2px rgba(37, 99, 235, 0.15);
+    }
+    input[type="text"], input[type="email"], input[type="tel"] {
+      font-size: 16px !important;
+    }
+    .whatsapp-bubble {
+      background: #E7FFDB;
+      position: relative;
+    }
+    .whatsapp-bubble::before {
+      content: "";
+      position: absolute;
+      top: 10px;
+      left: -8px;
+      width: 0;
+      height: 0;
+      border-top: 8px solid transparent;
+      border-bottom: 8px solid transparent;
+      border-right: 8px solid #E7FFDB;
+    }
+  </style>
+</head>
+<body class="bg-brandBg text-slate-800 font-sans antialiased min-h-screen pt-10">
+
+  <!-- AVISO TOPO FIXO (URGÊNCIA SUAVE) -->
+  <aside class="fixed top-0 left-0 right-0 z-50 h-10 bg-gradient-to-r from-blue-700 via-indigo-700 to-purple-700 text-white text-xs px-3 shadow-md flex items-center">
+    <div class="max-w-5xl mx-auto w-full flex items-center justify-between sm:justify-center gap-2 sm:gap-4">
+      <div class="flex items-center gap-2 truncate">
+        <span class="relative flex h-2 w-2 flex-shrink-0">
+          <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-yellow-300 opacity-75"></span>
+          <span class="relative inline-flex rounded-full h-2 w-2 bg-yellow-400"></span>
+        </span>
+        <span class="font-medium text-[11px] sm:text-xs tracking-tight truncate">
+          🔥 <strong>OFERTA DE LANÇAMENTO:</strong> 61% OFF + 5 Bônus Exclusivos garantidos por:
+        </span>
+      </div>
+      <div class="flex items-center gap-1 flex-shrink-0">
+        <span id="countdown" class="bg-black/30 border border-white/20 text-yellow-300 px-2 py-0.5 rounded font-mono font-bold text-xs">14:59</span>
+      </div>
+    </div>
+  </aside>
+
+  <!-- HERO SECTION -->
+  <header class="relative overflow-hidden bg-gradient-to-b from-blue-50 via-indigo-50/40 to-brandBg pt-6 pb-12 sm:pt-10 sm:pb-16 border-b border-slate-200">
+    <div class="max-w-4xl mx-auto px-4 text-center">
+      
+      <!-- Selo Superior -->
+      <div class="inline-flex items-center gap-2 bg-blue-100 text-blue-800 text-xs sm:text-sm font-bold px-3.5 py-1.5 rounded-full border border-blue-200 shadow-sm mb-4">
+        <span>🤖</span>
+        <span>MÉTODO PRÁTICO ANTI-TELAS PARA PAIS & FILHOS</span>
+      </div>
+
+      <!-- Headline Principal -->
+      <h1 class="font-display font-extrabold text-3xl sm:text-5xl lg:text-5xl text-slate-900 leading-tight tracking-tight mb-4">
+        Seu filho vai deixar o celular de lado e vai <span class="text-blue-600 underline decoration-yellow-400 decoration-4">construir seu primeiro robô</span> com as próprias mãos neste final de semana.
+      </h1>
+
+      <!-- Subheadline -->
+      <p class="text-base sm:text-lg text-slate-600 max-w-2xl mx-auto mb-6 leading-relaxed">
+        Mais de <strong>120 projetos práticos de robótica, ciência caseira e engenhocas</strong> passo a passo usando papelão e materiais que você já tem em casa. Primeiro constrói, depois entende como funciona e passa horas se divertindo longe das telas.
+      </p>
+
+      <!-- Mockup Principal com Selo de Vídeos -->
+      <div class="relative max-w-lg mx-auto mb-8">
+        <img src="assets/mockup-transparente-com-selo-de-videos-1hqbF3qL5M29IzOX.png" 
+             alt="Mega Pack de Inventores 3D com Vídeos Passo a Passo" 
+             class="w-full h-auto drop-shadow-2xl mx-auto transform hover:scale-[1.02] transition-transform duration-300">
+      </div>
+
+      <!-- Destaques Rápidos -->
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-2.5 sm:gap-4 max-w-2xl mx-auto mb-8 text-left">
+        <div class="bg-white p-3 rounded-xl border border-slate-200 shadow-sm flex items-center gap-2.5">
+          <span class="text-xl">📦</span>
+          <div class="text-xs">
+            <strong class="block text-slate-800 font-bold">120 Projetos</strong>
+            <span class="text-slate-500">Passo a passo</span>
+          </div>
+        </div>
+        <div class="bg-white p-3 rounded-xl border border-slate-200 shadow-sm flex items-center gap-2.5">
+          <span class="text-xl">♻️</span>
+          <div class="text-xs">
+            <strong class="block text-slate-800 font-bold">Sem Gastar Nada</strong>
+            <span class="text-slate-500">Usa recicláveis</span>
+          </div>
+        </div>
+        <div class="bg-white p-3 rounded-xl border border-slate-200 shadow-sm flex items-center gap-2.5">
+          <span class="text-xl">🎥</span>
+          <div class="text-xs">
+            <strong class="block text-slate-800 font-bold">Vídeos Guiados</strong>
+            <span class="text-slate-500">Visual e fácil</span>
+          </div>
+        </div>
+        <div class="bg-white p-3 rounded-xl border border-slate-200 shadow-sm flex items-center gap-2.5">
+          <span class="text-xl">⚡</span>
+          <div class="text-xs">
+            <strong class="block text-slate-800 font-bold">Acesso Vitalício</strong>
+            <span class="text-slate-500">Entrega imediata</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Botão CTA Direto para o Checkout na Mesma Página -->
+      <a href="#checkout-section" class="pulse-btn inline-flex items-center justify-center gap-3 bg-brandGreen hover:bg-brandGreenDark text-white font-display font-black text-lg sm:text-xl py-4 px-8 rounded-2xl shadow-xl transition-all duration-200 w-full sm:w-auto">
+        <span>🚀 QUERO ACESSO IMEDIATO COM 61% OFF</span>
+        <svg class="w-5 h-5 animate-bounce" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path></svg>
+      </a>
+      <p class="text-xs text-slate-500 mt-2.5">🔒 Compra 100% Segura · Garantia Incondicional de 7 Dias</p>
+
+    </div>
+  </header>
+
+  <!-- BARRA DE PROVA SOCIAL E AUTORIDADE (+11.400 ALUNOS) -->
+  <div class="bg-gradient-to-r from-orange-500 via-amber-500 to-orange-600 text-white py-3.5 px-4 shadow-inner border-y border-orange-600/30">
+    <div class="max-w-5xl mx-auto flex flex-wrap items-center justify-around gap-4 text-center text-xs sm:text-sm font-bold">
+      <div class="flex items-center gap-2">
+        <span class="text-xl sm:text-2xl font-black text-yellow-200">+11.423</span>
+        <span class="text-white/95 text-left leading-tight">Pequenos Inventores<br class="hidden sm:inline"> no Mundo</span>
+      </div>
+      <div class="hidden md:block w-px h-8 bg-white/20"></div>
+      <div class="flex items-center gap-2">
+        <span class="text-base sm:text-lg">🇧🇷 🇵🇹 🇺🇸 🇪🇸 🇩🇪 🇫🇷 🇮🇹</span>
+        <span class="text-white/95 text-left leading-tight">Famílias de Diversas<br class="hidden sm:inline"> Nacionalidades</span>
+      </div>
+      <div class="hidden md:block w-px h-8 bg-white/20"></div>
+      <div class="flex items-center gap-2">
+        <span class="text-xl sm:text-2xl font-black text-yellow-200">5 a 12</span>
+        <span class="text-white/95 text-left leading-tight">Anos de Idade<br class="hidden sm:inline"> (Dividido por Faixas)</span>
+      </div>
+      <div class="hidden md:block w-px h-8 bg-white/20"></div>
+      <div class="flex items-center gap-2">
+        <span class="text-xl sm:text-2xl font-black text-yellow-200">30 Dias</span>
+        <span class="text-white/95 text-left leading-tight">Garantia Incondicional<br class="hidden sm:inline"> "Primeiro Robô"</span>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- A VERDADEIRA CAUSA: O PROBLEMA NÃO É SEU FILHO -->
+  <section class="py-12 sm:py-16 bg-white border-b border-slate-200">
+    <div class="max-w-4xl mx-auto px-4">
+      <div class="text-center max-w-2xl mx-auto mb-10">
+        <span class="text-xs font-bold text-amber-600 uppercase tracking-wider bg-amber-50 border border-amber-200 px-3 py-1 rounded-full">Antes de Tudo</span>
+        <h2 class="font-display font-black text-2xl sm:text-4xl text-slate-900 mt-3">O Problema Não É Seu Filho. E Também Não É a Tela.</h2>
+        <p class="text-sm sm:text-base text-slate-600 mt-2 leading-relaxed">
+          Vídeos que começam sozinhos, algoritmos e fases infinitas são desenvolvidos por equipes inteiras de psicólogos comportamentais para reter a atenção. E do outro lado, o que costumamos oferecer?
+        </p>
+      </div>
+
+      <!-- Quadro Comparativo de 2 Colunas -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-3xl mx-auto">
+        <!-- O que já tentamos -->
+        <div class="bg-red-50/60 border-2 border-red-200 rounded-3xl p-6 sm:p-7 shadow-sm">
+          <div class="flex items-center gap-2 mb-4">
+            <span class="w-8 h-8 rounded-full bg-red-100 text-red-600 flex items-center justify-center font-black text-lg">✕</span>
+            <h3 class="font-display font-extrabold text-slate-900 text-lg sm:text-xl">O Que Já Tentamos</h3>
+          </div>
+          <ul class="space-y-3.5 text-xs sm:text-sm text-slate-700">
+            <li class="flex items-start gap-2.5">
+              <span class="text-red-500 font-bold flex-shrink-0 mt-0.5">✕</span>
+              <span><strong>"Só mais cinco minutinhos!"</strong>... e depois a briga, cara feia e choro para desligar.</span>
+            </li>
+            <li class="flex items-start gap-2.5">
+              <span class="text-red-500 font-bold flex-shrink-0 mt-0.5">✕</span>
+              <span><strong>Desenhos e artesanato simples no papel:</strong> em 10 minutos enjoa e volta a pedir a tela.</span>
+            </li>
+            <li class="flex items-start gap-2.5">
+              <span class="text-red-500 font-bold flex-shrink-0 mt-0.5">✕</span>
+              <span><strong>O brinquedo caro da loja:</strong> usa 2 dias e fica jogado para sempre no fundo da gaveta.</span>
+            </li>
+            <li class="flex items-start gap-2.5">
+              <span class="text-red-500 font-bold flex-shrink-0 mt-0.5">✕</span>
+              <span><strong>Proibir na marra:</strong> birra, portas batendo e um sentimento horrível de culpa no fim da tarde.</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- O Que Funciona de Verdade -->
+        <div class="bg-emerald-50/70 border-2 border-emerald-300 rounded-3xl p-6 sm:p-7 shadow-sm">
+          <div class="flex items-center gap-2 mb-4">
+            <span class="w-8 h-8 rounded-full bg-emerald-100 text-emerald-700 flex items-center justify-center font-black text-lg">✓</span>
+            <h3 class="font-display font-extrabold text-slate-900 text-lg sm:text-xl">O Que Funciona de Verdade</h3>
+          </div>
+          <ul class="space-y-3.5 text-xs sm:text-sm text-slate-800">
+            <li class="flex items-start gap-2.5">
+              <span class="text-emerald-600 font-bold flex-shrink-0 mt-0.5">✓</span>
+              <span><strong>Uma missão mecânica real</strong> com um objetivo prático que ele pode tocar e ver mexer.</span>
+            </li>
+            <li class="flex items-start gap-2.5">
+              <span class="text-emerald-600 font-bold flex-shrink-0 mt-0.5">✓</span>
+              <span><strong>Construir com as próprias mãos</strong> usando caixas de papelão e materiais que já tem em casa.</span>
+            </li>
+            <li class="flex items-start gap-2.5">
+              <span class="text-emerald-600 font-bold flex-shrink-0 mt-0.5">✓</span>
+              <span><strong>Ciência de verdade fascinante:</strong> tendões biônicos, pressão hidráulica e circuitos elétricos.</span>
+            </li>
+            <li class="flex items-start gap-2.5">
+              <span class="text-emerald-600 font-bold flex-shrink-0 mt-0.5">✓</span>
+              <span><strong>O desafio final triunfante:</strong> ligar a chave e ver a criação funcionar na frente de todos!</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Conclusão de Destaque -->
+      <div class="mt-8 max-w-2xl mx-auto p-5 sm:p-6 bg-slate-50 border border-slate-200 rounded-2xl text-center">
+        <p class="font-display font-bold text-slate-900 text-base sm:text-lg leading-snug">
+          É uma luta injusta. Proibir só vira discussão. O que realmente funciona é <span class="text-orange-600 underline decoration-amber-400 font-extrabold">substituir a tela</span> por algo que ele deseje ainda mais.
+        </p>
+        <div class="mt-4">
+          <a href="#checkout-section" class="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold text-xs sm:text-sm px-6 py-2.5 rounded-full shadow-md transition">
+            <span>Desbloquear Acesso Imediato</span>
+            <span>→</span>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- O QUE É O MEGA PACK: PROVA VISUAL DOS 120 PROJETOS -->
+  <section class="py-12 bg-brandBg border-b border-slate-200">
+    <div class="max-w-4xl mx-auto px-4">
+      <div class="text-center mb-10">
+        <span class="text-blue-600 font-bold text-xs uppercase tracking-wider">A Maior Biblioteca Infantil DIY</span>
+        <h2 class="font-display font-black text-2xl sm:text-4xl text-slate-900 mt-1">O que seu pequeno inventor vai construir?</h2>
+        <p class="text-sm text-slate-600 max-w-xl mx-auto mt-2">Instruções visuais passo a passo para crianças de 5 a 12 anos. Projetos organizados por nível de dificuldade.</p>
+      </div>
+
+      <!-- Grid com Imagens Reais dos Projetos -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+        <div class="bg-white p-4 rounded-2xl border border-slate-200 shadow-sm overflow-hidden">
+          <img src="assets/duas-paginas-impressas-com-guindaste-1-886QDK4GmfiTPIuD.png" alt="Guindaste Hidráulico de Papelão" class="w-full h-auto rounded-xl object-cover mb-3">
+          <h3 class="font-display font-bold text-slate-900 text-lg">🏗️ Guindastes e Mecanismos com Polias</h3>
+          <p class="text-xs text-slate-600 mt-1">Descobre na prática como alavancas e roldanas multiplicam a força para levantar pesos reais usando palitos, linhas e papelão.</p>
+        </div>
+
+        <div class="bg-white p-4 rounded-2xl border border-slate-200 shadow-sm overflow-hidden">
+          <img src="assets/dupla_mao_robotica_diploma_6144-LSCVmlIl5heXJIMG.png" alt="Mão Robótica e Diploma de Inventor" class="w-full h-auto rounded-xl object-cover mb-3">
+          <h3 class="font-display font-bold text-slate-900 text-lg">🦾 Mão Biônica e Robôs Articulados</h3>
+          <p class="text-xs text-slate-600 mt-1">Cria tendões articulados que se movem quando você puxa os fios, imitando a anatomia de uma mão mecânica de verdade.</p>
+        </div>
+
+        <div class="bg-white p-4 rounded-2xl border border-slate-200 shadow-sm overflow-hidden">
+          <img src="assets/mapa-de-projetos-e-carro-eletrico-qsokkWGxoHu8RGXA.png" alt="Carros Elétricos e a Propulsão" class="w-full h-auto rounded-xl object-cover mb-3">
+          <h3 class="font-display font-bold text-slate-900 text-lg">🏎️ Veículos a Propulsão e Movimento</h3>
+          <p class="text-xs text-slate-600 mt-1">Carrinhos movidos a ar, elásticos de tensão e pequenos circuitos de pilha que correm pela sala sem precisar de baterias caras.</p>
+        </div>
+
+        <div class="bg-white p-4 rounded-2xl border border-slate-200 shadow-sm overflow-hidden">
+          <img src="assets/duas-fichas-educativas-ampliadas-em-fundo-transparente-6QYvrn0clj4FQsY8.png" alt="Fichas Educativas Ilustradas" class="w-full h-auto rounded-xl object-cover mb-3">
+          <h3 class="font-display font-bold text-slate-900 text-lg">📐 Fichas Didáticas com a Ciência Explicada</h3>
+          <p class="text-xs text-slate-600 mt-1">Cada projeto ensina o conceito físico por trás de forma leve: hidráulica, circuitos, gravidade e engrenagens.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  
+  <!-- PÁGINAS REAIS DO PACK / VEJA O QUE VEM DENTRO -->
+  <section class="py-12 sm:py-16 bg-slate-50 border-b border-slate-200">
+    <div class="max-w-5xl mx-auto px-4">
+      <div class="text-center max-w-2xl mx-auto mb-10">
+        <span class="text-xs font-bold text-blue-600 uppercase tracking-wider bg-blue-50 border border-blue-200 px-3 py-1 rounded-full">Páginas Reais do Pack</span>
+        <h2 class="font-display font-black text-2xl sm:text-4xl text-slate-900 mt-3">Veja o Que Tem Dentro do Livro</h2>
+        <p class="text-sm sm:text-base text-slate-600 mt-2">Cada projeto traz fotos reais de montagem, lista de materiais de casa, passos numerados e a explicação simples da física por trás.</p>
+      </div>
+
+      <div class="space-y-8 max-w-4xl mx-auto">
+        <!-- Mostruário 1: Mapa 120 Projetos + Auto Elétrico -->
+        <div class="bg-white border border-slate-200 rounded-3xl p-4 sm:p-6 shadow-md hover:shadow-lg transition">
+          <img src="assets/showcase-mapa-120-auto-eletrico.jpg" alt="Mapa de 120 Projetos e Auto Elétrico de Corrida" class="w-full h-auto rounded-2xl shadow-sm">
+          <div class="mt-4 flex flex-wrap items-center justify-between gap-2 text-xs sm:text-sm">
+            <span class="font-bold text-slate-900">📌 Mapa dos 120 Projetos (9 Categorias STEM) + Projeto 019: Auto Elétrico de Corrida</span>
+            <span class="bg-green-100 text-green-800 font-bold px-3 py-1 rounded-full text-xs">Materiais 100% de Casa</span>
+          </div>
+        </div>
+
+        <!-- Mostruário 2: Guindaste Hidráulico + Robô com Pinça -->
+        <div class="bg-white border border-slate-200 rounded-3xl p-4 sm:p-6 shadow-md hover:shadow-lg transition">
+          <img src="assets/showcase-grua-hidraulica-pinza.jpg" alt="Guindaste Hidráulico e Robô com Pinça" class="w-full h-auto rounded-2xl shadow-sm">
+          <div class="mt-4 flex flex-wrap items-center justify-between gap-2 text-xs sm:text-sm">
+            <span class="font-bold text-slate-900">📌 Projeto 069: Robô com Pinça + Projeto 052: Guindaste Hidráulico com Seringas</span>
+            <span class="bg-blue-100 text-blue-800 font-bold px-3 py-1 rounded-full text-xs">Ensina Alavancas e Pressão Hidráulica</span>
+          </div>
+        </div>
+
+        <!-- Mostruário 3: Mão Robótica + Diploma Oficial -->
+        <div class="bg-white border border-slate-200 rounded-3xl p-4 sm:p-6 shadow-md hover:shadow-lg transition">
+          <img src="assets/showcase-mao-robotica-diploma.jpg" alt="Mão Robótica Articulada e Diploma Oficial" class="w-full h-auto rounded-2xl shadow-sm">
+          <div class="mt-4 flex flex-wrap items-center justify-between gap-2 text-xs sm:text-sm">
+            <span class="font-bold text-slate-900">📌 Projeto 070: Mão Robótica Articulada + Diploma Oficial de Inventor</span>
+            <span class="bg-amber-100 text-amber-800 font-bold px-3 py-1 rounded-full text-xs">Premie o Esforço com Selo Dourado</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5 SUPER BÔNUS EXCLUSIVOS -->
+  <section class="py-12 bg-white border-b border-slate-200">
+    <div class="max-w-4xl mx-auto px-4">
+      <div class="text-center mb-8">
+        <span class="bg-yellow-100 text-yellow-800 text-xs font-bold px-3 py-1 rounded-full border border-yellow-200">🎁 PRESENTES INCLUSOS HOJE</span>
+        <h2 class="font-display font-black text-2xl sm:text-4xl text-slate-900 mt-2">Leve gratuitamente estes 5 Bônus Exclusivos</h2>
+        <p class="text-sm text-slate-600 mt-1">Adquirindo o Mega Pack hoje, você ganha acesso sem custo adicional a toda essa esteira:</p>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        <!-- Bônus 1 -->
+        <div class="p-4 bg-slate-50 border border-slate-200 rounded-2xl flex flex-col items-center text-center">
+          <img src="assets/bono-01-plan-7-dias-expandido.jpg" class="h-44 object-contain mb-3 rounded-lg shadow-sm" alt="Plano 7 Dias" class="h-32 object-contain mb-3">
+          <span class="text-[10px] font-bold text-blue-600 uppercase">Bônus #1</span>
+          <h4 class="font-display font-bold text-slate-900 text-sm mt-0.5">Desafio 7 Dias de Invenção</h4>
+          <p class="text-xs text-slate-600 mt-1">Um projeto guiado por dia durante uma semana com folha de progresso e missão final.</p>
+        </div>
+
+        <!-- Bônus 2 -->
+        <div class="p-4 bg-slate-50 border border-slate-200 rounded-2xl flex flex-col items-center text-center">
+          <img src="assets/bono-02-robotica-14-dias-expandido.jpg" class="h-44 object-contain mb-3 rounded-lg shadow-sm" alt="Robótica 14 Dias" class="h-32 object-contain mb-3">
+          <span class="text-[10px] font-bold text-blue-600 uppercase">Bônus #2</span>
+          <h4 class="font-display font-bold text-slate-900 text-sm mt-0.5">Plano 14 Dias de Robótica</h4>
+          <p class="text-xs text-slate-600 mt-1">Roteiro com a ordem exata de construção por idade e complexidade.</p>
+        </div>
+
+        <!-- Bônus 3 -->
+        <div class="p-4 bg-slate-50 border border-slate-200 rounded-2xl flex flex-col items-center text-center">
+          <img src="assets/bono-03-guia-ajustes-expandido.jpg" class="h-44 object-contain mb-3 rounded-lg shadow-sm" alt="Guia de Ajustes" class="h-32 object-contain mb-3">
+          <span class="text-[10px] font-bold text-blue-600 uppercase">Bônus #3</span>
+          <h4 class="font-display font-bold text-slate-900 text-sm mt-0.5">Guia Rápido de Testes</h4>
+          <p class="text-xs text-slate-600 mt-1">O que fazer se a roda travar, a alavanca falhar ou o motor perder potência.</p>
+        </div>
+
+        <!-- Bônus 4 -->
+        <div class="p-4 bg-slate-50 border border-slate-200 rounded-2xl flex flex-col items-center text-center">
+          <img src="assets/bonus-4_-checklist-para-inventar-7TMwV3M07Cwn2nOr.png" alt="Checklist de Materiais" class="h-32 object-contain mb-3">
+          <span class="text-[10px] font-bold text-blue-600 uppercase">Bônus #4</span>
+          <h4 class="font-display font-bold text-slate-900 text-sm mt-0.5">Checklist de Recicláveis</h4>
+          <p class="text-xs text-slate-600 mt-1">Lista ilustrada para separar tampinhas, caixas e tubos antes de começar.</p>
+        </div>
+
+        <!-- Bônus 5 -->
+        <div class="p-4 bg-slate-50 border border-slate-200 rounded-2xl flex flex-col items-center text-center sm:col-span-2 lg:col-span-2">
+          <img src="assets/bonus-05_-invencoes-no-quintal-1-xN6D6FikVSzT9pDm.png" alt="Invenções no Quintal" class="h-32 object-contain mb-3">
+          <span class="text-[10px] font-bold text-blue-600 uppercase">Bônus #5</span>
+          <h4 class="font-display font-bold text-slate-900 text-sm mt-0.5">40 Invenções ao Ar Livre & Quintal</h4>
+          <p class="text-xs text-slate-600 mt-1">Foguetes de ar comprimido, moinhos de vento e catapultas seguras para brincar no jardim.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- PROVA SOCIAL BRASILEIRA 100% NATIVA (SUBSTITUINDO OS PRINTS EM ESPANHOL) -->
+  <section class="py-12 bg-slate-50 border-b border-slate-200">
+    <div class="max-w-3xl mx-auto px-4">
+      <div class="text-center mb-8">
+        <span class="text-brandGreen font-bold text-xs uppercase tracking-wider">Histórias Reais de Pais no Brasil</span>
+        <h2 class="font-display font-black text-2xl sm:text-3xl text-slate-900 mt-1">Veja o que as famílias estão vivendo</h2>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        
+        <!-- Depoimento 1: Mãe de SP -->
+        <div class="bg-white p-4 rounded-2xl border border-slate-200 shadow-sm flex flex-col justify-between">
+          <div class="flex items-center gap-3 mb-3">
+            <div class="w-10 h-10 rounded-full bg-blue-600 text-white font-bold flex items-center justify-center text-sm shadow">
+              MR
+            </div>
+            <div>
+              <h4 class="font-bold text-slate-900 text-sm">Mariana Ramos</h4>
+              <span class="text-[11px] text-slate-400">Mãe do Theo (8 anos) · São Paulo - SP</span>
+            </div>
+          </div>
+          <div class="whatsapp-bubble p-3.5 rounded-xl text-xs sm:text-sm text-slate-800 leading-relaxed shadow-sm">
+            "Meninas, só passando pra agradecer! O Theo passava o sábado inteiro jogando no celular. Ontem nós montamos a garra mecânica de papelão e o carrinho turbo. Ele ficou 3 horas seguidas concentrado na mesa, rindo com o pai. Valeu cada centavo!"
+            <div class="text-[10px] text-slate-500 text-right mt-1.5 flex items-center justify-end gap-1">
+              <span>17:42</span> <span class="text-blue-500 font-bold">✓✓</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Depoimento 2: Pai de MG -->
+        <div class="bg-white p-4 rounded-2xl border border-slate-200 shadow-sm flex flex-col justify-between">
+          <div class="flex items-center gap-3 mb-3">
+            <div class="w-10 h-10 rounded-full bg-emerald-600 text-white font-bold flex items-center justify-center text-sm shadow">
+              CE
+            </div>
+            <div>
+              <h4 class="font-bold text-slate-900 text-sm">Carlos Eduardo</h4>
+              <span class="text-[11px] text-slate-400">Pai do Enzo (6 anos) e Lucca (9 anos) · BH - MG</span>
+            </div>
+          </div>
+          <div class="whatsapp-bubble p-3.5 rounded-xl text-xs sm:text-sm text-slate-800 leading-relaxed shadow-sm">
+            "A melhor compra do ano. O que eu mais gostei é que não precisa gastar com nada caro: pegamos as caixas do condomínio e tampinhas de refrigerante. Eles montaram o guindaste e agora querem fazer a ponte hidráulica. Nota 10!"
+            <div class="text-[10px] text-slate-500 text-right mt-1.5 flex items-center justify-end gap-1">
+              <span>10:15</span> <span class="text-blue-500 font-bold">✓✓</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- SEÇÃO DE CHECKOUT INTEGRADO COM TODOS OS 7 ORDER BUMPS -->
+  <section id="checkout-section" class="py-12 bg-gradient-to-b from-blue-50/50 via-white to-slate-100">
+    <div class="max-w-3xl mx-auto px-4">
+      
+      <div class="text-center mb-8">
+        <span class="bg-green-100 text-green-800 text-xs font-black px-3.5 py-1.5 rounded-full border border-green-200 uppercase">⚡ PASSO FINAL: RECEBA SEU ACESSO IMEDIATO</span>
+        <h2 class="font-display font-black text-3xl sm:text-4xl text-slate-900 mt-2">Preencha seus dados para começar</h2>
+        <p class="text-xs sm:text-sm text-slate-600 mt-1">Você receberá o link de download e a área de membros no seu e-mail imediatamente após a confirmação.</p>
+      </div>
+
+      <!-- CARD PRINCIPAL DO FORMULÁRIO -->
+      <div class="bg-white rounded-3xl border-2 border-blue-500/30 shadow-2xl overflow-hidden">
+        
+        <!-- Topo do Card -->
+        <div class="bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 text-white p-5 sm:p-6 flex items-center justify-between">
+          <div class="flex items-center gap-3">
+            <span class="text-3xl">🤖</span>
+            <div>
+              <h3 class="font-display font-extrabold text-lg sm:text-xl leading-tight">Mega Pack de Inventores</h3>
+              <p class="text-xs text-blue-100">120 Projetos Passo a Passo + 5 Bônus Exclusivos</p>
+            </div>
+          </div>
+          <div class="text-right">
+            <span class="text-xs text-blue-200 line-through block">De R$ 47,00</span>
+            <span class="font-display font-black text-xl sm:text-2xl text-yellow-300">R$ 9,90</span>
+          </div>
+        </div>
+
+        <div class="p-6 sm:p-8 space-y-6">
+
+          <!-- 1. DADOS PESSOAIS -->
+          <div>
+            <h4 class="font-display font-bold text-slate-900 text-sm sm:text-base mb-3 flex items-center gap-2">
+              <span class="w-6 h-6 rounded-full bg-blue-600 text-white flex items-center justify-center text-xs">1</span>
+              Onde devemos enviar seus materiais?
+            </h4>
+            <div class="space-y-3">
+              <div>
+                <label for="cust-name" class="block text-xs font-semibold text-slate-700 mb-1">Seu Nome Completo:</label>
+                <input type="text" id="cust-name" placeholder="Ex: Roberto Silva" 
+                       class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-sm">
+              </div>
+              <div>
+                <label for="cust-email" class="block text-xs font-semibold text-slate-700 mb-1">Seu Melhor E-mail (onde receberá o acesso):</label>
+                <input type="email" id="cust-email" placeholder="Ex: roberto@gmail.com" 
+                       class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-sm">
+              </div>
+              <div>
+                <label for="cust-phone" class="block text-xs font-semibold text-slate-700 mb-1">WhatsApp com DDD (para suporte e avisos):</label>
+                <input type="tel" id="cust-phone" placeholder="Ex: (11) 98765-4321" 
+                       class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-sm">
+              </div>
+            </div>
+          </div>
+
+          <!-- 2. OS 7 ORDER BUMPS OFICIAIS -->
+          <div class="pt-4 border-t border-slate-200">
+            <div class="flex items-center justify-between mb-3">
+              <h4 class="font-display font-bold text-slate-900 text-sm sm:text-base flex items-center gap-2">
+                <span class="w-6 h-6 rounded-full bg-blue-600 text-white flex items-center justify-center text-xs">2</span>
+                Aproveite e compre junto (Desconto Especial de 43% OFF):
+              </h4>
+            </div>
+
+            <div class="space-y-3">
+              
+              <!-- Bump 1: Pequeños Ingenieros -->
+              <label class="order-bump-card block p-3.5 sm:p-4 rounded-2xl border-2 border-slate-200 bg-slate-50 cursor-pointer hover:border-blue-400" id="card-bump-1">
+                <div class="flex items-start gap-3">
+                  <input type="checkbox" id="bump-pequenos-engenheiros" class="mt-1 w-5 h-5 rounded border-slate-300 text-blue-600 focus:ring-blue-500">
+                  <div class="flex-1">
+                    <div class="flex items-center justify-between gap-2">
+                      <span class="font-bold text-slate-900 text-xs sm:text-sm">🛠️ Pequenos Engenheiros: 10 Projetos para Pequenos Inventores</span>
+                      <span class="font-bold text-blue-700 text-xs sm:text-sm whitespace-nowrap">+ R$ 23,65</span>
+                    </div>
+                    <p class="text-[11px] sm:text-xs text-slate-600 mt-1">10 projetos divertidos para criar, inventar e aprender brincando!</p>
+                  </div>
+                </div>
+              </label>
+
+              <!-- Bump 2: Robótica con Movimiento -->
+              <label class="order-bump-card block p-3.5 sm:p-4 rounded-2xl border-2 border-slate-200 bg-slate-50 cursor-pointer hover:border-blue-400" id="card-bump-2">
+                <div class="flex items-start gap-3">
+                  <input type="checkbox" id="bump-robotica-movimento" class="mt-1 w-5 h-5 rounded border-slate-300 text-blue-600 focus:ring-blue-500">
+                  <div class="flex-1">
+                    <div class="flex items-center justify-between gap-2">
+                      <span class="font-bold text-slate-900 text-xs sm:text-sm">🤖 Robótica com Movimento: 24 Mecanismos de Papelão</span>
+                      <span class="font-bold text-blue-700 text-xs sm:text-sm whitespace-nowrap">+ R$ 23,65</span>
+                    </div>
+                    <p class="text-[11px] sm:text-xs text-slate-600 mt-1">Robôs que se movem de verdade: 24 mecanismos de papelão com moldes e gabaritos.</p>
+                  </div>
+                </div>
+              </label>
+
+              <!-- Bump 3: Científicos en Casa -->
+              <label class="order-bump-card block p-3.5 sm:p-4 rounded-2xl border-2 border-slate-200 bg-slate-50 cursor-pointer hover:border-blue-400" id="card-bump-3">
+                <div class="flex items-start gap-3">
+                  <input type="checkbox" id="bump-cientistas-casa" class="mt-1 w-5 h-5 rounded border-slate-300 text-blue-600 focus:ring-blue-500">
+                  <div class="flex-1">
+                    <div class="flex items-center justify-between gap-2">
+                      <span class="font-bold text-slate-900 text-xs sm:text-sm">🔬 Cientistas em Casa: 60 Experimentos Ilustrados</span>
+                      <span class="font-bold text-blue-700 text-xs sm:text-sm whitespace-nowrap">+ R$ 23,65</span>
+                    </div>
+                    <p class="text-[11px] sm:text-xs text-slate-600 mt-1">60 Experimentos Ilustrados para descobrir a ciência, despertar a curiosidade e aprender brincando em família. ✨</p>
+                  </div>
+                </div>
+              </label>
+
+              <!-- Bump 4: Tecnología sin Pantallas -->
+              <label class="order-bump-card block p-3.5 sm:p-4 rounded-2xl border-2 border-slate-200 bg-slate-50 cursor-pointer hover:border-blue-400" id="card-bump-4">
+                <div class="flex items-start gap-3">
+                  <input type="checkbox" id="bump-tecnologia-sem-telas" class="mt-1 w-5 h-5 rounded border-slate-300 text-blue-600 focus:ring-blue-500">
+                  <div class="flex-1">
+                    <div class="flex items-center justify-between gap-2">
+                      <span class="font-bold text-slate-900 text-xs sm:text-sm">🏆 Tecnologia sem Telas: 40 Desafios</span>
+                      <span class="font-bold text-blue-700 text-xs sm:text-sm whitespace-nowrap">+ R$ 23,65</span>
+                    </div>
+                    <p class="text-[11px] sm:text-xs text-slate-600 mt-1">40 desafios por nível, com tabuleiro de progresso, emblemas e diplomas.</p>
+                  </div>
+                </div>
+              </label>
+
+              <!-- Bump 5: Máquinas Hidráulicas -->
+              <label class="order-bump-card block p-3.5 sm:p-4 rounded-2xl border-2 border-slate-200 bg-slate-50 cursor-pointer hover:border-blue-400" id="card-bump-5">
+                <div class="flex items-start gap-3">
+                  <input type="checkbox" id="bump-maquinas-hidraulicas" class="mt-1 w-5 h-5 rounded border-slate-300 text-blue-600 focus:ring-blue-500">
+                  <div class="flex-1">
+                    <div class="flex items-center justify-between gap-2">
+                      <span class="font-bold text-slate-900 text-xs sm:text-sm">🚀 Máquinas Hidráulicas: 10 Desafios com Água</span>
+                      <span class="font-bold text-blue-700 text-xs sm:text-sm whitespace-nowrap">+ R$ 23,65</span>
+                    </div>
+                    <p class="text-[11px] sm:text-xs text-slate-600 mt-1">Construa máquinas hidráulicas e descubra como a água pode criar movimento enquanto aprende brincando em família 💧.</p>
+                  </div>
+                </div>
+              </label>
+
+              <!-- Bump 6: Fiesta de Inventores -->
+              <label class="order-bump-card block p-3.5 sm:p-4 rounded-2xl border-2 border-slate-200 bg-slate-50 cursor-pointer hover:border-blue-400" id="card-bump-6">
+                <div class="flex items-start gap-3">
+                  <input type="checkbox" id="bump-festa-inventores" class="mt-1 w-5 h-5 rounded border-slate-300 text-blue-600 focus:ring-blue-500">
+                  <div class="flex-1">
+                    <div class="flex items-center justify-between gap-2">
+                      <span class="font-bold text-slate-900 text-xs sm:text-sm">🎉 Festa de Inventores: Kit Temático Completo</span>
+                      <span class="font-bold text-blue-700 text-xs sm:text-sm whitespace-nowrap">+ R$ 23,65</span>
+                    </div>
+                    <p class="text-[11px] sm:text-xs text-slate-600 mt-1">Kit para organizar uma festa temática inesquecível: convites editáveis, decoração para imprimir, guia de atividades grupais e crachás para as equipes.</p>
+                  </div>
+                </div>
+              </label>
+
+              <!-- Bump 7: Mi Diario de Inventor -->
+              <label class="order-bump-card block p-3.5 sm:p-4 rounded-2xl border-2 border-slate-200 bg-slate-50 cursor-pointer hover:border-blue-400" id="card-bump-7">
+                <div class="flex items-start gap-3">
+                  <input type="checkbox" id="bump-diario-inventor" class="mt-1 w-5 h-5 rounded border-slate-300 text-blue-600 focus:ring-blue-500">
+                  <div class="flex-1">
+                    <div class="flex items-center justify-between gap-2">
+                      <span class="font-bold text-slate-900 text-xs sm:text-sm">📓 Meu Diário de Inventor: 30 Dias de Criação</span>
+                      <span class="font-bold text-blue-700 text-xs sm:text-sm whitespace-nowrap">+ R$ 23,65</span>
+                    </div>
+                    <p class="text-[11px] sm:text-xs text-slate-600 mt-1">30 dias para imaginar, desenhar e descobrir. Um diário ilustrado para registrar ideias, testes e melhorias de cada invento. Baixe, imprima e comece a criar!</p>
+                  </div>
+                </div>
+              </label>
+
+            </div>
+          </div>
+
+          <!-- 3. RESUMO E BOTÃO DE PAGAMENTO -->
+          <div class="pt-4 border-t border-slate-200 bg-slate-50 p-5 rounded-2xl">
+            <div class="space-y-1.5 text-xs sm:text-sm mb-4">
+              <div class="flex justify-between text-slate-600">
+                <span>Mega Pack de Inventores (Base + 5 Bônus):</span>
+                <span class="font-semibold text-slate-900">R$ 9,90</span>
+              </div>
+              <div id="summary-pequenos-engenheiros" class="hidden flex justify-between text-blue-700">
+                <span>+ Pequenos Engenheiros:</span>
+                <span class="font-semibold">R$ 23,65</span>
+              </div>
+              <div id="summary-robotica-movimento" class="hidden flex justify-between text-blue-700">
+                <span>+ Robótica com Movimento:</span>
+                <span class="font-semibold">R$ 23,65</span>
+              </div>
+              <div id="summary-cientistas-casa" class="hidden flex justify-between text-blue-700">
+                <span>+ Cientistas em Casa:</span>
+                <span class="font-semibold">R$ 23,65</span>
+              </div>
+              <div id="summary-tecnologia-sem-telas" class="hidden flex justify-between text-blue-700">
+                <span>+ Tecnologia sem Telas (40 Desafios):</span>
+                <span class="font-semibold">R$ 23,65</span>
+              </div>
+              <div id="summary-maquinas-hidraulicas" class="hidden flex justify-between text-blue-700">
+                <span>+ Máquinas Hidráulicas:</span>
+                <span class="font-semibold">R$ 23,65</span>
+              </div>
+              <div id="summary-festa-inventores" class="hidden flex justify-between text-blue-700">
+                <span>+ Festa de Inventores:</span>
+                <span class="font-semibold">R$ 23,65</span>
+              </div>
+              <div id="summary-diario-inventor" class="hidden flex justify-between text-blue-700">
+                <span>+ Meu Diário de Inventor:</span>
+                <span class="font-semibold">R$ 23,65</span>
+              </div>
+              <div class="border-t border-slate-200 pt-2 flex justify-between items-center text-base sm:text-lg font-display font-extrabold text-slate-900">
+                <span>Total a Pagar:</span>
+                <span id="summary-total" class="text-blue-700 font-black">R$ 9,90</span>
+              </div>
+            </div>
+
+            <!-- BOTÃO FINALIZAR -->
+            <button id="btn-finalizar" type="button" class="pulse-btn w-full py-4 px-6 rounded-2xl bg-brandGreen hover:bg-brandGreenDark text-white font-display font-black text-lg sm:text-xl shadow-xl transition-all duration-200 flex items-center justify-center gap-2">
+              <span>PAGAR AGORA NO PIX OU CARTÃO ·</span>
+              <span id="btn-total">R$ 9,90</span>
+            </button>
+
+            <div class="flex items-center justify-center gap-4 text-[11px] text-slate-500 mt-3">
+              <span class="flex items-center gap-1">🔒 Conexão Criptografada SSL</span>
+              <span class="flex items-center gap-1">⚡ Acesso Imediato</span>
+              <span class="flex items-center gap-1">🛡️ 7 Dias de Garantia</span>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- GARANTIA BLINDADA 7 DIAS -->
+  <section class="py-12 bg-white border-b border-slate-200">
+    <div class="max-w-2xl mx-auto px-4 text-center">
+      <img src="assets/garantia-YrDNbk5xkXtbRqee.png" alt="Garantia Incondicional 7 Dias" class="w-24 h-auto mx-auto mb-4">
+      <h3 class="font-display font-black text-2xl text-slate-900">Garantia Incondicional de 7 Dias</h3>
+      <p class="text-xs sm:text-sm text-slate-600 mt-2 leading-relaxed">
+        Teste o <strong>Mega Pack de Inventores</strong> com seu filho neste final de semana. Se ele não deixar o celular de lado ou você achar que o material não valeu cada centavo, basta nos mandar uma mensagem. Devolvemos 100% do seu dinheiro, sem burocracia e sem perguntas.
+      </p>
+    </div>
+  </section>
+
+  <!-- FAQ / PERGUNTAS FREQUENTES -->
+  <section class="py-12 bg-brandBg">
+    <div class="max-w-2xl mx-auto px-4">
+      <h3 class="font-display font-black text-2xl text-center text-slate-900 mb-8">Perguntas Frequentes</h3>
+
+      <div class="space-y-3 text-xs sm:text-sm">
+        <details class="bg-white p-4 rounded-xl border border-slate-200 shadow-sm cursor-pointer">
+          <summary class="font-bold text-slate-900">1. Para qual faixa de idade é recomendado?</summary>
+          <p class="text-slate-600 mt-2">Os projetos atendem perfeitamente crianças de 5 a 12 anos. Crianças menores de 7 anos vão adorar construir junto com os pais; acima de 8 anos já conseguem montar muitos projetos sozinhos com autonomia.</p>
+        </details>
+
+        <details class="bg-white p-4 rounded-xl border border-slate-200 shadow-sm cursor-pointer">
+          <summary class="font-bold text-slate-900">2. Preciso comprar ferramentas caras ou materiais especiais?</summary>
+          <p class="text-slate-600 mt-2">Não! O grande diferencial é usar o que você já tem em casa: caixas de papelão, tampinhas de garrafa pet, palitos de picolé, canudos, elásticos e cola escolar.</p>
+        </details>
+
+        <details class="bg-white p-4 rounded-xl border border-slate-200 shadow-sm cursor-pointer">
+          <summary class="font-bold text-slate-900">3. Como e quando recebo o acesso?</summary>
+          <p class="text-slate-600 mt-2">A entrega é 100% digital e imediata. Assim que o pagamento (Pix ou Cartão) é confirmado, o link de download chega no seu e-mail e você já pode acessar do celular, tablet ou computador.</p>
+        </details>
+
+        <details class="bg-white p-4 rounded-xl border border-slate-200 shadow-sm cursor-pointer">
+          <summary class="font-bold text-slate-900">4. O acesso tem prazo de validade?</summary>
+          <p class="text-slate-600 mt-2">Não, seu acesso é vitalício. Você pode baixar todos os PDFs, salvar no computador ou imprimir quando quiser.</p>
+        </details>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- RODAPÉ -->
+  <footer class="py-8 bg-slate-900 text-slate-400 text-xs text-center px-4">
+    <div class="max-w-3xl mx-auto space-y-2">
+      <p class="font-bold text-white">Mega Pack de Inventores © 2026. Todos os direitos reservados.</p>
+      <p class="text-[11px] text-slate-500">Este site não é afiliado ao Facebook, Google ou qualquer entidade de mídia social. Todos os conteúdos são desenvolvidos para fins educacionais e de lazer em família.</p>
+    </div>
+  </footer>
+
+  <!-- SCRIPT DE CÁLCULO DINÂMICO DOS 7 BUMPS E REDIRECIONAMENTO STRIPE -->
+  <script>
+    (function() {
+      const BASE_PRICE = 37.00;
+      const BUMP_PRICE = 23.65;
+
+      const bumps = [
+        { chk: document.getElementById('bump-pequenos-engenheiros'), card: document.getElementById('card-bump-1'), sum: document.getElementById('summary-pequenos-engenheiros') },
+        { chk: document.getElementById('bump-robotica-movimento'), card: document.getElementById('card-bump-2'), sum: document.getElementById('summary-robotica-movimento') },
+        { chk: document.getElementById('bump-cientistas-casa'), card: document.getElementById('card-bump-3'), sum: document.getElementById('summary-cientistas-casa') },
+        { chk: document.getElementById('bump-tecnologia-sem-telas'), card: document.getElementById('card-bump-4'), sum: document.getElementById('summary-tecnologia-sem-telas') },
+        { chk: document.getElementById('bump-maquinas-hidraulicas'), card: document.getElementById('card-bump-5'), sum: document.getElementById('summary-maquinas-hidraulicas') },
+        { chk: document.getElementById('bump-festa-inventores'), card: document.getElementById('card-bump-6'), sum: document.getElementById('summary-festa-inventores') },
+        { chk: document.getElementById('bump-diario-inventor'), card: document.getElementById('card-bump-7'), sum: document.getElementById('summary-diario-inventor') }
+      ];
+
+      const sumTotal = document.getElementById('summary-total');
+      const btnTotal = document.getElementById('btn-total');
+      const btnFinalizar = document.getElementById('btn-finalizar');
+
+      function formatBRL(val) {
+        return 'R$ ' + val.toFixed(2).replace('.', ',');
+      }
+
+      function updateTotal() {
+        let total = BASE_PRICE;
+
+        bumps.forEach(b => {
+          if (b.chk && b.chk.checked) {
+            total += BUMP_PRICE;
+            b.card.classList.add('checked');
+            b.sum.classList.remove('hidden');
+          } else if (b.chk) {
+            b.card.classList.remove('checked');
+            b.sum.classList.add('hidden');
+          }
+        });
+
+        const formatted = formatBRL(total);
+        sumTotal.textContent = formatted;
+        btnTotal.textContent = formatted;
+      }
+
+      bumps.forEach(b => {
+        if (b.chk) b.chk.addEventListener('change', updateTotal);
+      });
+
+      // Redirecionamento dinâmico para o Stripe Payment Link Oficial
+      btnFinalizar.addEventListener('click', function() {
+        const name = document.getElementById('cust-name').value.trim();
+        const email = document.getElementById('cust-email').value.trim();
+        const phone = document.getElementById('cust-phone').value.trim();
+
+        if (!name || !email) {
+          alert('Por favor, informe seu Nome e E-mail para receber o acesso aos materiais.');
+          document.getElementById('cust-name').focus();
+          return;
+        }
+
+        // Dispara evento InitiateCheckout no Pixel
+        if (typeof fbq === 'function') {
+          fbq('track', 'InitiateCheckout', {
+            value: BASE_PRICE,
+            currency: 'BRL',
+            content_name: 'Mega Pack de Inventores'
+          });
+        }
+
+        // Stripe Payment Link Oficial com todos os 7 Bumps habilitados
+        let checkoutUrl = 'https://buy.stripe.com/3cI3cv0mn87O4Vn4o73Je09';
+        const params = new URLSearchParams();
+        params.append('prefilled_email', email);
+        if (name) params.append('client_reference_id', encodeURIComponent(name));
+
+        // Propaga UTMs
+        const currentSearch = new URLSearchParams(window.location.search);
+        for (const [key, value] of currentSearch.entries()) {
+          params.append(key, value);
+        }
+
+        const finalUrl = checkoutUrl + (checkoutUrl.includes('?') ? '&' : '?') + params.toString();
+        window.location.href = finalUrl;
+      });
+
+      // Cronômetro regressivo
+      let timeLeft = 14 * 60 + 59;
+      const countEl = document.getElementById('countdown');
+      setInterval(function() {
+        if (timeLeft <= 0) return;
+        timeLeft--;
+        const mins = Math.floor(timeLeft / 60);
+        const secs = timeLeft % 60;
+        countEl.textContent = (mins < 10 ? '0' : '') + mins + ':' + (secs < 10 ? '0' : '') + secs;
+      }, 1000);
+
+    })();
+  </script>
+
+</body>
+</html>

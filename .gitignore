@@ -1,0 +1,24 @@
+# Dependencias
+node_modules/
+**/node_modules/
+
+# Segredos e configuracoes locais
+.env
+**/.env
+*.env.local
+**/*.env.local
+
+# Repositorios Git aninhados
+.git/
+**/.git/
+
+# Cloudflare local
+.wrangler/
+**/.wrangler/
+
+# Temporarios e cache
+temp_render/
+**/temp_render/
+*.log
+.DS_Store
+Thumbs.db

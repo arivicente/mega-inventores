@@ -1,0 +1,949 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>Les Jeunes Inventeurs • Méga Pack (120+ Projets STEM & Robotique en Carton)</title>
+  <meta name="description" content="Échangez les écrans contre la créativité. Plus de 120 projets STEM pratiques pour enfants avec du simple carton et des objets du quotidien.">
+  
+  <!-- Meta Pixel Code -->
+  <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '1864964467859741');
+    fbq('track', 'PageView');
+  </script>
+  <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=1864964467859741&ev=PageView&noscript=1"
+  /></noscript>
+  <!-- End Meta Pixel Code -->
+
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🤖</text></svg>">
+  
+  <!-- Google Fonts & Tailwind CDN -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brandBlue: '#2563EB',
+            brandBlueDark: '#1D4ED8',
+            brandYellow: '#FBBF24',
+            brandOrange: '#F97316',
+            brandGreen: '#10B981',
+            brandGreenDark: '#059669',
+            brandDark: '#0F172A',
+            brandBg: '#F8FAFC'
+          },
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+            display: ['"Outfit"', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    html { scroll-behavior: smooth; }
+    @keyframes pulse-green {
+      0% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+      70% { box-shadow: 0 0 0 14px rgba(16, 185, 129, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+    }
+    .order-bump-card {
+      transition: all 0.25s ease-in-out;
+    }
+    .order-bump-card.checked {
+      background-color: #EFF6FF;
+      border-color: #2563EB;
+      box-shadow: 0 6px 16px -2px rgba(37, 99, 235, 0.15);
+    }
+    input[type="text"], input[type="email"], input[type="tel"] {
+      font-size: 16px !important;
+    }
+  </style>
+  <script src="https://js.stripe.com/v3/"></script>
+</head>
+<body class="bg-brandBg text-slate-800 font-sans antialiased min-h-screen pt-10 pb-20 sm:pb-0">
+
+  <!-- TOP URGENCY BANNER -->
+  <aside class="fixed top-0 left-0 right-0 z-50 h-10 bg-gradient-to-r from-blue-700 via-indigo-700 to-purple-700 text-white text-xs px-3 shadow-md flex items-center">
+    <div class="max-w-5xl mx-auto w-full flex items-center justify-between sm:justify-center gap-2 sm:gap-4">
+      <div class="flex items-center gap-2 truncate">
+        <span class="relative flex h-2 w-2 flex-shrink-0">
+          <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-yellow-300 opacity-75"></span>
+          <span class="relative inline-flex rounded-full h-2 w-2 bg-yellow-400"></span>
+        </span>
+        <span class="font-medium text-[11px] sm:text-xs tracking-tight truncate">
+          ⚡ <strong>OFFRE SPÉCIALE DE LANCEMENT :</strong> 62% DE RÉDUCTION + 5 Bonus Offerts réservés pendant :
+        </span>
+      </div>
+      <div class="flex items-center gap-1 flex-shrink-0">
+        <span id="countdown" class="bg-black/30 border border-white/20 text-yellow-300 px-2 py-0.5 rounded font-mono font-bold text-xs">14:59</span>
+      </div>
+    </div>
+  </aside>
+
+  <!-- HERO SECTION -->
+  <header class="relative overflow-hidden bg-gradient-to-b from-blue-50 via-indigo-50/40 to-brandBg pt-6 pb-12 sm:pt-10 sm:pb-16 border-b border-slate-200">
+    <div class="max-w-4xl mx-auto px-4 text-center">
+      
+      <!-- Social Proof Rating Pill -->
+      <div class="inline-flex items-center gap-2 bg-white/90 text-slate-800 text-xs sm:text-sm font-semibold px-4 py-1.5 rounded-full border border-slate-200 shadow-sm mb-4">
+        <div class="flex text-amber-400 text-xs">★★★★★</div>
+        <span class="font-bold">4.9/5</span>
+        <span class="text-slate-400">•</span>
+        <span class="text-slate-600">Recommandé par plus de 14 800 familles sans écran</span>
+      </div>
+
+      <!-- Main Headline -->
+      <h1 class="font-display font-black text-3xl sm:text-5xl md:text-6xl text-slate-900 tracking-tight leading-[1.15] max-w-3xl mx-auto">
+        Votre enfant va poser son écran et construire son tout premier <span class="text-blue-600 underline decoration-yellow-400 decoration-wavy decoration-2">robot fonctionnel</span> ce week-end.
+      </h1>
+
+      <!-- Subheadline -->
+      <p class="text-base sm:text-xl text-slate-600 mt-5 max-w-2xl mx-auto leading-relaxed font-normal">
+        Plus de <strong class="text-slate-900 font-bold">120 projets d'ingénierie STEM pas à pas</strong> avec de simples cartons et des objets que vous avez déjà à la maison. Zéro kit coûteux. Une créativité 100% pratique.
+      </p>
+
+      <!-- Trust Badges -->
+      <div class="flex flex-wrap justify-center items-center gap-2 sm:gap-4 mt-6 text-xs sm:text-sm text-slate-700 font-medium">
+        <span class="flex items-center gap-1.5 bg-white px-3 py-1 rounded-full border border-slate-200 shadow-sm">
+          <span class="text-green-600 font-bold">✓</span> ✓ Téléchargement Immédiat (PDF + Vidéos)
+        </span>
+        <span class="flex items-center gap-1.5 bg-white px-3 py-1 rounded-full border border-slate-200 shadow-sm">
+          <span class="text-green-600 font-bold">✓</span> ✓ Objets du quotidien uniquement
+        </span>
+        <span class="flex items-center gap-1.5 bg-white px-3 py-1 rounded-full border border-slate-200 shadow-sm">
+          <span class="text-green-600 font-bold">✓</span> ✓ Garantie 30 Jours "Premier Robot"
+        </span>
+      </div>
+
+      <!-- Hero Mockup Image -->
+      <div class="mt-8 relative max-w-2xl mx-auto">
+        <img src="assets/mockup-transparente-com-selo-de-videos-1hqbF3qL5M29IzOX.png" 
+             alt="Les Jeunes Inventeurs • Méga Pack (120+ Projets STEM & Robotique en Carton)" 
+             class="w-full h-auto drop-shadow-2xl rounded-2xl mx-auto transform hover:scale-[1.01] transition duration-300">
+      </div>
+
+      <!-- Primary CTA Button -->
+      <div class="mt-8 max-w-md mx-auto">
+        <a href="#checkout" 
+           class="w-full inline-flex items-center justify-center gap-3 bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 text-white font-display font-extrabold text-lg sm:text-xl px-8 py-4 rounded-2xl shadow-xl shadow-green-500/30 transform hover:-translate-y-0.5 transition duration-200 uppercase tracking-wide">
+          <span>OBTENIR L'ACCÈS IMMÉDIAT (27€)</span>
+          <svg class="w-6 h-6 animate-pulse" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+        </a>
+        <div class="flex items-center justify-center gap-3 text-[11px] text-slate-500 mt-2.5">
+          <span>🔒 Paiement Sécurisé SSL 256-Bit • ⚡ Accès Immédiat par E-mail • 💳 Apple Pay / Google Pay / Cartes</span>
+        </div>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- PREUVE SOCIALE ET AUTORITÉ (+11.400 INVENTEURS) -->
+  <div class="bg-gradient-to-r from-orange-500 via-amber-500 to-orange-600 text-white py-3.5 px-4 shadow-inner border-y border-orange-600/30">
+    <div class="max-w-5xl mx-auto flex flex-wrap items-center justify-around gap-4 text-center text-xs sm:text-sm font-bold">
+      <div class="flex items-center gap-2">
+        <span class="text-xl sm:text-2xl font-black text-yellow-200">+11.423</span>
+        <span class="text-white/95 text-left leading-tight">Petits Inventeurs<br class="hidden sm:inline"> dans le Monde</span>
+      </div>
+      <div class="hidden md:block w-px h-8 bg-white/20"></div>
+      <div class="flex items-center gap-2">
+        <span class="text-base sm:text-lg">🇫🇷 🇧🇪 🇨🇭 🇨🇦 🇺🇸 🇪🇸</span>
+        <span class="text-white/95 text-left leading-tight">Familles de<br class="hidden sm:inline"> Plusieurs Pays</span>
+      </div>
+      <div class="hidden md:block w-px h-8 bg-white/20"></div>
+      <div class="flex items-center gap-2">
+        <span class="text-xl sm:text-2xl font-black text-yellow-200">5 à 12</span>
+        <span class="text-white/95 text-left leading-tight">Ans d'Âge<br class="hidden sm:inline"> (Organisé par Niveau)</span>
+      </div>
+      <div class="hidden md:block w-px h-8 bg-white/20"></div>
+      <div class="flex items-center gap-2">
+        <span class="text-xl sm:text-2xl font-black text-yellow-200">30 Jours</span>
+        <span class="text-white/95 text-left leading-tight">Garantie 100%<br class="hidden sm:inline"> "Premier Robot"</span>
+      </div>
+    </div>
+  </div>
+
+
+    <!-- LA VRAIE CAUSE : LE PROBLÈME N'EST PAS VOTRE ENFANT -->
+  <section class="py-12 sm:py-16 bg-white border-b border-slate-200">
+    <div class="max-w-4xl mx-auto px-4">
+      <div class="text-center max-w-2xl mx-auto mb-10">
+        <span class="text-xs font-bold text-amber-600 uppercase tracking-wider bg-amber-50 border border-amber-200 px-3 py-1 rounded-full">Avant tout</span>
+        <h2 class="font-display font-black text-2xl sm:text-4xl text-slate-900 mt-3">Le problème n'est pas votre enfant. Ni même l'écran.</h2>
+        <p class="text-sm sm:text-base text-slate-600 mt-2 leading-relaxed">
+          Des vidéos automatiques et des niveaux sans fin sont conçus par des équipes entières de psychologues pour captiver l'attention. Et en face, quelle alternative proposons-nous ?
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-3xl mx-auto">
+        <div class="bg-red-50/60 border-2 border-red-200 rounded-3xl p-6 sm:p-7 shadow-sm">
+          <div class="flex items-center gap-2 mb-4">
+            <span class="w-8 h-8 rounded-full bg-red-100 text-red-600 flex items-center justify-center font-black text-lg">✕</span>
+            <h3 class="font-display font-extrabold text-slate-900 text-lg sm:text-xl">Ce que nous avons déjà essayé</h3>
+          </div>
+          <ul class="space-y-3.5 text-xs sm:text-sm text-slate-700">
+            <li class="flex items-start gap-2.5">
+              <span class="text-red-500 font-bold flex-shrink-0 mt-0.5">✕</span>
+              <span><strong>«Encore 5 petites minutes !»</strong>... puis les disputes et les larmes pour éteindre.</span>
+            </li>
+            <li class="flex items-start gap-2.5">
+              <span class="text-red-500 font-bold flex-shrink-0 mt-0.5">✕</span>
+              <span><strong>Coloriages et bricolages simples :</strong> au bout de 10 minutes, il s'ennuie et redemande l'écran.</span>
+            </li>
+            <li class="flex items-start gap-2.5">
+              <span class="text-red-500 font-bold flex-shrink-0 mt-0.5">✕</span>
+              <span><strong>Le robot de magasin à 90€ :</strong> utilisé 2 jours, puis abandonné dans un placard.</span>
+            </li>
+            <li class="flex items-start gap-2.5">
+              <span class="text-red-500 font-bold flex-shrink-0 mt-0.5">✕</span>
+              <span><strong>Interdire strictement :</strong> crises, portes qui claquent et culpabilité le soir.</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="bg-emerald-50/70 border-2 border-emerald-300 rounded-3xl p-6 sm:p-7 shadow-sm">
+          <div class="flex items-center gap-2 mb-4">
+            <span class="w-8 h-8 rounded-full bg-emerald-100 text-emerald-700 flex items-center justify-center font-black text-lg">✓</span>
+            <h3 class="font-display font-extrabold text-slate-900 text-lg sm:text-xl">Ce qui fonctionne vraiment</h3>
+          </div>
+          <ul class="space-y-3.5 text-xs sm:text-sm text-slate-800">
+            <li class="flex items-start gap-2.5">
+              <span class="text-emerald-600 font-bold flex-shrink-0 mt-0.5">✓</span>
+              <span><strong>Une vraie mission mécanique</strong> avec un objectif concret et gratifiant.</span>
+            </li>
+            <li class="flex items-start gap-2.5">
+              <span class="text-emerald-600 font-bold flex-shrink-0 mt-0.5">✓</span>
+              <span><strong>Construire de ses propres mains</strong> avec du carton et des objets du quotidien.</span>
+            </li>
+            <li class="flex items-start gap-2.5">
+              <span class="text-emerald-600 font-bold flex-shrink-0 mt-0.5">✓</span>
+              <span><strong>De la vraie science fascinante :</strong> tendons bioniques, hydraulique et circuits électriques.</span>
+            </li>
+            <li class="flex items-start gap-2.5">
+              <span class="text-emerald-600 font-bold flex-shrink-0 mt-0.5">✓</span>
+              <span><strong>Le défi final triomphant :</strong> allumer l'interrupteur et voir la création s'animer !</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="mt-8 max-w-2xl mx-auto p-5 sm:p-6 bg-slate-50 border border-slate-200 rounded-2xl text-center">
+        <p class="font-display font-bold text-slate-900 text-base sm:text-lg leading-snug">
+          C'est une lutte inégale. Interdire mène au conflit. Ce qui fonctionne, c'est <span class="text-orange-600 underline decoration-amber-400 font-extrabold">de remplacer l'écran</span> par quelque chose qu'il désire encore plus.
+        </p>
+        <div class="mt-4">
+          <a href="#checkout" class="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold text-xs sm:text-sm px-6 py-2.5 rounded-full shadow-md transition">
+            <span>Débloquer l'accès immédiat</span>
+            <span>→</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- O QUE É O MEGA PACK: PROVA VISUAL DOS 120 PROJETOS -->
+  <section class="py-12 bg-brandBg border-b border-slate-200">
+    <div class="max-w-4xl mx-auto px-4">
+      <div class="text-center mb-10">
+        <span class="text-blue-600 font-bold text-xs uppercase tracking-wider">La Plus Grande Bibliothèque STEM DIY Pour Enfants</span>
+        <h2 class="font-display font-black text-2xl sm:text-4xl text-slate-900 mt-1">Que va construire votre petit inventeur ?</h2>
+        <p class="text-sm text-slate-600 max-w-xl mx-auto mt-2">Instructions visuelles étape par étape pour les enfants de 5 à 12 ans. Projets classés par niveau de difficulté.</p>
+      </div>
+
+      <!-- Grid com Imagens Reais dos Projetos -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+
+        <div class="bg-white p-4 rounded-2xl border border-slate-200 shadow-sm overflow-hidden hover:shadow-md transition">
+          <img src="assets/duas-paginas-impressas-com-guindaste-1-886QDK4GmfiTPIuD.png" alt="Grue hydraulique en carton" class="w-full h-auto rounded-xl object-cover mb-3">
+          <h3 class="font-display font-bold text-slate-900 text-lg">🏗️ Grues Hydrauliques & Systèmes à Poulies</h3>
+          <p class="text-xs text-slate-600 mt-1">Découvrez par la pratique comment les leviers et poulies multiplient la force pour soulever de vraies charges en carton.</p>
+        </div>
+
+        <div class="bg-white p-4 rounded-2xl border border-slate-200 shadow-sm overflow-hidden hover:shadow-md transition">
+          <img src="assets/dupla_mao_robotica_diploma_6144-LSCVmlIl5heXJIMG.png" alt="Main robotique bionique et diplôme officiel" class="w-full h-auto rounded-xl object-cover mb-3">
+          <h3 class="font-display font-bold text-slate-900 text-lg">🦾 Main Bionique & Robots Articulés</h3>
+          <p class="text-xs text-slate-600 mt-1">Créez des tendons articulés qui bougent quand vous tirez sur les fils, reproduisant l'anatomie d'une vraie main.</p>
+        </div>
+
+        <div class="bg-white p-4 rounded-2xl border border-slate-200 shadow-sm overflow-hidden hover:shadow-md transition">
+          <img src="assets/mapa-de-projetos-e-carro-eletrico-qsokkWGxoHu8RGXA.png" alt="Véhicules à propulsion et bolides" class="w-full h-auto rounded-xl object-cover mb-3">
+          <h3 class="font-display font-bold text-slate-900 text-lg">🏎️ Véhicules à Propulsion & Bolides</h3>
+          <p class="text-xs text-slate-600 mt-1">Voitures à propulsion pneumatique, à élastiques et petits circuits à pile qui filent à toute allure dans le salon.</p>
+        </div>
+
+        <div class="bg-white p-4 rounded-2xl border border-slate-200 shadow-sm overflow-hidden hover:shadow-md transition">
+          <img src="assets/duas-fichas-educativas-ampliadas-em-fundo-transparente-6QYvrn0clj4FQsY8.png" alt="Fiches pédagogiques illustrées" class="w-full h-auto rounded-xl object-cover mb-3">
+          <h3 class="font-display font-bold text-slate-900 text-lg">📐 Fiches Didactiques & Sciences Expliquées</h3>
+          <p class="text-xs text-slate-600 mt-1">Chaque projet explique simplement le concept physique réel : hydraulique, circuits, gravité et engrenages.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  
+  <!-- VRAIES PAGES DU PACK / DÉCOUVREZ CE QU'IL Y A À L'INTÉRIEUR -->
+  <section class="py-12 sm:py-16 bg-slate-50 border-b border-slate-200">
+    <div class="max-w-5xl mx-auto px-4">
+      <div class="text-center max-w-2xl mx-auto mb-10">
+        <span class="text-xs font-bold text-blue-600 uppercase tracking-wider bg-blue-50 border border-blue-200 px-3 py-1 rounded-full">Pages Réelles du Pack</span>
+        <h2 class="font-display font-black text-2xl sm:text-4xl text-slate-900 mt-3">Découvrez ce qu'il y a à l'intérieur</h2>
+        <p class="text-sm sm:text-base text-slate-600 mt-2">Chaque projet propose des photos de montage réelles, une liste de matériel maison, des étapes numérotées et des explications physiques simples.</p>
+      </div>
+
+      <div class="space-y-8 max-w-4xl mx-auto">
+        <div class="bg-white border border-slate-200 rounded-3xl p-4 sm:p-6 shadow-md hover:shadow-lg transition">
+          <img src="assets/showcase-mapa-120-auto-eletrico.jpg" alt="Carte des 120 Projets et Voiture Électrique" class="w-full h-auto rounded-2xl shadow-sm">
+          <div class="mt-4 flex flex-wrap items-center justify-between gap-2 text-xs sm:text-sm">
+            <span class="font-bold text-slate-900">📌 Carte des 120 Projets (9 Catégories STEM) + Projet 019 : Voiture Électrique</span>
+            <span class="bg-green-100 text-green-800 font-bold px-3 py-1 rounded-full text-xs">Matériaux 100% Maison</span>
+          </div>
+        </div>
+
+        <div class="bg-white border border-slate-200 rounded-3xl p-4 sm:p-6 shadow-md hover:shadow-lg transition">
+          <img src="assets/showcase-grua-hidraulica-pinza.jpg" alt="Grue Hydraulique et Robot à Pince" class="w-full h-auto rounded-2xl shadow-sm">
+          <div class="mt-4 flex flex-wrap items-center justify-between gap-2 text-xs sm:text-sm">
+            <span class="font-bold text-slate-900">📌 Projet 069 : Robot à Pince + Projet 052 : Grue Hydraulique avec Seringues</span>
+            <span class="bg-blue-100 text-blue-800 font-bold px-3 py-1 rounded-full text-xs">Enseigne les Leviers & la Pression Hydraulique</span>
+          </div>
+        </div>
+
+        <div class="bg-white border border-slate-200 rounded-3xl p-4 sm:p-6 shadow-md hover:shadow-lg transition">
+          <img src="assets/showcase-mao-robotica-diploma.jpg" alt="Main Bionique et Diplôme Officiel" class="w-full h-auto rounded-2xl shadow-sm">
+          <div class="mt-4 flex flex-wrap items-center justify-between gap-2 text-xs sm:text-sm">
+            <span class="font-bold text-slate-900">📌 Projet 070 : Main Bionique Articulée + Diplôme Officiel d'Inventeur</span>
+            <span class="bg-amber-100 text-amber-800 font-bold px-3 py-1 rounded-full text-xs">Récompensez son Succès avec le Sceau Doré</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- 5 SUPER BÔNUS EXCLUSIVOS -->
+  <section class="py-12 bg-white border-b border-slate-200">
+    <div class="max-w-4xl mx-auto px-4">
+      <div class="text-center mb-8">
+        <span class="bg-yellow-100 text-yellow-800 text-xs font-bold px-3 py-1 rounded-full border border-yellow-200">🎁 CADEAUX OFFERTS AUJOURD'HUI</span>
+        <h2 class="font-display font-black text-2xl sm:text-4xl text-slate-900 mt-2">Recevez gratuitement ces 5 Super Bonus Exclusifs</h2>
+        <p class="text-sm text-slate-600 mt-1">En commandant le Méga Pack aujourd'hui, vous accédez immédiatement et sans frais à ces 5 cadeaux :</p>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+
+        <div class="p-4 bg-slate-50 border border-slate-200 rounded-2xl flex flex-col items-center text-center ">
+          <img src="assets/bono-01-plan-7-dias-expandido.jpg" class="h-44 object-contain mb-3 rounded-lg shadow-sm" alt="Défi 7 Jours" class="h-32 object-contain mb-3">
+          <span class="text-[10px] font-bold text-blue-600 uppercase">Bonus #1</span>
+          <h4 class="font-display font-bold text-slate-900 text-sm mt-0.5">Défi 7 Jours d'Invention</h4>
+          <p class="text-xs text-slate-600 mt-1">Un projet guidé par jour pendant une semaine avec feuille de suivi et mission finale.</p>
+        </div>
+
+        <div class="p-4 bg-slate-50 border border-slate-200 rounded-2xl flex flex-col items-center text-center ">
+          <img src="assets/bono-02-robotica-14-dias-expandido.jpg" class="h-44 object-contain mb-3 rounded-lg shadow-sm" alt="Robotique 14 Jours" class="h-32 object-contain mb-3">
+          <span class="text-[10px] font-bold text-blue-600 uppercase">Bonus #2</span>
+          <h4 class="font-display font-bold text-slate-900 text-sm mt-0.5">Plan de Robotique Maison en 14 Jours</h4>
+          <p class="text-xs text-slate-600 mt-1">Roteiro progressif avec ordre exact de construction selon l'âge et la complexité.</p>
+        </div>
+
+        <div class="p-4 bg-slate-50 border border-slate-200 rounded-2xl flex flex-col items-center text-center ">
+          <img src="assets/bono-03-guia-ajustes-expandido.jpg" class="h-44 object-contain mb-3 rounded-lg shadow-sm" alt="Guide de réglages" class="h-32 object-contain mb-3">
+          <span class="text-[10px] font-bold text-blue-600 uppercase">Bonus #3</span>
+          <h4 class="font-display font-bold text-slate-900 text-sm mt-0.5">Guide Rapide de Réglages et Tests</h4>
+          <p class="text-xs text-slate-600 mt-1">Que faire si une roue se bloque, le levier glisse ou le moteur faiblit. Dépannage minute.</p>
+        </div>
+
+        <div class="p-4 bg-slate-50 border border-slate-200 rounded-2xl flex flex-col items-center text-center ">
+          <img src="assets/bonus-4_-checklist-para-inventar-7TMwV3M07Cwn2nOr.png" alt="Checklist de recyclables" class="h-32 object-contain mb-3">
+          <span class="text-[10px] font-bold text-blue-600 uppercase">Bonus #4</span>
+          <h4 class="font-display font-bold text-slate-900 text-sm mt-0.5">Checklist des Matériaux Recyclables</h4>
+          <p class="text-xs text-slate-600 mt-1">Guide illustré pour rassembler facilement boîtes en carton, bouchons et pailles avant de débuter.</p>
+        </div>
+
+        <div class="p-4 bg-slate-50 border border-slate-200 rounded-2xl flex flex-col items-center text-center sm:col-span-2 lg:col-span-2">
+          <img src="assets/bonus-05_-invencoes-no-quintal-1-xN6D6FikVSzT9pDm.png" alt="Inventions pour le jardin" class="h-32 object-contain mb-3">
+          <span class="text-[10px] font-bold text-blue-600 uppercase">Bonus #5</span>
+          <h4 class="font-display font-bold text-slate-900 text-sm mt-0.5">40 Inventions pour le Jardin & Plein Air</h4>
+          <p class="text-xs text-slate-600 mt-1">Fusées à air comprimé, éoliennes et catapultes sécurisées conçues pour s'amuser dehors.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  
+  <!-- VRAIS MOMENTS EN FAMILLE -->
+  <section class="py-12 sm:py-16 bg-white border-b border-slate-200">
+    <div class="max-w-4xl mx-auto px-4 text-center">
+      <span class="text-xs font-bold text-purple-600 uppercase tracking-wider bg-purple-50 border border-purple-200 px-3 py-1 rounded-full">Moments Réels</span>
+      <h2 class="font-display font-black text-2xl sm:text-4xl text-slate-900 mt-3">Vous n'achetez pas seulement des projets. Vous achetez des moments ensemble.</h2>
+      <p class="text-sm sm:text-base text-slate-600 max-w-2xl mx-auto mt-2 leading-relaxed">
+        Le matériel est conçu pour construire en autonomie ou transformer un dimanche pluvieux en une aventure familiale inoubliable loin des écrans.
+      </p>
+
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-8">
+        <div class="bg-slate-50 p-4 rounded-2xl border border-slate-200 shadow-sm text-center">
+          <div class="w-12 h-12 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center text-2xl mx-auto mb-2">🤖</div>
+          <h4 class="font-display font-bold text-slate-900 text-sm">Robots & Bionique</h4>
+          <p class="text-[11px] text-slate-500 mt-1">Créer, tester et faire bouger des robots articulés en carton.</p>
+        </div>
+        <div class="bg-slate-50 p-4 rounded-2xl border border-slate-200 shadow-sm text-center">
+          <div class="w-12 h-12 bg-purple-100 text-purple-600 rounded-full flex items-center justify-center text-2xl mx-auto mb-2">🏎️</div>
+          <h4 class="font-display font-bold text-slate-900 text-sm">Véhicules & Vitesse</h4>
+          <p class="text-[11px] text-slate-500 mt-1">Bolides et engins roulants pour explorer le mouvement et le frottement.</p>
+        </div>
+        <div class="bg-slate-50 p-4 rounded-2xl border border-slate-200 shadow-sm text-center">
+          <div class="w-12 h-12 bg-amber-100 text-amber-600 rounded-full flex items-center justify-center text-2xl mx-auto mb-2">🏗️</div>
+          <h4 class="font-display font-bold text-slate-900 text-sm">Grues Hydrauliques</h4>
+          <p class="text-[11px] text-slate-500 mt-1">Mécanique simple pour développer coordination, logique et patience.</p>
+        </div>
+        <div class="bg-slate-50 p-4 rounded-2xl border border-slate-200 shadow-sm text-center">
+          <div class="w-12 h-12 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center text-2xl mx-auto mb-2">🎯</div>
+          <h4 class="font-display font-bold text-slate-900 text-sm">Lanceurs & Physique</h4>
+          <p class="text-[11px] text-slate-500 mt-1">Catapultes et mécanismes pour tester la précision et la force.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- COMPARISON TABLE -->
+  <section class="py-12 sm:py-16 bg-slate-50 border-b border-slate-200">
+    <div class="max-w-4xl mx-auto px-4">
+      <div class="text-center max-w-2xl mx-auto mb-10">
+        <span class="text-xs font-bold text-emerald-600 uppercase tracking-wider bg-emerald-50 border border-emerald-200 px-3 py-1 rounded-full">Le Calcul Malin des Parents</span>
+        <h2 class="font-display font-black text-2xl sm:text-4xl text-slate-900 mt-3">Pourquoi des milliers de familles adoptent les STEM en carton</h2>
+      </div>
+
+      <div class="overflow-x-auto">
+        <table class="w-full bg-white rounded-2xl border border-slate-200 shadow-sm text-left text-xs sm:text-sm overflow-hidden">
+          <thead>
+            <tr class="border-b border-slate-200 bg-slate-100 text-slate-700">
+              <th class="p-3.5 sm:p-4">Caractéristique</th>
+              <th class="p-3.5 sm:p-4 bg-blue-50 text-blue-800 font-extrabold border-x border-blue-200">Le Méga Pack des Jeunes Inventeurs</th>
+              <th class="p-3.5 sm:p-4 text-slate-500">Kits Commerciaux en Magasin</th>
+              <th class="p-3.5 sm:p-4 text-slate-500">Vidéos Aléatoires sur YouTube</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-slate-100">
+            <tr>
+              <td class="p-3.5 sm:p-4 font-semibold text-slate-900">Prix Total</td>
+              <td class="p-3.5 sm:p-4 bg-blue-50/60 font-bold text-blue-700 border-x border-blue-200">Paiement unique 27€ (120 projets)</td>
+              <td class="p-3.5 sm:p-4 text-slate-600">80€ à 150€ par kit unique</td>
+              <td class="p-3.5 sm:p-4 text-slate-600">Gratuit, mais des heures perdues à chercher</td>
+            </tr>
+            <tr>
+              <td class="p-3.5 sm:p-4 font-semibold text-slate-900">Matériaux Requis</td>
+              <td class="p-3.5 sm:p-4 bg-blue-50/60 font-bold text-blue-700 border-x border-blue-200">Cartons d'emballage & objets de la maison</td>
+              <td class="p-3.5 sm:p-4 text-slate-600">Petites pièces en plastique vite perdues</td>
+              <td class="p-3.5 sm:p-4 text-slate-600">Pièces rares introuvables chez soi</td>
+            </tr>
+            <tr>
+              <td class="p-3.5 sm:p-4 font-semibold text-slate-900">Garantie Sans Écran</td>
+              <td class="p-3.5 sm:p-4 bg-blue-50/60 font-bold text-emerald-600 border-x border-blue-200">✅ 100% Hors Écran & Manuel</td>
+              <td class="p-3.5 sm:p-4 text-slate-600">❌ Nécessite souvent une tablette</td>
+              <td class="p-3.5 sm:p-4 text-slate-600">❌ Colle les enfants devant YouTube</td>
+            </tr>
+            <tr>
+              <td class="p-3.5 sm:p-4 font-semibold text-slate-900">Niveau de Frustration</td>
+              <td class="p-3.5 sm:p-4 bg-blue-50/60 font-bold text-blue-700 border-x border-blue-200">Zéro : Plans illustrés + Vidéos</td>
+              <td class="p-3.5 sm:p-4 text-slate-600">Élevé : Logiciels déroutants</td>
+              <td class="p-3.5 sm:p-4 text-slate-600">Élevé : Tutoriels incomplets</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- VERIFIED REVIEWS -->
+  <section class="py-12 sm:py-16 bg-white border-b border-slate-200">
+    <div class="max-w-4xl mx-auto px-4">
+      <div class="text-center max-w-2xl mx-auto mb-10">
+        <span class="text-xs font-bold text-amber-600 uppercase tracking-wider bg-amber-50 border border-amber-200 px-3 py-1 rounded-full">Familles Réelles, Résultats Concrets</span>
+        <h2 class="font-display font-black text-2xl sm:text-4xl text-slate-900 mt-3">Ce que disent les parents</h2>
+        <p class="text-sm text-slate-600 mt-2">Découvrez comment plus de 14 800 familles ont transformé leurs après-midis et week-ends.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="bg-slate-50 rounded-2xl p-5 border border-slate-200 shadow-sm flex flex-col justify-between">
+          <div>
+            <div class="flex text-amber-400 text-sm mb-2">★★★★★</div>
+            <p class="text-xs sm:text-sm text-slate-700 leading-relaxed italic">"Mon fils de 7 ans a un TDAH et abandonne d'habitude les bricolages après 5 minutes. Il a passé 3 heures d'affilée samedi à monter la pince robotique articulée ! Pas d'écran de tout le week-end."</p>
+          </div>
+          <div class="mt-4 pt-3 border-t border-slate-200 flex items-center justify-between text-xs">
+            <div>
+              <strong class="text-slate-900 block font-bold">Céline B.</strong>
+              <span class="text-slate-500">Lyon, France</span>
+            </div>
+            <span class="text-green-700 bg-green-100 font-bold text-[10px] px-2 py-0.5 rounded-full">✓ Verified</span>
+          </div>
+        </div>
+
+        <div class="bg-slate-50 rounded-2xl p-5 border border-slate-200 shadow-sm flex flex-col justify-between">
+          <div>
+            <div class="flex text-amber-400 text-sm mb-2">★★★★★</div>
+            <p class="text-xs sm:text-sm text-slate-700 leading-relaxed italic">"Les explications simples de physique sont géniales. Bien mieux que le kit de robotique à 120€ de Noël dernier qui prenait la poussière. On construit un nouveau projet chaque dimanche après le repas !"</p>
+          </div>
+          <div class="mt-4 pt-3 border-t border-slate-200 flex items-center justify-between text-xs">
+            <div>
+              <strong class="text-slate-900 block font-bold">Marc & Julien D.</strong>
+              <span class="text-slate-500">Bordeaux, France</span>
+            </div>
+            <span class="text-green-700 bg-green-100 font-bold text-[10px] px-2 py-0.5 rounded-full">✓ Verified</span>
+          </div>
+        </div>
+
+        <div class="bg-slate-50 rounded-2xl p-5 border border-slate-200 shadow-sm flex flex-col justify-between">
+          <div>
+            <div class="flex text-amber-400 text-sm mb-2">★★★★★</div>
+            <p class="text-xs sm:text-sm text-slate-700 leading-relaxed italic">"J'enseigne en école primaire et j'ai acheté ce pack pour ma classe. Les plans sont tellement clairs que les enfants suivent les étapes en totale autonomie. Rapport qualité-prix imbattable."</p>
+          </div>
+          <div class="mt-4 pt-3 border-t border-slate-200 flex items-center justify-between text-xs">
+            <div>
+              <strong class="text-slate-900 block font-bold">Sophie L. (Professeure des écoles)</strong>
+              <span class="text-slate-500">Bruxelles, Belgique</span>
+            </div>
+            <span class="text-green-700 bg-green-100 font-bold text-[10px] px-2 py-0.5 rounded-full">✓ Verified</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 30-DAY FIRST ROBOT GUARANTEE -->
+  <section class="py-12 sm:py-16 bg-slate-50 border-b border-slate-200">
+    <div class="max-w-3xl mx-auto px-4">
+      <div class="bg-white rounded-3xl p-6 sm:p-10 border-2 border-amber-300 shadow-xl text-center relative overflow-hidden">
+        <div class="w-20 h-20 mx-auto mb-4">
+          <img src="assets/garantia-YrDNbk5xkXtbRqee.png" alt="Guarantee Seal" class="w-full h-full object-contain">
+        </div>
+
+        <h3 class="font-display font-black text-2xl sm:text-3xl text-slate-900">
+          Garantie 30 Jours 100% "Premier Robot Réussi ou Remboursé"
+        </h3>
+
+        <p class="text-xs sm:text-sm text-slate-600 mt-4 leading-relaxed max-w-xl mx-auto">
+          Téléchargez le Méga Pack dès maintenant. Choisissez un projet ce week-end avec votre enfant. S'il ne délaisse pas immédiatement son écran, ou si vous n'êtes pas comblé par la clarté des plans, écrivez-nous dans les 30 jours à <strong>support@younginventorspack.com</strong>.
+        </p>
+
+        <p class="text-xs font-bold text-slate-900 mt-3">
+          Nous vous rembourserons intégralement et sans aucune question. Vous pourrez même conserver l'ensemble des plans PDF et des bonus.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ SECTION -->
+  <section class="py-12 sm:py-16 bg-white border-b border-slate-200">
+    <div class="max-w-3xl mx-auto px-4">
+      <div class="text-center mb-10">
+        <span class="text-xs font-bold text-blue-600 uppercase tracking-wider bg-blue-50 border border-blue-200 px-3 py-1 rounded-full">Des Questions ?</span>
+        <h2 class="font-display font-black text-2xl sm:text-3xl text-slate-900 mt-3">Foire Aux Questions</h2>
+      </div>
+
+      <div class="space-y-3.5 text-xs sm:text-sm">
+        <details class="group bg-slate-50 p-4 rounded-2xl border border-slate-200 cursor-pointer">
+          <summary class="font-bold text-slate-900 flex justify-between items-center list-none">
+            <span>Faut-il des outils spéciaux, un pistolet à colle chaude ou un fer à souder ?</span>
+            <span class="text-blue-600 group-open:rotate-180 transition transform">▼</span>
+          </summary>
+          <p class="text-slate-600 mt-2.5 leading-relaxed pt-2 border-t border-slate-200/60">Non ! Chaque projet a été pensé pour la sécurité des enfants. Tout ce dont vous avez besoin : ciseaux d'écolier, colle ou ruban adhésif, cartons de livraison et objets recyclés simples.</p>
+        </details>
+
+        <details class="group bg-slate-50 p-4 rounded-2xl border border-slate-200 cursor-pointer">
+          <summary class="font-bold text-slate-900 flex justify-between items-center list-none">
+            <span>À quelle tranche d'âge s'adresse ce pack ?</span>
+            <span class="text-blue-600 group-open:rotate-180 transition transform">▼</span>
+          </summary>
+          <p class="text-slate-600 mt-2.5 leading-relaxed pt-2 border-t border-slate-200/60">Idéal de 4 à 12 ans. Les plus jeunes (4-7 ans) adoreront construire avec l'aide de leurs parents, tandis que les 8 ans et plus réaliseront la plupart des projets seuls grâce aux photos pas à pas.</p>
+        </details>
+
+        <details class="group bg-slate-50 p-4 rounded-2xl border border-slate-200 cursor-pointer">
+          <summary class="font-bold text-slate-900 flex justify-between items-center list-none">
+            <span>Est-ce un kit envoyé par la poste ou un téléchargement numérique ?</span>
+            <span class="text-blue-600 group-open:rotate-180 transition transform">▼</span>
+          </summary>
+          <p class="text-slate-600 mt-2.5 leading-relaxed pt-2 border-t border-slate-200/60">C'est une bibliothèque numérique instantanée (fiches PDF imprimables + vidéothèque). Vous recevez vos accès par e-mail immédiatement après paiement pour commencer dans 2 minutes sans attendre de livraison !</p>
+        </details>
+
+        <details class="group bg-slate-50 p-4 rounded-2xl border border-slate-200 cursor-pointer">
+          <summary class="font-bold text-slate-900 flex justify-between items-center list-none">
+            <span>Est-ce adapté aux enfants débordants d'énergie ou avec TDAH ?</span>
+            <span class="text-blue-600 group-open:rotate-180 transition transform">▼</span>
+          </summary>
+          <p class="text-slate-600 mt-2.5 leading-relaxed pt-2 border-t border-slate-200/60">Absolument ! De nombreux parents d'enfants neuroatypiques témoignent de l'effet apaisant du découpage et de la manipulation du carton, remplaçant la dopamine rapide par une concentration profonde.</p>
+        </details>
+
+        <details class="group bg-slate-50 p-4 rounded-2xl border border-slate-200 cursor-pointer">
+          <summary class="font-bold text-slate-900 flex justify-between items-center list-none">
+            <span>Comment fonctionne la garantie 30 jours ?</span>
+            <span class="text-blue-600 group-open:rotate-180 transition transform">▼</span>
+          </summary>
+          <p class="text-slate-600 mt-2.5 leading-relaxed pt-2 border-t border-slate-200/60">Si vous n'êtes pas pleinement satisfait, un simple e-mail suffit pour recevoir un remboursement intégral immédiat, sans complication.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- CHECKOUT / ORDER SECTION -->
+  <section id="checkout" class="py-12 sm:py-16 bg-white">
+    <div class="max-w-2xl mx-auto px-4">
+      
+      <div class="text-center mb-8">
+        <span class="text-xs font-bold text-green-700 bg-green-50 border border-green-200 px-3 py-1 rounded-full uppercase tracking-wider">Paiement Rapide & Sécurisé</span>
+        <h2 class="font-display font-black text-2xl sm:text-3xl text-slate-900 mt-2">Débloquez le Méga Pack des Jeunes Inventeurs</h2>
+        <p class="text-xs sm:text-sm text-slate-500 mt-1">Accès numérique immédiat envoyé par e-mail dès la validation.</p>
+      </div>
+
+      <!-- MAIN ORDER SUMMARY CARD -->
+      <div class="bg-gradient-to-b from-slate-50 to-white rounded-3xl border border-slate-200 p-6 sm:p-8 shadow-xl">
+        
+        <!-- Main Product Header -->
+        <div class="flex items-center justify-between border-b border-slate-200 pb-4 mb-5">
+          <div class="flex items-center gap-3">
+            <div class="w-12 h-12 bg-blue-100 rounded-2xl flex items-center justify-center text-2xl flex-shrink-0">
+              🤖
+            </div>
+            <div>
+              <h3 class="font-bold text-slate-900 text-sm sm:text-base leading-snug">Le Méga Pack des Jeunes Inventeurs</h3>
+              <p class="text-[11px] sm:text-xs text-slate-500">120 Projets MINT + 5 Super Bonus Exclusifs Inclus</p>
+            </div>
+          </div>
+          <div class="text-right flex-shrink-0">
+            <span class="text-xs text-slate-400 line-through block">72.00€</span>
+            <span class="font-display font-black text-xl text-blue-600">27.00€</span>
+          </div>
+        </div>
+
+        <!-- CUSTOMER FORM -->
+        <div class="space-y-3 mb-6">
+          <h4 class="font-bold text-slate-800 text-xs sm:text-sm mb-2">1. Où devons-nous vous envoyer vos accès ?</h4>
+          <div>
+            <label class="block text-xs font-semibold text-slate-700 mb-1">Votre Nom Complet :</label>
+            <input type="text" id="cust-name" placeholder="Sarah Jenkins" 
+                   class="w-full px-4 py-2.5 rounded-xl border border-slate-300 focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm bg-white">
+          </div>
+          <div>
+            <label class="block text-xs font-semibold text-slate-700 mb-1">Votre Meilleur E-mail (où vous recevrez l'accès) :</label>
+            <input type="email" id="cust-email" placeholder="sarah@gmail.com" 
+                   class="w-full px-4 py-2.5 rounded-xl border border-slate-300 focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm bg-white">
+          </div>
+        </div>
+
+        <!-- ORDER BUMPS SECTION -->
+        <div class="border-t border-slate-200 pt-5 mb-6">
+          <div class="flex items-center justify-between mb-3">
+            <h4 class="font-bold text-slate-800 text-xs sm:text-sm">2. Packs Complémentaires Recommandés (43% de Réduction) :</h4>
+            <span class="text-[11px] text-slate-400">Ajoutez en un clic</span>
+          </div>
+
+          <div class="space-y-3">
+            
+            <!-- BUMP 1 -->
+            <label class="order-bump-card flex items-start gap-3 p-3.5 rounded-2xl border border-slate-200 bg-white cursor-pointer hover:border-blue-300 transition">
+              <input type="checkbox" class="bump-chk mt-1 w-4 h-4 text-blue-600 rounded border-slate-300 focus:ring-blue-500" data-price="11.99">
+              <div class="flex-1 text-xs">
+                <div class="flex justify-between font-bold text-slate-900">
+                  <span>🛠️ Petits Ingénieurs (5-7 ans)</span>
+                  <span class="text-blue-600">+11.99€</span>
+                </div>
+                <p class="text-slate-500 text-[11px] mt-0.5">10 projets d'initiation faciles avec grands emboîtements.</p>
+              </div>
+            </label>
+
+            <!-- BUMP 2 -->
+            <label class="order-bump-card flex items-start gap-3 p-3.5 rounded-2xl border border-slate-200 bg-white cursor-pointer hover:border-blue-300 transition">
+              <input type="checkbox" class="bump-chk mt-1 w-4 h-4 text-blue-600 rounded border-slate-300 focus:ring-blue-500" data-price="11.99">
+              <div class="flex-1 text-xs">
+                <div class="flex justify-between font-bold text-slate-900 items-center">
+                  <span>🤖 Robotique en Mouvement : 24 Mécanismes</span>
+                  <span class="text-blue-600">+11.99€</span>
+                </div>
+                <p class="text-slate-500 text-[11px] mt-0.5">Mécanismes motorisés en carton avec moteurs DC, poulies et gabarits.</p>
+              </div>
+            </label>
+
+            <!-- BUMP 3 -->
+            <label class="order-bump-card flex items-start gap-3 p-3.5 rounded-2xl border border-slate-200 bg-white cursor-pointer hover:border-blue-300 transition">
+              <input type="checkbox" class="bump-chk mt-1 w-4 h-4 text-blue-600 rounded border-slate-300 focus:ring-blue-500" data-price="11.99">
+              <div class="flex-1 text-xs">
+                <div class="flex justify-between font-bold text-slate-900">
+                  <span>🔬 Scientifiques à la Maison (60 Expériences)</span>
+                  <span class="text-blue-600">+11.99€</span>
+                </div>
+                <p class="text-slate-500 text-[11px] mt-0.5">Expériences sûres en cuisine avec du bicarbonate, de l'huile et du lait.</p>
+              </div>
+            </label>
+
+            <!-- BUMP 4 -->
+            <label class="order-bump-card flex items-start gap-3 p-3.5 rounded-2xl border border-slate-200 bg-white cursor-pointer hover:border-blue-300 transition">
+              <input type="checkbox" class="bump-chk mt-1 w-4 h-4 text-blue-600 rounded border-slate-300 focus:ring-blue-500" data-price="11.99">
+              <div class="flex-1 text-xs">
+                <div class="flex justify-between font-bold text-slate-900">
+                  <span>🏆 Technologie Sans Écran : 40 Défis</span>
+                  <span class="text-blue-600">+11.99€</span>
+                </div>
+                <p class="text-slate-500 text-[11px] mt-0.5">Système de progression ludique avec tableau de score et diplômes.</p>
+              </div>
+            </label>
+
+            <!-- BUMP 5 -->
+            <label class="order-bump-card flex items-start gap-3 p-3.5 rounded-2xl border border-slate-200 bg-white cursor-pointer hover:border-blue-300 transition">
+              <input type="checkbox" class="bump-chk mt-1 w-4 h-4 text-blue-600 rounded border-slate-300 focus:ring-blue-500" data-price="11.99">
+              <div class="flex-1 text-xs">
+                <div class="flex justify-between font-bold text-slate-900">
+                  <span>🚀 Machines Hydrauliques : 10 Défis avec l'Eau</span>
+                  <span class="text-blue-600">+11.99€</span>
+                </div>
+                <p class="text-slate-500 text-[11px] mt-0.5">Seringues et pistons actionnant ponts-levis et bras articulés.</p>
+              </div>
+            </label>
+
+            <!-- BUMP 6 -->
+            <label class="order-bump-card flex items-start gap-3 p-3.5 rounded-2xl border border-slate-200 bg-white cursor-pointer hover:border-blue-300 transition">
+              <input type="checkbox" class="bump-chk mt-1 w-4 h-4 text-blue-600 rounded border-slate-300 focus:ring-blue-500" data-price="11.99">
+              <div class="flex-1 text-xs">
+                <div class="flex justify-between font-bold text-slate-900">
+                  <span>🎉 Fête des Inventeurs : Kit Anniversaire Complet</span>
+                  <span class="text-blue-600">+11.99€</span>
+                </div>
+                <p class="text-slate-500 text-[11px] mt-0.5">Invitations modifiables, badges d'équipe, déco et 5 grands jeux.</p>
+              </div>
+            </label>
+
+            <!-- BUMP 7 -->
+            <label class="order-bump-card flex items-start gap-3 p-3.5 rounded-2xl border border-slate-200 bg-white cursor-pointer hover:border-blue-300 transition">
+              <input type="checkbox" class="bump-chk mt-1 w-4 h-4 text-blue-600 rounded border-slate-300 focus:ring-blue-500" data-price="11.99">
+              <div class="flex-1 text-xs">
+                <div class="flex justify-between font-bold text-slate-900">
+                  <span>📓 Mon Journal d'Inventeur : 30 Jours de Création</span>
+                  <span class="text-blue-600">+11.99€</span>
+                </div>
+                <p class="text-slate-500 text-[11px] mt-0.5">Un journal illustré pour imaginer, dessiner et tester chaque idée.</p>
+              </div>
+            </label>
+
+          </div>
+        </div>
+
+        <!-- TOTAL DISPLAY -->
+        <div class="bg-blue-50 rounded-2xl p-4 border border-blue-200 flex items-center justify-between mb-4">
+          <span class="font-bold text-slate-800 text-sm">TOTAL:</span>
+          <span id="display-total" class="font-display font-black text-2xl text-blue-700">27.00€</span>
+        </div>
+
+        <!-- 3. STRIPE EMBEDDED CHECKOUT (NATIVE FORM) -->
+        <div class="pt-5 border-t border-slate-200">
+          <div class="flex items-center justify-between mb-3">
+            <h4 class="font-display font-bold text-slate-900 text-sm sm:text-base flex items-center gap-2">
+              <span class="w-6 h-6 rounded-full bg-blue-600 text-white flex items-center justify-center text-xs">3</span>
+              <span>3. Coordonnées de Paiement (Carte, Apple Pay, Google Pay) :</span>
+            </h4>
+            <span class="text-[11px] font-semibold text-green-700 bg-green-50 px-2.5 py-1 rounded-full border border-green-200 flex items-center gap-1">
+              🔒 Stripe Vérifié
+            </span>
+          </div>
+
+          <!-- Stripe Element Mount Target -->
+          <div id="checkout-embed" class="bg-white rounded-2xl p-2 sm:p-4 border-2 border-blue-500/20 shadow-inner min-h-[380px]">
+            <div class="py-16 text-center text-slate-500 text-sm animate-pulse flex flex-col items-center justify-center gap-3">
+              <div class="w-8 h-8 border-2 border-blue-600 border-t-transparent rounded-full animate-spin"></div>
+              <span class="font-medium">Chargement du formulaire de paiement sécurisé...</span>
+            </div>
+          </div>
+
+          <div class="flex flex-wrap items-center justify-center gap-4 text-[11px] text-slate-500 mt-4">
+            <span class="flex items-center gap-1">🔒 Cryptage SSL 256-Bit</span>
+            <span class="flex items-center gap-1">⚡ Accès Immédiat par E-mail</span>
+            <span class="flex items-center gap-1">🛡️ Garantie 30 Jours Satisfait ou Remboursé</span>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- STICKY MOBILE BOTTOM BAR -->
+  <div id="sticky-bottom-bar" class="sm:hidden fixed bottom-0 left-0 right-0 z-40 bg-white/95 backdrop-blur-md border-t border-slate-200 p-3 shadow-2xl flex items-center justify-between gap-3">
+    <div>
+      <span class="font-display font-black text-lg text-blue-700 block leading-tight">27.00€</span>
+      <span class="text-[10px] text-slate-500 block leading-tight">62% DE RÉDUCTION • 120 PROJETS</span>
+    </div>
+    <a href="#checkout" class="bg-gradient-to-r from-green-500 to-emerald-600 text-white font-bold text-xs uppercase px-5 py-2.5 rounded-xl shadow-md flex items-center gap-1.5 flex-shrink-0">
+      <span>OBTENIR L'ACCÈS</span>
+      <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+    </a>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="bg-slate-900 text-slate-400 text-xs py-8 border-t border-slate-800 text-center">
+    <div class="max-w-4xl mx-auto px-4">
+      <p class="font-bold text-white mb-2">Les Jeunes Inventeurs™ • Tous droits réservés © 2026</p>
+      <p class="text-slate-500 max-w-lg mx-auto">Ce site ne fait pas partie du site web de Meta, Facebook ou Instagram. De plus, ce site n'est en aucun cas approuvé par Meta, Inc.</p>
+      <p class="text-slate-500 mt-2">Support client : support@younginventorspack.com</p>
+    </div>
+  </footer>
+
+  <!-- DYNAMIC STRIPE EMBEDDED CHECKOUT SCRIPT -->
+  <script>
+    (function() {
+      const BASE_PRICE = 27.00;
+      const BUMP_PRICE = 11.99;
+      const STRIPE_PK = 'pk_live_51TTQv9EWgMF5GJUkvzWBnbaku78bLKwOCvRIAA8ksmnVB4a59HR2XSDtDuV0EH1RwyyVuFSvvIghc3iVdkBcKtrw00PSW5ZOFI';
+
+      const bumpIds = [
+        'bump-pequenos-engenheiros',
+        'bump-robotica-movimento',
+        'bump-cientistas-casa',
+        'bump-tecnologia-sem-telas',
+        'bump-maquinas-hidraulicas',
+        'bump-festa-inventores',
+        'bump-diario-inventor'
+      ];
+
+      const chks = document.querySelectorAll('.bump-chk');
+      // Assign IDs to checkboxes sequentially
+      chks.forEach((chk, idx) => {
+        if (bumpIds[idx]) chk.id = bumpIds[idx];
+      });
+
+      const displayTotal = document.getElementById('display-total');
+
+      function formatEUR(val) {
+        return val.toFixed(2) + '€';
+      }
+
+      function updateTotal() {
+        let total = BASE_PRICE;
+        chks.forEach(chk => {
+          const card = chk.closest('.order-bump-card');
+          if (chk.checked) {
+            total += BUMP_PRICE;
+            if (card) card.classList.add('checked');
+          } else {
+            if (card) card.classList.remove('checked');
+          }
+        });
+        if (displayTotal) displayTotal.textContent = formatEUR(total);
+      }
+
+      let stripe = null;
+      let embeddedCheckoutInstance = null;
+      let updateDebounceTimer = null;
+      let hasTrackedInitiate = false;
+
+      async function mountStripe() {
+        const container = document.getElementById('checkout-embed');
+        if (!container) return;
+
+        if (embeddedCheckoutInstance) {
+          try {
+            embeddedCheckoutInstance.destroy();
+          } catch(e) {}
+          embeddedCheckoutInstance = null;
+        }
+
+        container.innerHTML = '<div class="py-16 text-center text-slate-500 text-sm animate-pulse flex flex-col items-center justify-center gap-3"><div class="w-8 h-8 border-2 border-blue-600 border-t-transparent rounded-full animate-spin"></div><span class="font-medium">Chargement du formulaire de paiement sécurisé...</span></div>';
+
+        const name = (document.getElementById('cust-name')?.value || '').trim();
+        const email = (document.getElementById('cust-email')?.value || '').trim();
+
+        const selectedBumps = [];
+        chks.forEach(chk => {
+          if (chk.checked && chk.id) selectedBumps.push(chk.id);
+        });
+
+        if (!hasTrackedInitiate && typeof fbq === 'function') {
+          fbq('track', 'InitiateCheckout', {
+            value: BASE_PRICE + (selectedBumps.length * BUMP_PRICE),
+            currency: 'EUR',
+            content_name: "Les Jeunes Inventeurs • Méga Pack"
+          });
+          hasTrackedInitiate = true;
+        }
+
+        try {
+          if (!stripe && typeof Stripe === 'function') {
+            stripe = Stripe(STRIPE_PK);
+          }
+          if (!stripe) throw new Error('Stripe.js not loaded');
+
+          embeddedCheckoutInstance = await stripe.initEmbeddedCheckout({
+            fetchClientSecret: async () => {
+              const res = await fetch('/api/create-checkout-session', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                  email: email,
+                  name: name,
+                  bumps: selectedBumps,
+                  utm_params: Object.fromEntries(new URLSearchParams(window.location.search).entries())
+                })
+              });
+              const data = await res.json();
+              if (data.error) throw new Error(data.error);
+              return data.clientSecret;
+            }
+          });
+
+          container.innerHTML = '';
+          embeddedCheckoutInstance.mount('#checkout-embed');
+        } catch (err) {
+          console.error('Embedded Checkout mount error:', err);
+          container.innerHTML = '<div class="text-center py-6 px-4 bg-slate-50 rounded-xl"><p class="text-xs text-slate-700 font-semibold mb-3">Erreur de chargement. Veuillez rafraîchir la page.</p></div>';
+        }
+      }
+
+      function scheduleMount() {
+        clearTimeout(updateDebounceTimer);
+        updateDebounceTimer = setTimeout(() => {
+          mountStripe();
+        }, 400);
+      }
+
+      chks.forEach(chk => {
+        chk.addEventListener('change', () => {
+          updateTotal();
+          scheduleMount();
+        });
+      });
+
+      const custEmail = document.getElementById('cust-email');
+      const custName = document.getElementById('cust-name');
+
+      if (custEmail) custEmail.addEventListener('blur', scheduleMount);
+      if (custName) custName.addEventListener('blur', scheduleMount);
+
+      // Initial Mount
+      document.addEventListener('DOMContentLoaded', () => {
+        updateTotal();
+        scheduleMount();
+      });
+
+      // Simple 15min Urgency Countdown
+      let seconds = 14 * 60 + 59;
+      const elCount = document.getElementById('countdown');
+      setInterval(function() {
+        if (seconds > 0) {
+          seconds--;
+          const m = Math.floor(seconds / 60);
+          const s = seconds % 60;
+          if (elCount) elCount.textContent = (m < 10 ? '0' : '') + m + ':' + (s < 10 ? '0' : '') + s;
+        }
+      }, 1000);
+    })();
+  </script>
+
+</body>
+</html>

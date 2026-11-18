@@ -1,0 +1,16 @@
+name = "mega-inventors-us"
+main = "./src/index.js"
+compatibility_date = "2024-11-01"
+
+[assets]
+directory = "./public"
+
+[[kv_namespaces]]
+binding = "SALES_DB"
+id = "857e6364c6714db389a1d194b1e5457b"
+
+[vars]
+META_PIXEL_ID = "1864964467859741"
+META_ACCESS_TOKEN = "EAAgl7zR5FK0BS2zPHZBTJBUuKAoQ4MY0W8l2PZBd4jGJD9OGeY24q560O384ZAJ6pkQYSPWttmNRO763ZAe02nhL0tBQOrj5kQFZCeTqa7rwi3kg2SlNf1LpHzBOjtZA7FqAoT2Cv68txSpw6l6d0EGBjxXOQYQ10WYjV83tZCKOqpdr4ZBnyyywYWhDX82nNwZDZD"
+STRIPE_WEBHOOK_SECRET = "whsec_VrhAwhRrxIW8D8ZJGDtp6U6KZ5ON65W3"
+ADMIN_SECRET = "inventors_audit_2026"

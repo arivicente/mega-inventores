@@ -1,0 +1,110 @@
+{
+  "publishedAt": "2026-11-14T21:02:37.300Z",
+  "adAccountId": "act_898705452000785",
+  "adsetId": "120252715725420168",
+  "pausedEnglishAds": [
+    "120252749471520168",
+    "120252749467340168",
+    "120252749473690168"
+  ],
+  "publishedSpanishAds": [
+    {
+      "key": "ad_03_es",
+      "name": "Ad 03 ES - Conexión Padre e Hijo en Fin de Semana [100% Limpio US/USD]",
+      "videoFile": "ad_03_clean_es.mp4",
+      "videoId": "1112030061651838",
+      "creativeId": "3237248619782236",
+      "adId": "120252755702810168",
+      "adsetId": "120252715725420168",
+      "status": "ACTIVE"
+    },
+    {
+      "key": "ad_02_es",
+      "name": "Ad 02 ES - Robótica Articulada y Creatividad Táctil [100% Limpio US/USD]",
+      "videoFile": "ad_02_clean_es.mp4",
+      "videoId": "1004635412030431",
+      "creativeId": "2695705667553244",
+      "adId": "120252755705460168",
+      "adsetId": "120252715725420168",
+      "status": "ACTIVE"
+    },
+    {
+      "key": "ad_05_es",
+      "name": "Ad 05 ES - Dinámico Construye Su Futuro [100% Limpio US/USD]",
+      "videoFile": "ad_05_clean_es.mp4",
+      "videoId": "2583908815409611",
+      "creativeId": "2321023792085667",
+      "adId": "120252755709950168",
+      "adsetId": "120252715725420168",
+      "status": "ACTIVE"
+    }
+  ],
+  "liveAdsetAds": [
+    {
+      "id": "120252749473690168",
+      "name": "Ad 05 V2 - Dynamic 18s Build Their Future [100% Clean EN]",
+      "status": "PAUSED",
+      "effective_status": "IN_PROCESS"
+    },
+    {
+      "id": "120252749467340168",
+      "name": "Ad 03 V2 - Parent & Child Weekend Connection [100% Clean EN]",
+      "status": "PAUSED",
+      "effective_status": "IN_PROCESS"
+    },
+    {
+      "id": "120252749471520168",
+      "name": "Ad 02 V2 - Articulated Robots & DIY Engineering [100% Clean EN]",
+      "status": "PAUSED",
+      "effective_status": "IN_PROCESS"
+    },
+    {
+      "id": "120252755709950168",
+      "name": "Ad 05 ES - Dinámico Construye Su Futuro [100% Limpio US/USD]",
+      "status": "ACTIVE",
+      "effective_status": "IN_PROCESS"
+    },
+    {
+      "id": "120252755702810168",
+      "name": "Ad 03 ES - Conexión Padre e Hijo en Fin de Semana [100% Limpio US/USD]",
+      "status": "ACTIVE",
+      "effective_status": "IN_PROCESS"
+    },
+    {
+      "id": "120252755705460168",
+      "name": "Ad 02 ES - Robótica Articulada y Creatividad Táctil [100% Limpio US/USD]",
+      "status": "ACTIVE",
+      "effective_status": "IN_PROCESS"
+    },
+    {
+      "id": "120252715726920168",
+      "name": "Ad 03 - Parent & Child Weekend Connection",
+      "status": "PAUSED",
+      "effective_status": "PAUSED"
+    },
+    {
+      "id": "120252715727030168",
+      "name": "Ad 04 - Recycled Cardboard Workshop & 120 Projects (English Perfect)",
+      "status": "PAUSED",
+      "effective_status": "PAUSED"
+    },
+    {
+      "id": "120252715726050168",
+      "name": "Ad 01 - Screens vs Curiosity (Robot & Cardboard)",
+      "status": "PAUSED",
+      "effective_status": "PAUSED"
+    },
+    {
+      "id": "120252715726360168",
+      "name": "Ad 02 - Articulated Robots & DIY Engineering",
+      "status": "PAUSED",
+      "effective_status": "PAUSED"
+    },
+    {
+      "id": "120252715727640168",
+      "name": "Ad 05 - Dynamic 18s (Build Their Future)",
+      "status": "PAUSED",
+      "effective_status": "PAUSED"
+    }
+  ]
+}

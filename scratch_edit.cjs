@@ -1,0 +1,18 @@
+const fs = require('fs');
+const p = 'mega-inventors/regions/es/public/index.html';
+let h = fs.readFileSync(p, 'utf8');
+const rep = (a, b) => { if (!h.includes(a)) console.log('MISSING:', a); h = h.split(a).join(b); };
+rep('assets/showcase-mao-robotica-diploma.jpg" alt="Mano', 'assets/photo-mano-robotica.jpg" alt="Mano');
+rep('assets/showcase-mapa-120-auto-eletrico.jpg" alt="Auto El', 'assets/photo-auto-electrico.jpg" alt="Auto El');
+rep('assets/showcase-grua-hidraulica-pinza.jpg" alt="Gr', 'assets/photo-grua-hidraulica.jpg" alt="Gr');
+rep('assets/moment-boy-robot-hd.jpg" alt="Robot Androide de Cartón"', 'assets/photo-robots-familia.jpg" alt="Robots de Cartón en Familia"');
+rep('assets/category-motor-father-son.jpg" alt="Lanzador Mecánico en Cartón"', 'assets/photo-vehiculos-carton.jpg" alt="Vehículos de Cartón"');
+rep('Física & Balística', 'Propulsión Casera');
+rep('Lanzador Catapulta de Precisión', 'Vehículos: Goma, Vela y Solar');
+rep('Palancas elásticas para ajustar ángulos, fuerza de rebote y precisión en torneos de diana en familia.', 'Coches impulsados por gomas elásticas, un velero con ruedas y un coche con mini panel solar para carreras en casa.');
+rep('Demuestra la transformación de energía potencial elástica en trayectoria parabólica perfecta.', 'Una goma retorcida almacena energía que luego se convierte en movimiento: ¡física que se ve y se toca!');
+rep('Robot Androide Articulado', 'Robots de Cartón');
+rep('Brazos y piernas móviles con pivotes reforzados y compartimento en el pecho para inventar historias interactivas.', 'Robots con ruedas, ojos y brazos que construyes en familia con cajas, tapas y palitos.');
+rep('Diseñar uniones mecánicas móviles con cartón entrena la visión espacial tridimensional y la motricidad fina.', 'Construir mecanismos con cartón entrena la visión espacial y la motricidad fina.');
+fs.writeFileSync(p, h);
+console.log('ok');

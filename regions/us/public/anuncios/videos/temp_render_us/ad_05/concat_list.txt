@@ -1,0 +1,4 @@
+file 'C:/Users/Star/Documents/espionagem1/mega-inventors-us/public/anuncios/videos/temp_render_us/ad_05/phrase_01/audio.mp3'
+file 'C:/Users/Star/Documents/espionagem1/mega-inventors-us/public/anuncios/videos/temp_render_us/ad_05/phrase_02/audio.mp3'
+file 'C:/Users/Star/Documents/espionagem1/mega-inventors-us/public/anuncios/videos/temp_render_us/ad_05/phrase_03/audio.mp3'
+file 'C:/Users/Star/Documents/espionagem1/mega-inventors-us/public/anuncios/videos/temp_render_us/ad_05/phrase_04/audio.mp3'
