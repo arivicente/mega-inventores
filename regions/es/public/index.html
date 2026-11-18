@@ -946,7 +946,7 @@ if(!fx())document.addEventListener('DOMContentLoaded',fx);
 
 <style>
 .lp-checkout-local,.lp-checkout-local *{box-sizing:border-box}
-.lp-checkout-local{font-family:Inter,ui-sans-serif,system-ui,-apple-system,sans-serif;color:#fff;background:var(--lp-navy);padding:34px 0 56px;scroll-margin-top:8px}
+.lp-checkout-local{--lp-navy:#211936;--lp-green:#1c9d68;--lp-green-dark:#178048;--lp-green-soft:#eafbf3;--lp-ink:#211936;--lp-ink-soft:#6a6478;--lp-border:#e9e3f2;font-family:Inter,ui-sans-serif,system-ui,-apple-system,sans-serif;color:#fff;background:var(--lp-navy);padding:34px 0 56px;scroll-margin-top:8px}
 .lp-checkout-local .lp-wrap{max-width:720px;width:100%;padding:0 16px;margin:0 auto}
 .lp-checkout-local .lp-divider{display:flex;align-items:center;justify-content:center;gap:12px;max-width:600px;margin:0 auto 18px;padding:0 20px}
 .lp-checkout-local .lp-divider::before,.lp-checkout-local .lp-divider::after{content:"";flex:1;height:2px;border-radius:999px;background:linear-gradient(90deg,rgba(31,163,90,0),rgba(31,163,90,.38))}
@@ -978,7 +978,7 @@ if(!fx())document.addEventListener('DOMContentLoaded',fx);
 .lp-checkout-local .co-bump:hover{border-color:#a7f3d0}
 .lp-checkout-local .co-bump.is-on{border-color:var(--lp-green);box-shadow:0 0 0 1px var(--lp-green)}
 .lp-checkout-local .co-bump-top{display:grid;grid-template-columns:82px minmax(0,1fr);gap:12px;align-items:start;padding:12px 13px}
-.lp-checkout-local .co-bump-head{grid-column:1/-1;display:block;font-weight:800;font-size:13.5px;line-height:1.35;color:var(--lp-navy);overflow-wrap:anywhere}
+.lp-checkout-local .co-bump-head{grid-column:1/-1;display:block;font-weight:800;font-size:15px;line-height:1.3;color:#111827;overflow-wrap:anywhere}
 .lp-checkout-local .co-bump-capa{display:block;width:82px;min-width:0}
 .lp-checkout-local .co-bump-capa img{display:block;width:82px;aspect-ratio:3/4;object-fit:cover;object-position:center top;border-radius:8px;border:1px solid #e2e8f0;background:#f1f5f9}
 .lp-checkout-local .co-bump-main{display:block;min-width:0}
@@ -989,20 +989,32 @@ if(!fx())document.addEventListener('DOMContentLoaded',fx);
 .lp-checkout-local .co-bump-pct{font-size:10px;font-weight:900;color:#fff;background:#158458;border-radius:999px;padding:3px 8px;white-space:nowrap}
 .lp-checkout-local .co-bump-bar{display:flex;align-items:center;gap:9px;width:100%;padding:10px 13px;background:#FFFBEB;border-top:1px solid #FDE68A;font-weight:800;font-size:12.5px;color:#7a5600}
 .lp-checkout-local .co-bump-bar input{width:17px;height:17px;flex:0 0 17px;margin:0;accent-color:var(--lp-green);cursor:pointer}
-.lp-checkout-local .co-all{display:flex;align-items:center;gap:9px;width:100%;background:#FEF9C3;border:1px solid #FDE68A;border-radius:12px;padding:12px 13px;cursor:pointer;font-weight:900;font-size:13.5px;color:#7a5600}
+.lp-checkout-local .co-all{display:flex;align-items:center;gap:9px;width:100%;background:#FEF9C3;border:1px solid #FDE68A;border-radius:12px;padding:12px 13px;margin-top:16px;cursor:pointer;font-weight:900;font-size:13.5px;color:#7a5600}
 .lp-checkout-local .co-all input{width:17px;height:17px;flex:0 0 17px;margin:0;accent-color:var(--lp-green);cursor:pointer}
 .lp-checkout-local .co-summary{background:#f8fafc;border:1px solid #e2e8f0;border-radius:12px;padding:14px 15px}
 .lp-checkout-local .co-line{display:flex;justify-content:space-between;gap:12px;font-size:13px;color:#475569;padding:3px 0}
 .lp-checkout-local .co-line span:last-child{font-weight:800;color:var(--lp-navy);white-space:nowrap}
 .lp-checkout-local .co-line.is-bump{color:#158458}
 .lp-checkout-local .co-line.is-bump span:last-child{color:#158458}
-.lp-checkout-local .co-total{display:flex;justify-content:space-between;align-items:center;border-top:1px solid #e2e8f0;margin-top:8px;padding-top:10px;font-size:16px;font-weight:900;color:var(--lp-navy)}
+.lp-checkout-local .co-total{display:flex;justify-content:space-between;align-items:center;border-top:1px solid #e2e8f0;margin-top:8px;padding-top:10px;font-size:16px;font-weight:900;color:#111827}
 .lp-checkout-local .co-total b{font-size:22px;color:#158458}
-.lp-checkout-local .co-save{text-align:right;font-size:12px;font-weight:800;color:#158458;margin-top:4px}
+.lp-checkout-local .co-save{text-align:right;font-size:12px;font-weight:800;color:#16A34A;margin-top:4px}
 .lp-checkout-local .co-pay-head{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:10px;flex-wrap:wrap}
 .lp-checkout-local .co-pay-head h4{margin:0;color:var(--lp-navy);font-size:15px}
 .lp-checkout-local .co-ssl{font-size:11px;font-weight:700;color:#047857;background:#ecfdf5;border:1px solid #a7f3d0;border-radius:999px;padding:3px 9px}
 #checkout-embed{background:#fff;border:1.5px solid #e2e8f0;border-radius:12px;padding:6px;min-height:360px}
+.lp-checkout-local .co-mock{padding:14px}
+.lp-checkout-local .co-mock-tabs{display:flex;gap:8px;margin-bottom:12px}
+.lp-checkout-local .co-mock-tab{flex:1;text-align:center;padding:9px;border:1px solid #e2e8f0;border-radius:8px;font-size:13px;font-weight:800;color:#475569;background:#fff}
+.lp-checkout-local .co-mock-tab.is-active{border-color:#2563EB;color:#2563EB;background:#eff6ff}
+.lp-checkout-local .co-mock-card{border:1px solid #e2e8f0;border-radius:9px;padding:12px}
+.lp-checkout-local .co-mock-label{font-size:11px;font-weight:800;color:#111827;margin-bottom:4px}
+.lp-checkout-local .co-mock-input{display:flex;justify-content:space-between;align-items:center;gap:8px;border:1px solid #cbd5e1;border-radius:7px;padding:10px 11px;font-size:13px;color:#94a3b8;background:#fff;margin-bottom:10px}
+.lp-checkout-local .co-mock-row{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.lp-checkout-local .co-mock-row .co-mock-input{margin-bottom:0}
+.lp-checkout-local .co-mock-brands{font-size:9px;font-weight:900;color:#64748b;white-space:nowrap}
+.lp-checkout-local .co-mock-pay{width:100%;margin-top:14px;border:0;border-radius:9px;padding:13px;background:#2563EB;color:#fff;font-size:15px;font-weight:900;cursor:pointer}
+.lp-checkout-local .co-mock-note{text-align:center;font-size:10.5px;color:#94a3b8;margin-top:9px}
 .lp-checkout-local .co-trust{display:flex;align-items:center;justify-content:center;gap:8px;flex-wrap:wrap;font-size:11.5px;color:#64748b;margin-top:12px}
 .lp-checkout-local .co-legal{text-align:center;font-size:11px;color:#94a3b8;line-height:1.5;margin:14px 0 0}
 .lp-checkout-local .co-tech{text-align:center;font-size:11px;color:#94a3b8;margin:6px 0 0}
@@ -1058,8 +1070,8 @@ if(!fx())document.addEventListener('DOMContentLoaded',fx);
 </label>
 <label class="co-bump" data-bump="bump-tecnologia-sem-telas">
 <span class="co-bump-top">
-<span class="co-bump-head">&#128118; Chau &ldquo;me aburro&rdquo;: 40 desaf&iacute;os por niveles, con diplomas y sin pantalla</span>
-<span class="co-bump-capa"><img src="assets/ob-tecnologia-sin-pantallas.webp" alt="&#128118; Chau &ldquo;me aburro&rdquo;: 40 desaf&iacute;os por niveles, con diplomas y sin pantalla" loading="lazy" width="82" height="109"></span>
+<span class="co-bump-head">&#128245; Chau &ldquo;me aburro&rdquo;: 40 desaf&iacute;os por niveles, con diplomas y sin pantalla</span>
+<span class="co-bump-capa"><img src="assets/ob-tecnologia-sin-pantallas.webp" alt="&#128245; Chau &ldquo;me aburro&rdquo;: 40 desaf&iacute;os por niveles, con diplomas y sin pantalla" loading="lazy" width="82" height="109"></span>
 <span class="co-bump-main"><span class="co-bump-desc">40 desaf&iacute;os por nivel, con tablero de progreso y diplomas. Cada reto en un paso.</span><span class="co-bump-offer"><span class="co-bump-price">7,27 €</span><span class="co-bump-old">19,99 €</span><span class="co-bump-pct">-64%</span></span></span>
 </span>
 <span class="co-bump-bar"><input type="checkbox" id="bump-tecnologia-sem-telas"> + A&ntilde;adir a tu compra</span>
@@ -1085,21 +1097,21 @@ if(!fx())document.addEventListener('DOMContentLoaded',fx);
 </div>
 
 <div class="co-step">
-<h4 class="co-step-t"><span class="co-num">3</span> Resumo do pedido</h4>
+<h4 class="co-step-t"><span class="co-num">3</span> Resumen del pedido</h4>
 <div class="co-summary">
 <div class="co-line"><span>Mega Pack de Inventores (120 proyectos + 5 bonos)</span><span>19,08 €</span></div>
 <div id="co-bump-lines"></div>
-<div class="co-total"><span>Pre&ccedil;o total</span><b id="summary-total">19,08 €</b></div>
+<div class="co-total"><span>Precio total</span><b id="summary-total">19,08 €</b></div>
 <div class="co-save" id="summary-save"></div>
 </div>
 </div>
 
 <div class="co-step">
-<div class="co-pay-head"><h4><span class="co-num">4</span> &nbsp;Pagamento seguro</h4><span class="co-ssl">&#128274; 256-Bit SSL</span></div>
+<div class="co-pay-head"><h4><span class="co-num">4</span> &nbsp;Pago seguro</h4><span class="co-ssl">&#128274; 256-Bit SSL</span></div>
 <div id="checkout-embed"><div class="co-loading" style="padding:40px 12px;text-align:center;color:#64748b;font-size:13px">Cargando formulario de pago seguro...</div></div>
-<div class="co-trust"><span>&#128274; Pagamento seguro</span><span>&bull;</span><span>&#128233; Acesso imediato por email</span><span>&bull;</span><span>&#128737; Garantia de 15 dias</span></div>
-<p class="co-legal">Ao continuar, voc&ecirc; concorda com os Termos do Servi&ccedil;o do Comprador e a Pol&iacute;tica de Privacidade.</p>
-<p class="co-tech">Com tecnologia <b>Stripe</b> &middot; &#128233; Produto digital 100%: n&atilde;o se env&iacute;a nada f&iacute;sico; el acceso llega por email apenas se confirma el pago.</p>
+<div class="co-trust"><span>&#128274; Pago seguro</span><span>&bull;</span><span>&#128233; Acceso inmediato por email</span><span>&bull;</span><span>&#128737; Garant&iacute;a de 15 d&iacute;as</span></div>
+<p class="co-legal">Al continuar, aceptas los T&eacute;rminos del Servicio del Comprador y la Pol&iacute;tica de Privacidad.</p>
+<p class="co-tech">Con tecnolog&iacute;a <b>Stripe</b> &middot; &#128233; Producto digital 100%: no se env&iacute;a nada f&iacute;sico; el acceso llega por email apenas se confirma el pago.</p>
 </div>
 
 </div>
@@ -1145,6 +1157,17 @@ var el=document.getElementById(id);
 if(el)boxes.push({id:id,el:el,card:el.closest('.co-bump')});
 });
 function fmt(c){return (c/100).toLocaleString('de-DE',{minimumFractionDigits:2,maximumFractionDigits:2})+' €';}
+function renderFallback(){
+var box=document.getElementById('checkout-embed');if(!box)return;
+box.innerHTML='<div class="co-mock">'+
+'<div class="co-mock-tabs"><span class="co-mock-tab is-active">&#128179; Tarjeta</span><span class="co-mock-tab">G Pay</span></div>'+
+'<div class="co-mock-card"><div class="co-mock-label">N&uacute;mero de tarjeta</div><div class="co-mock-input">1234 1234 1234 1234 <span class="co-mock-brands">VISA &middot; MC &middot; AMEX</span></div>'+
+'<div class="co-mock-row"><div><div class="co-mock-label">Vencimiento</div><div class="co-mock-input">MM / AA</div></div><div><div class="co-mock-label">CVC</div><div class="co-mock-input">CVC</div></div></div></div>'+
+'<button type="button" class="co-mock-pay" id="mock-pay">Pagar '+fmt(BASE_CENTS+checked().reduce(function(s,id){return s+PRICES[id];},0))+'</button>'+
+'<div class="co-mock-note">Vista previa del formulario. El pago real se procesa de forma segura con Stripe.</div></div>';
+var mb=document.getElementById('mock-pay');
+if(mb)mb.addEventListener('click',function(){var n=document.querySelector('.co-mock-note');if(n)n.textContent='Vista previa: el importe se cobrar&aacute; de forma segura al finalizar con Stripe.';});
+}
 function checked(){return boxes.filter(function(b){return b.el.checked;}).map(function(b){return b.id;});}
 function persist(ids){try{sessionStorage.setItem('local_selected_bumps',JSON.stringify(ids));}catch(e){}}
 function track(ev){if(tracked[ev])return;tracked[ev]=true;try{var p=JSON.stringify({event:ev});if(navigator.sendBeacon){navigator.sendBeacon('/api/track',new Blob([p],{type:'application/json'}));}else{fetch('/api/track',{method:'POST',headers:{'Content-Type':'application/json'},body:p,keepalive:true}).catch(function(){});}}catch(e){}}
@@ -1154,7 +1177,8 @@ boxes.forEach(function(b){b.card.classList.toggle('is-on',b.el.checked);if(b.el.
 var ids=checked();
 if(all){all.checked=ids.length===boxes.length;lines.innerHTML='';ids.forEach(function(id){var d=document.createElement('div');d.className='co-line is-bump';d.innerHTML='<span>+ '+LABELS[id]+'</span><span>'+fmt(PRICES[id])+'</span>';lines.appendChild(d);});}
 if(totalEl)totalEl.textContent=fmt(cents);
-if(saveEl)saveEl.textContent=ids.length?('Voc&ecirc; economiza '+fmt(ids.reduce(function(s,id){return s+SAVINGS[id];},0))):'';
+var mockBtn=document.getElementById('mock-pay');if(mockBtn)mockBtn.textContent='Pagar '+fmt(cents);
+if(saveEl)saveEl.textContent=ids.length?('Ahorras '+fmt(ids.reduce(function(s,id){return s+SAVINGS[id];},0))):'';
 persist(ids);
 return cents;
 }
@@ -1169,14 +1193,14 @@ var name=(document.getElementById('cust-name').value||'').trim();
 var email=(document.getElementById('cust-email').value||'').trim();
 var phone=(document.getElementById('cust-phone').value||'').trim();
 try{
-if(!stripe&&typeof Stripe==='function')stripe=Stripe(STRIPE_KEY);
-if(!stripe)throw new Error('Stripe.js not loaded');
+if(typeof Stripe!=='function'){renderFallback();return;}
+if(!stripe)stripe=Stripe(STRIPE_KEY);
 instance=await stripe.initEmbeddedCheckout({fetchClientSecret:async function(){
 var res=await fetch('/api/create-checkout-session',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({email:email,name:name,phone:phone,bumps:checked(),locale:'es',utm_params:utms()})});
 var data=await res.json();if(data.error)throw new Error(data.error);return data.clientSecret;
 }});
 box.innerHTML='';instance.mount('#checkout-embed');
-}catch(e){console.error('Embedded checkout error:',e);box.innerHTML='<div style="padding:22px;text-align:center;color:#475569;font-size:13px"><p>No se pudo cargar el formulario de pago.</p><p style="margin:6px 0 0"><a href="https://buy.stripe.com/" style="color:#158458;font-weight:800">Pagar de forma segura con Stripe &rarr;</a></p></div>';}
+}catch(e){console.error('Embedded checkout error:',e);renderFallback();}
 }
 function schedule(){clearTimeout(timer);timer=setTimeout(mount,450);}
 function ensure(){if(!mounted)mount();}
@@ -1197,12 +1221,5 @@ ob.observe(document.getElementById('checkout'));
 <div class="lp-wrap"><b>InventaLab</b><br>Producto digital para uso personal y familiar.<br>&#169; 2026 &#183; Todos los derechos reservados.</div>
 </footer>
 
-<style>
-.lp-secure-title{font-family:Inter,ui-sans-serif,system-ui,sans-serif;font-size:23px;color:var(--lp-navy);text-align:center;margin:6px 0}
-.lp-secure-sub{font-family:Inter,ui-sans-serif,system-ui,sans-serif;color:var(--lp-ink-soft);font-size:14px;text-align:center;margin:0 auto 30px;max-width:560px;line-height:1.5;padding:0 20px}
-</style>
-<div class="lp-divider" aria-hidden="true"><span>&#128274;</span></div>
-<h2 class="lp-secure-title">&#128274; Pago seguro &mdash; Acceso inmediato</h2>
-<p class="lp-secure-sub">Producto 100% digital (PDF) &middot; Entrega inmediata por email &middot; Un solo pago</p>
 </body>
 </html>
