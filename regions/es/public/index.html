@@ -738,7 +738,7 @@ window.INVENTALAB_REAL_SALES = window.INVENTALAB_REAL_SALES || [
 <script>
 (function(){
 var SUELTOS=["f5285c47-8f33-4dbb-a95b-81c6b8800a39","9b36bbcd-2f6a-4835-a3bc-91bb1cd18c95","f1010423-0300-4241-af94-aa4d347c43e5","b8b8428c-6a24-4c25-ad4a-39aed8ae2889"], SEL4=SUELTOS.join(",");
-var LOCAL_BUMPS=["bump-robotica-movimento","bump-diario-inventor","bump-cientistas-casa","bump-tecnologia-sem-telas"];
+var LOCAL_BUMPS=["bump-robotica-movimento","bump-gran-desafio-inventor","bump-cientificos-casa","bump-tecnologia-sem-telas"];
 var BTN={basico:"Quiero solo el Mega Pack",completo:"Quiero el pack completo"};
 var root=document.getElementById("elegir-pack"); if(!root) return;
 var opts=root.querySelectorAll("[data-pk-opt]"), go=document.getElementById("pk-go"), lbl=root.querySelector("[data-pk-btn]");
@@ -1011,123 +1011,223 @@ if(!fx())document.addEventListener('DOMContentLoaded',fx);
 })();
 </script>
 
-<!-- ===== CHECKOUT LOCAL (Stripe / Cloudflare Worker) ===== -->
 <style>
-.lp-checkout-local{font-family:Inter,ui-sans-serif,system-ui,-apple-system,sans-serif;color:#fff;background:var(--lp-navy);padding:34px 0 52px;scroll-margin-top:8px}
-.lp-checkout-local .lp-wrap{max-width:600px}
+.lp-checkout-local{font-family:Inter,ui-sans-serif,system-ui,-apple-system,sans-serif;color:#fff;background:var(--lp-navy);padding:34px 0 56px;scroll-margin-top:8px}
+.lp-checkout-local .lp-wrap{max-width:720px}
 .lp-checkout-local .lp-divider{display:flex;align-items:center;justify-content:center;gap:12px;max-width:600px;margin:0 auto 18px;padding:0 20px}
 .lp-checkout-local .lp-divider::before,.lp-checkout-local .lp-divider::after{content:"";flex:1;height:2px;border-radius:999px;background:linear-gradient(90deg,rgba(31,163,90,0),rgba(31,163,90,.38))}
 .lp-checkout-local .lp-divider span{flex:none;width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:16px;background:#fff;border:2px solid var(--lp-green-soft)}
 .lp-checkout-local h2{color:#fff;font-size:23px;text-align:center;margin:6px 0}
-.lp-checkout-local .sub{color:#c7c0dc;font-size:14px;text-align:center;margin:0 auto 22px;max-width:520px}
-.lp-checkout-local #payment-form{background:#fff;border-radius:16px;padding:24px;max-width:520px;margin:0 auto;color:var(--lp-ink)}
-.lp-checkout-local #express-checkout-element{margin-bottom:16px}
-.lp-checkout-local .divider-or{display:flex;align-items:center;gap:10px;margin:0 0 16px;color:#94a3b8;font-size:13px}
-.lp-checkout-local .divider-or::before,.lp-checkout-local .divider-or::after{content:"";flex:1;height:1px;background:#e2e8f0}
-.lp-checkout-local .accordion-toggle{width:100%;background:var(--lp-green-soft);border:1.5px solid #BEE9CC;border-radius:10px;padding:12px 16px;cursor:pointer;display:flex;justify-content:space-between;align-items:center;font-weight:700;font-size:14px;color:var(--lp-navy)}
-.lp-checkout-local .accordion-toggle .arrow{transition:transform .25s ease}
-.lp-checkout-local .accordion-toggle.open .arrow{transform:rotate(180deg)}
-.lp-checkout-local #card-fields{max-height:0;overflow:hidden;transition:max-height .3s ease}
-.lp-checkout-local #card-fields.open{max-height:600px}
-.lp-checkout-local #card-element{border:1.5px solid #e2e8f0;border-radius:8px;padding:12px;margin:12px 0 8px;background:#fff}
-.lp-checkout-local #email-input,.lp-checkout-local #name-input,.lp-checkout-local #card-name-input{width:100%;border:1.5px solid #e2e8f0;border-radius:8px;padding:11px 14px;font-size:14px;font-family:Inter,sans-serif;outline:none;margin-bottom:8px}
-.lp-checkout-local #email-input:focus,.lp-checkout-local #name-input:focus,.lp-checkout-local #card-name-input:focus{border-color:var(--lp-green)}
-.lp-checkout-local #submit-btn{width:100%;background:var(--lp-green);color:#fff;border:none;border-radius:10px;padding:15px;font-size:17px;font-weight:800;cursor:pointer;overflow:hidden;animation:lpPress 1.6s ease-in-out infinite;margin-top:8px}
-.lp-checkout-local #submit-btn:hover{background:var(--lp-green-dark)}
-.lp-checkout-local #payment-message{color:#ef4444;font-size:13px;margin-top:8px;text-align:center;display:none}
-.lp-checkout-local .payment-trust-row{display:flex;align-items:center;justify-content:center;gap:8px;margin-top:14px;font-size:12px;color:var(--lp-ink-soft);font-weight:600}
-.lp-checkout-local .stripe-badges{display:flex;align-items:center;justify-content:center;gap:14px;margin-top:12px;flex-wrap:wrap}
-.lp-checkout-local .stripe-badge{background:#f8fafc;border:1px solid #e2e8f0;border-radius:8px;padding:5px 10px;font-size:11px;font-weight:700;color:#475569}
-.lp-checkout-local .co-pack{background:var(--lp-green-soft);border:1px solid #BEE9CC;border-radius:10px;padding:11px 14px;margin:0 0 14px;font-size:13.5px;color:#4B7A5C;font-weight:700;text-align:center}
+.lp-checkout-local .co-sub{color:#c7c0dc;font-size:14px;text-align:center;margin:0 auto 22px;max-width:560px;line-height:1.5}
+.lp-checkout-local .co-shell{background:#fff;border-radius:18px;overflow:hidden;box-shadow:0 24px 60px rgba(0,0,0,.28);color:var(--lp-ink);max-width:660px;margin:0 auto}
+.lp-checkout-local .co-banner{background:linear-gradient(100deg,#1c9d68,#25b87c);color:#fff;padding:18px 20px;text-align:center}
+.lp-checkout-local .co-banner .co-kick{display:inline-block;font-size:11px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;background:rgba(0,0,0,.18);padding:4px 12px;border-radius:999px}
+.lp-checkout-local .co-banner h3{color:#fff;font-size:19px;margin:8px 0 6px;line-height:1.25}
+.lp-checkout-local .co-banner .co-price{display:flex;align-items:center;justify-content:center;gap:10px;font-size:14px}
+.lp-checkout-local .co-banner .co-old{text-decoration:line-through;opacity:.8}
+.lp-checkout-local .co-banner .co-now{font-size:26px;font-weight:900;color:#fff8c9}
+.lp-checkout-local .co-banner .co-off{background:#fff;color:#158458;font-size:11px;font-weight:900;padding:3px 9px;border-radius:999px;text-transform:uppercase}
+.lp-checkout-local .co-body{padding:22px}
+.lp-checkout-local .co-step{margin-bottom:22px}
+.lp-checkout-local .co-step:last-child{margin-bottom:0}
+.lp-checkout-local .co-step-t{display:flex;align-items:center;gap:8px;font-weight:900;font-size:15px;margin:0 0 12px;color:var(--lp-navy)}
+.lp-checkout-local .co-num{width:24px;height:24px;flex:0 0 24px;border-radius:50%;background:var(--lp-green);color:#fff;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:900}
+.lp-checkout-local .co-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.lp-checkout-local .co-grid .co-full{grid-column:1/-1}
+.lp-checkout-local .co-lab{display:block;font-size:12px;font-weight:700;color:#475569;margin:0 0 4px}
+.lp-checkout-local .co-input{width:100%;border:1.5px solid #e2e8f0;border-radius:9px;padding:11px 13px;font-size:15px;font-family:inherit;color:#1e293b;background:#fff;outline:none;transition:border-color .15s,box-shadow .15s}
+.lp-checkout-local .co-input:focus{border-color:var(--lp-green);box-shadow:0 0 0 3px rgba(28,157,104,.12)}
+.lp-checkout-local .co-bumps{display:flex;flex-direction:column;gap:8px}
+.lp-checkout-local .co-bump{display:flex;gap:10px;align-items:flex-start;border:1.5px dashed #cbd5e1;border-radius:11px;padding:11px 12px;cursor:pointer;background:#fff;transition:border-color .15s,background .15s}
+.lp-checkout-local .co-bump:hover{border-color:#25b87c}
+.lp-checkout-local .co-bump.is-on{border:2px solid var(--lp-green);background:#f0fdf5}
+.lp-checkout-local .co-bump input{width:18px;height:18px;flex:0 0 18px;margin:2px 0 0;accent-color:var(--lp-green);cursor:pointer}
+.lp-checkout-local .co-bump-main{flex:1;min-width:0}
+.lp-checkout-local .co-bump-top{display:flex;justify-content:space-between;align-items:flex-start;gap:8px;flex-wrap:wrap}
+.lp-checkout-local .co-bump-name{font-weight:800;font-size:13.5px;line-height:1.35;color:var(--lp-navy)}
+.lp-checkout-local .co-bump-price{font-weight:900;font-size:14px;color:#158458;white-space:nowrap}
+.lp-checkout-local .co-bump-price s{display:block;font-size:11px;font-weight:600;color:#94a3b8;text-align:right}
+.lp-checkout-local .co-bump-desc{font-size:11.5px;color:#64748b;line-height:1.4;margin:4px 0 0}
+.lp-checkout-local .co-bump-cta{display:inline-block;margin-top:6px;font-size:11px;font-weight:800;color:#158458;background:#eafbf3;border:1px solid #bee9cc;border-radius:6px;padding:3px 8px}
+.lp-checkout-local .co-all{display:flex;align-items:center;gap:9px;background:#fff8e1;border:1.5px solid #fcd979;border-radius:11px;padding:11px 13px;cursor:pointer;font-weight:900;font-size:14px;color:#7a5600;margin-top:4px}
+.lp-checkout-local .co-all input{width:18px;height:18px;accent-color:var(--lp-green);cursor:pointer}
+.lp-checkout-local .co-summary{background:#f8fafc;border:1px solid #e2e8f0;border-radius:12px;padding:14px 15px}
+.lp-checkout-local .co-line{display:flex;justify-content:space-between;gap:12px;font-size:13px;color:#475569;padding:3px 0}
+.lp-checkout-local .co-line span:last-child{font-weight:800;color:var(--lp-navy);white-space:nowrap}
+.lp-checkout-local .co-line.is-bump{color:#158458}
+.lp-checkout-local .co-line.is-bump span:last-child{color:#158458}
+.lp-checkout-local .co-total{display:flex;justify-content:space-between;align-items:center;border-top:1px solid #e2e8f0;margin-top:8px;padding-top:10px;font-size:16px;font-weight:900;color:var(--lp-navy)}
+.lp-checkout-local .co-total b{font-size:22px;color:#158458}
+.lp-checkout-local .co-save{text-align:right;font-size:12px;font-weight:800;color:#158458;margin-top:4px}
+.lp-checkout-local .co-pay-head{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:10px;flex-wrap:wrap}
+.lp-checkout-local .co-pay-head h4{margin:0;color:var(--lp-navy);font-size:15px}
+.lp-checkout-local .co-ssl{font-size:11px;font-weight:700;color:#047857;background:#ecfdf5;border:1px solid #a7f3d0;border-radius:999px;padding:3px 9px}
+#checkout-embed{background:#fff;border:1.5px solid #e2e8f0;border-radius:12px;padding:6px;min-height:360px}
+.lp-checkout-local .co-trust{display:flex;align-items:center;justify-content:center;gap:8px;flex-wrap:wrap;font-size:11.5px;color:#64748b;margin-top:12px}
+.lp-checkout-local .co-legal{text-align:center;font-size:11px;color:#94a3b8;line-height:1.5;margin:14px 0 0}
+.lp-checkout-local .co-tech{text-align:center;font-size:11px;color:#94a3b8;margin:6px 0 0}
+@media(max-width:560px){.lp-checkout-local .co-grid{grid-template-columns:1fr}.lp-checkout-local .co-body{padding:16px}.lp-checkout-local h2{font-size:20px}}
 </style>
 <section class="lp-checkout-local checkout-section" id="checkout">
 <div class="lp-wrap">
 <div class="lp-divider" aria-hidden="true"><span>&#128274;</span></div>
-<h2>&#128274; Compra segura &mdash; Acceso inmediato</h2>
-<p class="sub">Producto 100% digital (PDF) &middot; Pago &uacute;nico &middot; Garant&iacute;a de 30 d&iacute;as</p>
-<form id="payment-form">
-<div class="co-pack" id="co-pack">Tu pedido: Solo el Mega Pack</div>
-<input type="email" id="email-input" placeholder="Tu correo electr&oacute;nico" required autocomplete="email">
-<input type="text" id="name-input" placeholder="Tu nombre completo" required autocomplete="name">
-<div id="express-checkout-element"></div>
-<div class="divider-or"><span>o paga con tarjeta</span></div>
-<button type="button" class="accordion-toggle" id="card-toggle"><span>&#128179; Tarjeta de cr&eacute;dito / d&eacute;bito</span><span class="arrow">&#9660;</span></button>
-<div id="card-fields">
-<input type="text" id="card-name-input" placeholder="Nombre en la tarjeta" autocomplete="cc-name" style="margin-top:12px">
-<div id="card-element"></div>
+<h2>&#128274; Pago seguro &mdash; Acceso inmediato</h2>
+<p class="co-sub">Producto 100% digital (PDF) &middot; Entrega inmediata por email &middot; Un solo pago</p>
+
+<div class="co-shell">
+<div class="co-banner">
+<span class="co-kick">Oferta de lanzamiento</span>
+<h3>Mega Pack de Inventores + 5 bonos gratis</h3>
+<div class="co-price"><span class="co-old">R$ 240,02</span><span class="co-now">R$ 120,01</span><span class="co-off">-50%</span></div>
 </div>
-<div id="payment-message"></div>
-<button id="submit-btn" type="submit">Acceder ahora &rarr;</button>
-<div class="payment-trust-row">&#128274; Pago 100% seguro &middot; Stripe certificado</div>
-<div class="stripe-badges"><span class="stripe-badge">&#9989; Visa</span><span class="stripe-badge">&#9989; Mastercard</span><span class="stripe-badge">&#9989; Apple Pay</span><span class="stripe-badge">&#9989; Google Pay</span></div>
-</form>
+
+<div class="co-body">
+<div class="co-step">
+<h4 class="co-step-t"><span class="co-num">1</span> Tus datos (d&oacute;nde enviar el acceso)</h4>
+<div class="co-grid">
+<div><label class="co-lab" for="cust-name">Nombre completo *</label><input class="co-input" type="text" id="cust-name" placeholder="Ej. Carlos Rodr&iacute;guez" autocomplete="name"></div>
+<div><label class="co-lab" for="cust-email">Tu mejor correo electr&oacute;nico *</label><input class="co-input" type="email" id="cust-email" placeholder="Ej. carlos@ejemplo.com" autocomplete="email"></div>
+<div class="co-full"><label class="co-lab" for="cust-phone">Tel&eacute;fono (opcional)</label><input class="co-input" type="tel" id="cust-phone" placeholder="+34 600 000 000" autocomplete="tel"></div>
+</div>
+</div>
+
+<div class="co-step">
+<h4 class="co-step-t"><span class="co-num">2</span> Agrega a tu compra (opcional)</h4>
+<div class="co-bumps">
+<label class="co-bump" data-bump="bump-robotica-movimento">
+<input type="checkbox" id="bump-robotica-movimento">
+<span class="co-bump-main"><span class="co-bump-top"><span class="co-bump-name">&#129302; Robots que se mueven de verdad: 24 mecanismos de cart&oacute;n con plantillas</span><span class="co-bump-price">R$ 21,43<s>R$ 60,04 &middot; -64%</s></span></span><span class="co-bump-desc">Tu robot deja de ser estatua: 24 mecanismos con ruedas, engranajes y m&aacute;s.</span><span class="co-bump-cta">+ Adicionar &agrave; sua compra</span></span>
+</label>
+<label class="co-bump" data-bump="bump-gran-desafio-inventor">
+<input type="checkbox" id="bump-gran-desafio-inventor">
+<span class="co-bump-main"><span class="co-bump-top"><span class="co-bump-name">&#127942; Que ning&uacute;n invento quede en un rinc&oacute;n: 30 misiones con puntos e insignias</span><span class="co-bump-price">R$ 21,43<s>R$ 60,04 &middot; -64%</s></span></span><span class="co-bump-desc">30 misiones en 6 mundos, con puntaje e insignias. &iexcl;A construir, probar y crear!</span><span class="co-bump-cta">+ Adicionar &agrave; sua compra</span></span>
+</label>
+<label class="co-bump" data-bump="bump-cientificos-casa">
+<input type="checkbox" id="bump-cientificos-casa">
+<span class="co-bump-main"><span class="co-bump-top"><span class="co-bump-name">&#129514; Laboratorio en tu cocina: 50 experimentos seguros con lo que ya ten&eacute;s</span><span class="co-bump-price">R$ 27,15<s>R$ 80,04 &middot; -66%</s></span></span><span class="co-bump-desc">50 experimentos con lo que ya ten&eacute;s en la cocina: pregunta, hip&oacute;tesis y resultado.</span><span class="co-bump-cta">+ Adicionar &agrave; sua compra</span></span>
+</label>
+<label class="co-bump" data-bump="bump-tecnologia-sem-telas">
+<input type="checkbox" id="bump-tecnologia-sem-telas">
+<span class="co-bump-main"><span class="co-bump-top"><span class="co-bump-name">&#128118; Chau &ldquo;me aburro&rdquo;: 40 desaf&iacute;os por niveles, con diplomas y sin pantalla</span><span class="co-bump-price">R$ 15,72<s>R$ 42,88 &middot; -63%</s></span></span><span class="co-bump-desc">40 desaf&iacute;os por nivel, con tablero de progreso y diplomas. Cada reto en un paso.</span><span class="co-bump-cta">+ Adicionar &agrave; sua compra</span></span>
+</label>
+<label class="co-bump" data-bump="bump-agentes-inventores">
+<input type="checkbox" id="bump-agentes-inventores">
+<span class="co-bump-main"><span class="co-bump-top"><span class="co-bump-name">&#128373; Agentes Inventores: 6 misterios para resolver inventando</span><span class="co-bump-price">R$ 21,43<s>R$ 60,04 &middot; -64%</s></span></span><span class="co-bump-desc">6 casos para imprimir: siguen pistas, arman un invento de verdad (periscopio, catapulta...).</span><span class="co-bump-cta">+ Adicionar &agrave; sua compra</span></span>
+</label>
+<label class="co-bump" data-bump="bump-magia-optica">
+<input type="checkbox" id="bump-magia-optica">
+<span class="co-bump-main"><span class="co-bump-top"><span class="co-bump-name">&#127914; Magia &Oacute;ptica: 10 juguetes de ilusi&oacute;n para armar con papel y cart&oacute;n</span><span class="co-bump-price">R$ 8,60<s>R$ 24,59 &middot; -65%</s></span></span><span class="co-bump-desc">10 ilusiones &oacute;pticas para armar con papel, cart&oacute;n y cosas de casa: taumatropo y m&aacute;s.</span><span class="co-bump-cta">+ Adicionar &agrave; sua compra</span></span>
+</label>
+</div>
+<label class="co-all"><input type="checkbox" id="bump-todos"> &iexcl;Me los llevo todos!</label>
+</div>
+
+<div class="co-step">
+<h4 class="co-step-t"><span class="co-num">3</span> Resumo do pedido</h4>
+<div class="co-summary">
+<div class="co-line"><span>Mega Pack de Inventores (120 proyectos + 5 bonos)</span><span>R$ 120,01</span></div>
+<div id="co-bump-lines"></div>
+<div class="co-total"><span>Pre&ccedil;o total</span><b id="summary-total">R$ 120,01</b></div>
+<div class="co-save" id="summary-save"></div>
+</div>
+</div>
+
+<div class="co-step">
+<div class="co-pay-head"><h4><span class="co-num">4</span> &nbsp;Pagamento seguro</h4><span class="co-ssl">&#128274; 256-Bit SSL</span></div>
+<div id="checkout-embed"><div class="co-loading" style="padding:40px 12px;text-align:center;color:#64748b;font-size:13px">Cargando formulario de pago seguro...</div></div>
+<div class="co-trust"><span>&#128274; Pagamento seguro</span><span>&bull;</span><span>&#128233; Acesso imediato por email</span><span>&bull;</span><span>&#128737; Garantia de 15 dias</span></div>
+<p class="co-legal">Ao continuar, voc&ecirc; concorda com os Termos do Servi&ccedil;o do Comprador e a Pol&iacute;tica de Privacidade.</p>
+<p class="co-tech">Com tecnologia <b>Stripe</b> &middot; &#128233; Produto digital 100%: n&atilde;o se env&iacute;a nada f&iacute;sico; el acceso llega por email apenas se confirma el pago.</p>
+</div>
+
+</div>
+</div>
 </div>
 </section>
 
 <script>
 (function(){
-var toggle=document.getElementById('card-toggle'),fields=document.getElementById('card-fields');
-if(toggle&&fields){toggle.addEventListener('click',function(){var open=fields.classList.toggle('open');toggle.classList.toggle('open',open);});}
-var pack=document.getElementById('co-pack');
-function getBumps(){try{return JSON.parse(sessionStorage.getItem('local_selected_bumps')||'[]');}catch(e){return [];}}
-function renderPack(){var b=getBumps();if(pack)pack.textContent=b.length?('Tu pedido: Mega Pack + '+b.length+' cuadernillos'):'Tu pedido: Solo el Mega Pack';}
-renderPack();
-document.addEventListener('click',function(e){if(e.target&&e.target.closest&&e.target.closest('[data-pk-opt]'))setTimeout(renderPack,0);});
-})();
-</script>
-<script src="https://js.stripe.com/v3/"></script>
-<script>
-(function(){
 var STRIPE_KEY='pk_live_51RQqeEHJMCMoZz9iKJZ1UAmX9yrwJCdIWMp2gBxKhIFiRAJIFCIUlluMHbOJY4A5dn8V8yMqrMlS7oBPMQ5LKBFD00DhGt3fN0';
-var form=document.getElementById('payment-form');if(!form)return;
-var stripe,elements,paymentIntentId;
-var submitBtn=document.getElementById('submit-btn'),msgEl=document.getElementById('payment-message');
-function showMsg(m){msgEl.textContent=m.replace(/&aacute;/g,'a').replace(/&eacute;/g,'e');msgEl.style.display='block';}
-function hideMsg(){msgEl.style.display='none';}
-function getBumps(){try{return JSON.parse(sessionStorage.getItem('local_selected_bumps')||'[]');}catch(e){return [];}}
-function getUTMs(){var out={};try{new URLSearchParams(location.search).forEach(function(v,k){if(/^(utm_|fbclid$|gclid$)/.test(k))out[k]=v;});}catch(e){}return out;}
-async function callIntent(extra){
-var body={bumps:getBumps(),utm_params:getUTMs()};
-for(var k in (extra||{}))body[k]=extra[k];
-var res=await fetch('/api/create-payment-intent',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(body)});
-var data=await res.json();if(data.error)throw new Error(data.error);if(!data.clientSecret)throw new Error('No se pudo iniciar el pago');return data;
+var BASE_CENTS=12001;
+var PRICES={
+'bump-robotica-movimento':2143,
+'bump-gran-desafio-inventor':2143,
+'bump-cientificos-casa':2715,
+'bump-tecnologia-sem-telas':1572,
+'bump-agentes-inventores':2143,
+'bump-magia-optica':860
+};
+var SAVINGS={
+'bump-robotica-movimento':3861,
+'bump-gran-desafio-inventor':3861,
+'bump-cientificos-casa':5289,
+'bump-tecnologia-sem-telas':2716,
+'bump-agentes-inventores':3861,
+'bump-magia-optica':1599
+};
+var LABELS={
+'bump-robotica-movimento':'Rob&oacute;tica Movible (24 mecanismos)',
+'bump-gran-desafio-inventor':'Gran Desaf&iacute;o Inventor (30 misiones)',
+'bump-cientificos-casa':'Cient&iacute;ficos en Casa (50 experimentos)',
+'bump-tecnologia-sem-telas':'Tecnolog&iacute;a Sin Pantallas (40 desaf&iacute;os)',
+'bump-agentes-inventores':'Agentes Inventores (6 misterios)',
+'bump-magia-optica':'Magia &Oacute;ptica (10 juguetes)'
+};
+var PACK4=['bump-robotica-movimento','bump-gran-desafio-inventor','bump-cientificos-casa','bump-tecnologia-sem-telas'];
+var root=document.getElementById('checkout');if(!root)return;
+var boxes=[],all=document.getElementById('bump-todos'),lines=document.getElementById('co-bump-lines');
+var totalEl=document.getElementById('summary-total'),saveEl=document.getElementById('summary-save');
+var stripe=null,instance=null,mounted=false,timer=null,tracked={};
+Object.keys(PRICES).forEach(function(id){
+var el=document.getElementById(id);
+if(el)boxes.push({id:id,el:el,card:el.closest('.co-bump')});
+});
+function fmt(c){return 'R$ '+(c/100).toLocaleString('pt-BR',{minimumFractionDigits:2,maximumFractionDigits:2});}
+function checked(){return boxes.filter(function(b){return b.el.checked;}).map(function(b){return b.id;});}
+function persist(ids){try{sessionStorage.setItem('local_selected_bumps',JSON.stringify(ids));}catch(e){}}
+function track(ev){if(tracked[ev])return;tracked[ev]=true;try{var p=JSON.stringify({event:ev});if(navigator.sendBeacon){navigator.sendBeacon('/api/track',new Blob([p],{type:'application/json'}));}else{fetch('/api/track',{method:'POST',headers:{'Content-Type':'application/json'},body:p,keepalive:true}).catch(function(){});}}catch(e){}}
+function update(){
+var cents=BASE_CENTS;
+boxes.forEach(function(b){b.card.classList.toggle('is-on',b.el.checked);if(b.el.checked)cents+=PRICES[b.id];});
+var ids=checked();
+if(all){all.checked=ids.length===boxes.length;lines.innerHTML='';ids.forEach(function(id){var d=document.createElement('div');d.className='co-line is-bump';d.innerHTML='<span>+ '+LABELS[id]+'</span><span>'+fmt(PRICES[id])+'</span>';lines.appendChild(d);});}
+if(totalEl)totalEl.textContent=fmt(cents);
+if(saveEl)saveEl.textContent=ids.length?('Voc&ecirc; economiza R$ '+(ids.reduce(function(s,id){return s+SAVINGS[id];},0)/100).toFixed(2).replace('.',',')):'';
+persist(ids);
+return cents;
 }
-async function syncIntent(email,name){
-if(!paymentIntentId)return;
-try{await callIntent({paymentIntentId:paymentIntentId,email:email,name:name});}catch(e){}
-}
+function utms(){var o={};try{new URLSearchParams(location.search).forEach(function(v,k){if(/^(utm_|fbclid$|gclid$)/.test(k))o[k]=v;});}catch(e){}return o;}
+function trackCheckout(){track('checkout_start');if(typeof fbq==='function'){fbq('track','InitiateCheckout',{value:update()/100,currency:'BRL',content_name:'Mega Pack de Inventores'});}}
 async function mount(){
+var box=document.getElementById('checkout-embed');if(!box)return;
+mounted=true;
+if(instance){try{instance.destroy();}catch(e){}instance=null;}
+box.innerHTML='<div style="padding:40px 12px;text-align:center;color:#64748b;font-size:13px">Cargando opciones de pago seguro...</div>';
+var name=(document.getElementById('cust-name').value||'').trim();
+var email=(document.getElementById('cust-email').value||'').trim();
+var phone=(document.getElementById('cust-phone').value||'').trim();
 try{
-var intent=await callIntent({});paymentIntentId=intent.paymentIntentId;
-stripe=Stripe(STRIPE_KEY);
-elements=stripe.elements({clientSecret:intent.clientSecret,appearance:{theme:'stripe',variables:{colorPrimary:'#1c9d68'}}});
-var expressCheckout=elements.create('expressCheckout',{});
-expressCheckout.mount('#express-checkout-element');
-expressCheckout.on('confirm',async function(){
-var email=document.getElementById('email-input').value,name=document.getElementById('name-input').value;
-if(!email||!name){showMsg('Complet&aacute; tu email y nombre.');return;}
-await syncIntent(email,name);
-var r=await stripe.confirmPayment({elements,confirmParams:{return_url:location.origin+'/thank-you.html',payment_method_data:{billing_details:{name:name,email:email}}}});
-if(r.error)showMsg(r.error.message);
-});
-var cardElement=elements.create('card',{style:{base:{fontSize:'16px',color:'#1e293b'}}});
-cardElement.mount('#card-element');
-}catch(e){console.error('Stripe init error:',e);showMsg('No se pudo cargar el formulario de pago. Recarg&aacute; la pagina.');}
+if(!stripe&&typeof Stripe==='function')stripe=Stripe(STRIPE_KEY);
+if(!stripe)throw new Error('Stripe.js not loaded');
+instance=await stripe.initEmbeddedCheckout({fetchClientSecret:async function(){
+var res=await fetch('/api/create-checkout-session',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({email:email,name:name,phone:phone,bumps:checked(),locale:'es',utm_params:utms()})});
+var data=await res.json();if(data.error)throw new Error(data.error);return data.clientSecret;
+}});
+box.innerHTML='';instance.mount('#checkout-embed');
+}catch(e){console.error('Embedded checkout error:',e);box.innerHTML='<div style="padding:22px;text-align:center;color:#475569;font-size:13px"><p>No se pudo cargar el formulario de pago.</p><p style="margin:6px 0 0"><a href="https://buy.stripe.com/" style="color:#158458;font-weight:800">Pagar de forma segura con Stripe &rarr;</a></p></div>';}
 }
-form.addEventListener('submit',async function(e){
-e.preventDefault();hideMsg();
-var email=document.getElementById('email-input').value,name=document.getElementById('name-input').value;
-var cardName=document.getElementById('card-name-input').value||name;
-if(!email||!name){showMsg('Por favor complet&aacute; todos los campos.');return;}
-submitBtn.disabled=true;submitBtn.textContent='Procesando...';
-try{
-await syncIntent(email,cardName);
-var r=await stripe.confirmPayment({elements,confirmParams:{return_url:location.origin+'/thank-you.html',payment_method_data:{billing_details:{name:cardName,email:email}}}});
-if(r.error)showMsg(r.error.message);
-}catch(err){showMsg('Error al procesar el pago. Intent&aacute;lo de nuevo.');}
-submitBtn.disabled=false;submitBtn.textContent='Acceder ahora \u2192';
-});
-mount();
+function schedule(){clearTimeout(timer);timer=setTimeout(mount,450);}
+function ensure(){if(!mounted)mount();}
+boxes.forEach(function(b){b.el.addEventListener('change',function(){update();trackCheckout();schedule();});});
+if(all)all.addEventListener('change',function(){boxes.forEach(function(b){b.el.checked=all.checked;});update();trackCheckout();schedule();});
+['cust-name','cust-email','cust-phone'].forEach(function(id){var el=document.getElementById(id);if(!el)return;el.addEventListener('focus',function(){trackCheckout();ensure();},{once:true});el.addEventListener('change',function(){trackCheckout();schedule();});});
+document.querySelectorAll('a[href="#checkout"]').forEach(function(a){a.addEventListener('click',function(){track('cta_click');trackCheckout();ensure();});});
+try{var saved=JSON.parse(sessionStorage.getItem('local_selected_bumps')||'[]');saved.forEach(function(id){var b=boxes.filter(function(x){return x.id===id;})[0];if(b)b.el.checked=true;});}catch(e){}
+update();
+if('IntersectionObserver' in window){
+var ob=new IntersectionObserver(function(es){if(es.some(function(e){return e.isIntersecting;})){trackCheckout();ensure();ob.disconnect();}},{rootMargin:'500px 0px'});
+ob.observe(document.getElementById('checkout'));
+}else{ensure();}
 })();
 </script>
 </body>

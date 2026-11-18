@@ -1,57 +1,90 @@
-const BUMP_NAMES = {
-  "bump-pequenos-engenheiros": "Pequeños Ingenieros: 10 Proyectos para Pequeños Inventores",
-  "bump-robotica-movimento": "Robótica con Movimiento: 24 Mecanismos de Cartón",
-  "bump-cientistas-casa": "Científicos en Casa: 60 Experimentos Ilustrados",
-  "bump-tecnologia-sem-telas": "Tecnología sin Pantallas: 40 Retos Desconectados",
-  "bump-maquinas-hidraulicas": "Máquinas Hidráulicas: 10 Desafíos con Agua",
-  "bump-festa-inventores": "Fiesta de Inventores: Kit de Cumpleaños Completo",
-  "bump-diario-inventor": "Mi Diario de Inventor: 30 Días de Creación"
+const CURRENCY = 'brl';
+const BASE_AMOUNT = 12001; // R$ 120,01
+const PRODUCT_NAME = "Mega Pack de Inventores • 120 Proyectos + 5 Bonos";
+const PRODUCT_DESCRIPTION = "Más de 120 proyectos STEM paso a paso + 5 bonos gratis";
+
+// Order bumps validados na landing de referência (preços em centavos de R$)
+const BUMP_CATALOG = {
+  "bump-robotica-movimento": {
+    name: "🤖 Robótica Movible: 24 mecanismos de cartón con plantillas",
+    amount: 2143
+  },
+  "bump-gran-desafio-inventor": {
+    name: "🏆 El Gran Desafío Inventor: 30 misiones con puntos e insignias",
+    amount: 2143
+  },
+  "bump-cientificos-casa": {
+    name: "🧪 Científicos en Casa: 50 experimentos seguros",
+    amount: 2715
+  },
+  "bump-tecnologia-sem-telas": {
+    name: "📵 Tecnología Sin Pantallas: 40 desafíos por niveles",
+    amount: 1572
+  },
+  "bump-agentes-inventores": {
+    name: "🕵️ Agentes Inventores: 6 misterios para resolver inventando",
+    amount: 2143
+  },
+  "bump-magia-optica": {
+    name: "🎩 Magia Óptica: 10 juguetes de ilusión para armar con papel y cartón",
+    amount: 860
+  }
 };
+
+const BUMP_NAMES = Object.fromEntries(
+  Object.entries(BUMP_CATALOG).map(([id, item]) => [id, item.name])
+);
+
+function selectedBumps(bumps) {
+  return Array.isArray(bumps)
+    ? [...new Set(bumps.filter(id => Boolean(BUMP_CATALOG[id])))]
+    : [];
+}
+
+function totalAmount(bumps) {
+  return selectedBumps(bumps).reduce((sum, id) => sum + BUMP_CATALOG[id].amount, BASE_AMOUNT);
+}
 
 export default {
   async fetch(request, env) {
     const url = new URL(request.url);
 
-    // Stripe PaymentIntent API for Express Checkout + Accordion PaymentElement
+    // Stripe PaymentIntent API (compatibilidade com fluxo antigo)
     if (url.pathname === '/api/create-payment-intent' && request.method === 'POST') {
       try {
         const body = await request.json();
         const { email, name, phone, bumps, utm_params, paymentIntentId } = body || {};
 
-        const validBumps = Array.isArray(bumps) ? bumps.filter(id => Boolean(BUMP_NAMES[id])) : [];
-        const amount = 2400 + validBumps.length * 1199;
+        const validBumps = selectedBumps(bumps);
+        const amount = totalAmount(validBumps);
         const description = validBumps.length > 0
-          ? `Los Pequeños Inventores • Mega Pack + ${validBumps.length} Pack(s) Adicionales`
-          : 'Los Pequeños Inventores • Mega Pack';
+          ? `${PRODUCT_NAME} + ${validBumps.length} Pack(s) Adicionales`
+          : PRODUCT_NAME;
 
         const buildParams = (isCreate) => {
           const params = new URLSearchParams();
           params.append('amount', amount.toString());
           params.append('description', description);
 
-          if (email && email.includes('@')) {
-            params.append('receipt_email', email.trim());
-          }
+          if (email && email.includes('@')) params.append('receipt_email', email.trim());
           if (name) params.append('metadata[customer_name]', name.trim());
           if (phone) params.append('metadata[customer_phone]', phone.trim());
           params.append('metadata[selected_bumps]', validBumps.join(','));
 
           if (utm_params && typeof utm_params === 'object') {
             for (const [k, v] of Object.entries(utm_params)) {
-              if (v && typeof v === 'string') {
-                params.append(`metadata[${k}]`, v.slice(0, 500));
-              }
+              if (v && typeof v === 'string') params.append(`metadata[${k}]`, v.slice(0, 500));
             }
           }
 
           if (isCreate) {
-            params.append('currency', 'eur');
+            params.append('currency', CURRENCY);
             params.append('automatic_payment_methods[enabled]', 'true');
           }
           return params;
         };
 
-        const rawSecret = (env.STRIPE_SECRET_KEY || '').trim().replace(/^[\"']|[\"']$/g, '');
+        const rawSecret = (env.STRIPE_SECRET_KEY || '').trim().replace(/^["']|["']$/g, '');
         const headers = {
           'Authorization': `Bearer ${rawSecret}`,
           'Content-Type': 'application/x-www-form-urlencoded'
@@ -65,9 +98,7 @@ export default {
             body: buildParams(false).toString()
           });
           const updateData = await updateRes.json();
-          if (!updateData.error) {
-            data = updateData;
-          }
+          if (!updateData.error) data = updateData;
         }
 
         if (!data) {
@@ -102,76 +133,60 @@ export default {
       }
     }
 
-    // Stripe Embedded Checkout Session API
+    // Stripe Embedded Checkout Session API (one-checkout-page)
     if (url.pathname === '/api/create-checkout-session' && request.method === 'POST') {
       try {
         const body = await request.json();
-        const { email, name, phone, bumps, utm_params } = body || {};
+        const { email, name, phone, bumps, utm_params, locale } = body || {};
 
-        // Base product
+        const validBumps = selectedBumps(bumps);
         const lineItems = [
           {
-            price_data: {
-              currency: 'eur',
-              product_data: {
-                name: "Los Pequeños Inventores • Mega Pack",
-                description: "120 Proyectos STEM Paso a Paso + 5 Super Bonos"
-              },
-              unit_amount: 2400
-            },
+            name: PRODUCT_NAME,
+            description: PRODUCT_DESCRIPTION,
+            amount: BASE_AMOUNT,
             quantity: 1
           }
         ];
 
-        const bumpNames = BUMP_NAMES;
-
-        if (Array.isArray(bumps)) {
-          for (const bumpId of bumps) {
-            if (bumpNames[bumpId]) {
-              lineItems.push({
-                price_data: {
-                  currency: 'eur',
-                  product_data: {
-                    name: bumpNames[bumpId]
-                  },
-                  unit_amount: 1199
-                },
-                quantity: 1
-              });
-            }
-          }
+        for (const id of validBumps) {
+          lineItems.push({
+            name: BUMP_CATALOG[id].name,
+            amount: BUMP_CATALOG[id].amount,
+            quantity: 1
+          });
         }
 
         const params = new URLSearchParams();
         params.append('ui_mode', 'embedded_page');
         params.append('mode', 'payment');
+        params.append('locale', typeof locale === 'string' && locale.trim() ? locale.trim() : 'es');
         params.append('return_url', `${url.origin}/thank-you.html?session_id={CHECKOUT_SESSION_ID}`);
 
-        if (email && email.includes('@')) {
-          params.append('customer_email', email.trim());
-        }
+        if (email && email.includes('@')) params.append('customer_email', email.trim());
 
         lineItems.forEach((item, idx) => {
-          params.append(`line_items[${idx}][price_data][currency]`, item.price_data.currency);
-          params.append(`line_items[${idx}][price_data][product_data][name]`, item.price_data.product_data.name);
-          if (item.price_data.product_data.description) {
-            params.append(`line_items[${idx}][price_data][product_data][description]`, item.price_data.product_data.description);
+          params.append(`line_items[${idx}][price_data][currency]`, CURRENCY);
+          params.append(`line_items[${idx}][price_data][product_data][name]`, item.name);
+          if (item.description) {
+            params.append(`line_items[${idx}][price_data][product_data][description]`, item.description);
           }
-          params.append(`line_items[${idx}][price_data][unit_amount]`, item.price_data.unit_amount.toString());
+          params.append(`line_items[${idx}][price_data][unit_amount]`, item.amount.toString());
           params.append(`line_items[${idx}][quantity]`, item.quantity.toString());
         });
 
         if (name) params.append('metadata[customer_name]', name.trim());
         if (phone) params.append('metadata[customer_phone]', phone.trim());
+        params.append('metadata[selected_bumps]', validBumps.join(','));
+        params.append('metadata[total_brl]', (totalAmount(validBumps) / 100).toFixed(2));
+
         if (utm_params && typeof utm_params === 'object') {
           for (const [k, v] of Object.entries(utm_params)) {
-            if (v && typeof v === 'string') {
-              params.append(`metadata[${k}]`, v.slice(0, 500));
-            }
+            if (v && typeof v === 'string') params.append(`metadata[${k}]`, v.slice(0, 500));
           }
         }
 
-        const rawSecret = (env.STRIPE_SECRET_KEY || '').trim().replace(/^[\"']|[\"']$/g, '');
+        const rawSecret = (env.STRIPE_SECRET_KEY || '').trim().replace(/^["']|["']$/g, '');
 
         const stripeRes = await fetch('https://api.stripe.com/v1/checkout/sessions', {
           method: 'POST',
