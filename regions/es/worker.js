@@ -1,33 +1,33 @@
-const CURRENCY = 'brl';
-const BASE_AMOUNT = 12001; // R$ 120,01
+const CURRENCY = 'eur';
+const BASE_AMOUNT = 1908; // 19,08 €
 const PRODUCT_NAME = "Mega Pack de Inventores • 120 Proyectos + 5 Bonos";
 const PRODUCT_DESCRIPTION = "Más de 120 proyectos STEM paso a paso + 5 bonos gratis";
 
-// Order bumps validados na landing de referência (preços em centavos de R$)
+// Order bumps validados (preços em centavos de euro)
 const BUMP_CATALOG = {
   "bump-robotica-movimento": {
-    name: "🤖 Robótica Movible: 24 mecanismos de cartón con plantillas",
-    amount: 2143
+    name: "🤖 Robots que se mueven de verdad: 24 mecanismos de cartón con plantillas",
+    amount: 818
   },
   "bump-gran-desafio-inventor": {
-    name: "🏆 El Gran Desafío Inventor: 30 misiones con puntos e insignias",
-    amount: 2143
+    name: "🏆 Que ningún invento quede en un rincón: 30 misiones con puntos e insignias",
+    amount: 818
   },
   "bump-cientificos-casa": {
-    name: "🧪 Científicos en Casa: 50 experimentos seguros",
-    amount: 2715
+    name: "🧪 Laboratorio en tu cocina: 50 experimentos seguros con lo que ya tenés",
+    amount: 909
   },
   "bump-tecnologia-sem-telas": {
-    name: "📵 Tecnología Sin Pantallas: 40 desafíos por niveles",
-    amount: 1572
+    name: "📵 Chau \"me aburro\": 40 desafíos por niveles, con diplomas y sin pantalla",
+    amount: 727
   },
   "bump-agentes-inventores": {
     name: "🕵️ Agentes Inventores: 6 misterios para resolver inventando",
-    amount: 2143
+    amount: 818
   },
   "bump-magia-optica": {
     name: "🎩 Magia Óptica: 10 juguetes de ilusión para armar con papel y cartón",
-    amount: 860
+    amount: 636
   }
 };
 
@@ -178,7 +178,7 @@ export default {
         if (name) params.append('metadata[customer_name]', name.trim());
         if (phone) params.append('metadata[customer_phone]', phone.trim());
         params.append('metadata[selected_bumps]', validBumps.join(','));
-        params.append('metadata[total_brl]', (totalAmount(validBumps) / 100).toFixed(2));
+        params.append('metadata[total_eur]', (totalAmount(validBumps) / 100).toFixed(2));
 
         if (utm_params && typeof utm_params === 'object') {
           for (const [k, v] of Object.entries(utm_params)) {
